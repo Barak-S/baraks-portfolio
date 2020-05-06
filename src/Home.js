@@ -10,36 +10,36 @@ export default class Home extends React.Component{
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="../headshot.png"
+                        src="../Soldier.jpeg"
                         alt="First slide"
                         />
                         <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Cozy Cabins</h3>
+                        <p>Real Estate Application</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="../headshot.png"
+                        src="../Soldier.jpeg"
                         alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Pirate Wars</h3>
+                        <p>JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="../headshot.png"
+                        src="../addmovie11.png"
                         alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>React Native Movie & TV App</h3>
+                        <p>Search Movie and TV show titles and share recommendations with friends</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
