@@ -5,7 +5,7 @@ import { Carousel } from 'react-bootstrap';
 export default class Home extends React.Component{
 
     state= {
-        projectImages: ["../Soldier.jpeg", "../homescreen.png", "../addmovie11.png"]
+        projectImages: [{img:"../Soldier.jpeg", description: "soldier"}, {img: "../homescreen.png", description: "movie app"}, {img: "../addmovie11.png", description: "Cozy cabins"}]
     }
 
     mapPictures(){
@@ -15,13 +15,12 @@ export default class Home extends React.Component{
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src={img}
+                        src={img.img}
                         alt="First slide"
                         style={{height: 450, width: 200}}
                         />
                         <Carousel.Caption>
-                        <h3>Cozy Cabins</h3>
-                        <p>Real Estate Application</p>
+                        <h3>{img.description}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 )
