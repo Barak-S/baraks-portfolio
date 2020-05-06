@@ -12,6 +12,7 @@ export default class Home extends React.Component{
                         className="d-block w-100"
                         src="../Soldier.jpeg"
                         alt="First slide"
+                        style={{height: 450, width: 200}}
                         />
                         <Carousel.Caption>
                         <h3>Cozy Cabins</h3>
@@ -23,6 +24,7 @@ export default class Home extends React.Component{
                         className="d-block w-100"
                         src="../Soldier.jpeg"
                         alt="Third slide"
+                        style={{height: 450, width: 200}}
                         />
 
                         <Carousel.Caption>
@@ -35,6 +37,7 @@ export default class Home extends React.Component{
                         className="d-block w-100"
                         src="../addmovie11.png"
                         alt="Third slide"
+                        style={{height: 450, width: 200}}
                         />
 
                         <Carousel.Caption>
