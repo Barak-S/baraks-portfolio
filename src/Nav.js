@@ -20,9 +20,9 @@ export default class Navigator extends React.Component{
                         <Link to="/contact" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" style={{color:"#A8A8A8", fontWeight: "700", fontSize: 15, marginLeft:25}}>CONTACT</Nav.Link>   
                         </Link>
-                        <Link to="/about" style={{ textDecoration: 'none' }}>
+                        {/* <Link to="/about" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" style={{color:"#A8A8A8", fontWeight: "700", fontSize: 15, marginLeft:25}}>ABOUT</Nav.Link>   
-                        </Link>
+                        </Link> */}
                     </Nav>
                     <div style={{marginRight: "13.5%"}}>
                     <Form inline>

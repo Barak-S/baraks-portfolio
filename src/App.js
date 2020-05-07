@@ -17,11 +17,7 @@ function App() {
         <body>
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Home {...routerProps} />}/>
-          </Switch>
-          <Switch>
             <Route exact path= "/contact" render={(routerProps) => <Contact {...routerProps}/>}/>
-          </Switch>
-          <Switch>
             <Route exact path= "/about" render={(routerProps) => <About {...routerProps}/>}/>
           </Switch>
         </body>

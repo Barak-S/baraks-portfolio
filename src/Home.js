@@ -1,23 +1,24 @@
 import React from 'react'
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Card } from 'react-bootstrap';
+// import Contact from './Contact'
 
 
 export default class Home extends React.Component{
 
     state= {
-        projectImages: [{img:"../Soldier.jpeg", description: "soldier"}, {img: "../homescreen.png", description: "movie app"}, {img: "../addmovie11.png", description: "Cozy cabins"}]
+        projectImages: [{img:"../Soldier.jpeg", description: "Covid-19 Data UI"}, {img: "../homescreen.png", description: "movie app"}, {img: "../addmovie.png", description: "Cozy cabins"}, {img: "../addmovie.png", description: "Pirate Wars"}]
     }
 
     mapPictures(){
         return(
-            this.state.projectImages.map(img=>{
+            this.state.projectImages.map((img, index) =>{
                 return(
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
                         src={img.img}
-                        alt="First slide"
-                        style={{height: 450, width: 200}}
+                        alt={ index+1+ "slide"}
+                        style={{ height: 550 }}
                         />
                         <Carousel.Caption>
                         <h3>{img.description}</h3>
@@ -32,7 +33,8 @@ export default class Home extends React.Component{
     render(){
         return(
             <div>
-                <Carousel style={{marginRight: "24%", marginLeft: "24%", marginTop:"7%" }}>
+                {/* <Contact/> */}
+                <Carousel className="carousel" style={{ display: "flex", marginTop:"7%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
                     {/* <Carousel.Item>
                         <img
                         className="d-block w-100"
