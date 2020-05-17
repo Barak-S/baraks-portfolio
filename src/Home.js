@@ -9,7 +9,7 @@ export default class Home extends React.Component{
         isClicked: false
     }
 
-    toggleModal(){
+    toggleModal=()=>{
         this.setState({
             isClicked: !this.state.isClicked
         })
@@ -40,7 +40,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <div>
-                {this.state.isClicked? <Modal toggleModal={this.toggleModal}/> : 
+                {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
                     <Carousel style={{ display: "flex", marginTop:"7%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
                         {this.mapPictures()}
                     </Carousel>
