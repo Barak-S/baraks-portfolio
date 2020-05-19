@@ -40,8 +40,8 @@ export default function Contact(){
                                         </li>
                                     </ul>
                                 </div>
-                                <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
-                            <ProjectCarousel/>
+                                {/* <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
+                            <ProjectCarousel/> */}
                         </Container>
                     </div>
                 </Card.Body>
