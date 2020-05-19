@@ -7,7 +7,7 @@ export default function Contact(){
     return(
         <div style={{margin: "3%"}}>
             <Card className="contactCard" style={{  borderColor: "A8A8A8" }}>
-                <Card.Body style={{backgroundColor:"#343A40"}}>
+                <Card.Body style={{backgroundColor:"#343A40",}}>
                     <div>
                         <Container>
                             <Row>
@@ -21,7 +21,7 @@ export default function Contact(){
                                 <p style={{color: "#D3D3D3"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
                                 <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Sergeant in the IDF <strong>|</strong> I Achieved award of excellence upon advanced training graduation receiving commander’s Beret.</p>
 
-                                <p style={{color: "#D3D3D3"}}><strong style={{fontWeight: 700}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
+                                <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
 
                                 </Col> 
                             </Row>

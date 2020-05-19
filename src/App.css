@@ -26,7 +26,6 @@ body{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
-
 .buttonIcon{
   cursor:pointer;
 }
@@ -50,6 +49,20 @@ ul#horizontal-list li :hover {
   background-color: #E6EFF6;
   border-radius:10px;
   transition: 0.5s;
+}
+
+span.carousel-control-next-icon:hover{
+  height: 34px;
+  background-color: #E6EFF6;
+  border-radius:8px;
+  transition: 0.3s;
+}
+
+span.carousel-control-prev-icon:hover{
+  height: 34px;
+  background-color: #E6EFF6;
+  border-radius:8px;
+  transition: 0.3s;
 }
 
   

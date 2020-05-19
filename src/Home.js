@@ -39,7 +39,7 @@ export default class Home extends React.Component{
         return(
             <div>
                 {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
-                    <div style={{border: '2px solid #0377B5'}}>
+                    <div style={{border: '2px solid #0377B5', borderRadius: 8}}>
                         <Carousel style={{ display: "flex", marginTop:"3.5%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
                             {this.mapPictures()}
                         </Carousel>
