@@ -22,20 +22,23 @@ export default function Contact(){
                                 <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Sergeant in the IDF <strong>|</strong> I Achieved award of excellence upon advanced training graduation receiving commander’s Beret.</p>
 
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontWeight: 700}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
-                                
-                                <ul className="navbar-nav">
-                                    <li>
-                                        <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" className="buttonIcon" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")} alt="LinkedIn"></img>
-                                    </li>
-                                    <li>
-                                        <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}alt="GitHub"></img>
-                                    </li>
-                                    <li>
-                                        <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}alt="Medium"></img>
-                                    </li>
-                                </ul>
+
                                 </Col> 
                             </Row>
+                            <div id="iconList" style={{textAlign: "center"}}>
+                                    <ul id="horizontal-list">
+                                        <li>
+                                            <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" className="buttonIcon" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")} alt="LinkedIn"></img>
+                                        </li>
+                                        <li>
+                                            <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}alt="GitHub"></img>
+                                        </li>
+                                        <li>
+                                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}alt="Medium"></img>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
                             <ProjectCarousel/>
                         </Container>
                     </div>

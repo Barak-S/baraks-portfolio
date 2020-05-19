@@ -26,6 +26,34 @@ body{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
+
 .buttonIcon{
   cursor:pointer;
+}
+
+
+ul#horizontal-list {
+	list-style: none;
+  padding-top: 20px;
+  display: inline-block;
+  padding-left: 0px;
+
+}
+
+ul#horizontal-list li {
+  display: inline;
+  padding: 8.5px;
+}
+
+ul#horizontal-list li :hover {
+  height: 38px;
+  background-color: #E6EFF6;
+  border-radius:10px;
+  transition: 0.5s;
+}
+
+  
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
 }

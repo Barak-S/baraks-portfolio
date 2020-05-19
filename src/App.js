@@ -16,9 +16,9 @@ function App() {
         </header>
         <body>
           <Switch>
-            <Route exact path= "/" render={(routerProps) => <Home {...routerProps} />}/>
+            <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
             <Route exact path= "/contact" render={(routerProps) => <Contact {...routerProps}/>}/>
-            <Route exact path= "/about" render={(routerProps) => <About {...routerProps}/>}/>
+
           </Switch>
         </body>
       

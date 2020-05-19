@@ -27,9 +27,6 @@ export default class Home extends React.Component{
                         alt={ index+1+ "slide"}
                         style={{display: 'flex', height: 650, display: "block", marginLeft: "auto", marginRight: "auto" }}
                         />
-                        <Carousel.Caption>
-                        {/* <h3 style={{color: "#343A40"}}>{img.description}</h3> */}
-                        </Carousel.Caption>
                     </Carousel.Item>
                 )
             })
@@ -42,9 +39,11 @@ export default class Home extends React.Component{
         return(
             <div>
                 {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
-                    <Carousel style={{ display: "flex", marginTop:"7%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
-                        {this.mapPictures()}
-                    </Carousel>
+                    <div style={{border: '2px solid #0377B5'}}>
+                        <Carousel style={{ display: "flex", marginTop:"3.5%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
+                            {this.mapPictures()}
+                        </Carousel>
+                    </div>
                 
                 }
             </div>
