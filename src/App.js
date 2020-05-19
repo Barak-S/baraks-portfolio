@@ -21,6 +21,7 @@ function App() {
             <Route exact path= "/about" render={(routerProps) => <About {...routerProps}/>}/>
           </Switch>
         </body>
+      
       </div>
     </Router>
 

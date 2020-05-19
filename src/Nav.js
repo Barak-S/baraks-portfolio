@@ -15,10 +15,10 @@ export default class Navigator extends React.Component{
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                         <Link to="/" style={{ textDecoration: 'none' }}>
-                            <Nav.Link href="#link" style={{color:"#A8A8A8", fontWeight: "700", fontSize: 15, marginLeft:25}}>HOME</Nav.Link>   
+                            <Nav.Link href="#link" style={{color:"#D3D3D3", fontWeight: "700", fontSize: 15, marginLeft:25}}>HOME</Nav.Link>   
                         </Link>
                         <Link to="/contact" style={{ textDecoration: 'none' }}>
-                            <Nav.Link href="#link" style={{color:"#A8A8A8", fontWeight: "700", fontSize: 15, marginLeft:25}}>CONTACT</Nav.Link>   
+                            <Nav.Link href="#link" style={{color:"#D3D3D3", fontWeight: "700", fontSize: 15, marginLeft:25}}>CONTACT</Nav.Link>   
                         </Link>
                         {/* <Link to="/about" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" style={{color:"#A8A8A8", fontWeight: "700", fontSize: 15, marginLeft:25}}>ABOUT</Nav.Link>   
