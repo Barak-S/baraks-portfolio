@@ -30,7 +30,9 @@ export default function Contact(){
                                     <li>
                                         <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" style={{height: 63, padding:10}} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}alt="GitHub"></img>
                                     </li>
-
+                                    <li>
+                                        <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}alt="Medium"></img>
+                                    </li>
                                 </ul>
                                 </Col> 
                             </Row>
