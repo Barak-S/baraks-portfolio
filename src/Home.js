@@ -22,6 +22,7 @@ export default class Home extends React.Component{
             this.state.projectImages.map((img, index) =>{
                 return(
                     <Carousel.Item style={{backgroundColor: "#343A40"}} onClick={()=>this.toggleModal()}>
+                        <Carousel.Caption style={{color: "#0377B5", fontWeight: "600", fontSize: 20, backgroundColor: "#E6EFF6", borderRadius: 8}}>{img.description.toUpperCase()}</Carousel.Caption>
                         <img
                         src={img.img}
                         alt={ index+1+ "slide"}
@@ -40,7 +41,7 @@ export default class Home extends React.Component{
             <div>
                 {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
                     <div style={{border: '2px solid #0377B5', borderRadius: 8}}>
-                        <Carousel style={{ display: "flex", marginTop:"3.5%", justifyContent: "center", alignItems: "center", height: 650, paddingRight: "10.5%", paddingLeft: "10.5%" }} >
+                        <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%", paddingRight: "10.5%", paddingLeft: "10.5%" }} >
                             {this.mapPictures()}
                         </Carousel>
                     </div>

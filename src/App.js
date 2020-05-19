@@ -18,7 +18,6 @@ function App() {
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
             <Route exact path= "/contact" render={(routerProps) => <Contact {...routerProps}/>}/>
-
           </Switch>
         </body>
       

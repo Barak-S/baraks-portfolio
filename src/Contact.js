@@ -5,15 +5,15 @@ import './App.css';
 
 export default function Contact(){
     return(
-        <div style={{margin: "3%"}}>
-            <Card className="contactCard" style={{  borderColor: "A8A8A8" }}>
-                <Card.Body style={{backgroundColor:"#343A40",}}>
+        <div style={{margin: "3%", paddingBottom: 25}}>
+            <Card className="contactCard">
+                <Card.Body style={{backgroundColor:"#343A40"}}>
                     <div>
                         <Container>
                             <Row>
                                 <Col xs={8} md={3}>
                                 <Image className="profilePicture" src="../images/headshot2.jpeg" thumbnail/>
-                                <Card.Title style={{paddingTop:12, color: "#D3D3D3"}}>Barak Saidoff</Card.Title>
+                                <Card.Title style={{paddingTop:12, color: "#D3D3D3", fontSize: 25}}>Barak Saidoff</Card.Title>
                                 <Card.Text style={{color: "#D3D3D3", fontWeight: "600", paddingBottom:8.5}}>Full Stack Web Developer</Card.Text>
                                 </Col>
                                 <Col>

@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
 
 .App {
   max-width: 100%;
@@ -17,6 +19,7 @@ body{
   height: 100%;
   position: relative;
   min-height: 100vh;
+  font-family: 'Roboto Slab', serif;
 }
 
 .main-navigation {
@@ -60,7 +63,7 @@ span.carousel-control-next-icon:hover{
   height: 34px;
   background-color: #E6EFF6;
   border-radius:8px;
-  transition: 0.3s;
+  transition: 0.3s ;
 }
 
 span.carousel-control-prev-icon:hover{
@@ -69,16 +72,22 @@ span.carousel-control-prev-icon:hover{
   border-radius:8px;
   transition: 0.3s;
 }
+span.carousel-control-next-icon{
+  transition:  0.3s ease-in-out
+}
+
+span.carousel-control-prev-icon{
+  transition:  0.3s ease-in-out
+}
 
 a.logo.nav-link{
   font-family: 'Comfortaa', cursive;
+  transition:  0.3s ease-in-out
 }
 
 a.logo.nav-link:hover{
   background-color: #E6EFF6;
   border-radius:10px;
-  transition: 0.5s;
-  
 }
 
   
