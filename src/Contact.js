@@ -11,7 +11,7 @@ export default function Contact(){
                     <div>
                         <Container>
                             <Row>
-                                <Col xs={8} md={3}>
+                                <Col xs={6} md={3}>
                                 <Image className="profilePicture" src="../images/headshot2.jpeg" thumbnail/>
                                 <Card.Title style={{paddingTop:12, color: "#D3D3D3", fontSize: 25}}>Barak Saidoff</Card.Title>
                                 <Card.Text style={{color: "#D3D3D3", fontWeight: "600", paddingBottom:8.5}}>Full Stack Web Developer</Card.Text>
