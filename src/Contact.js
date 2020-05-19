@@ -23,6 +23,8 @@ export default function Contact(){
 
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
 
+                                <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 15}}>Email:<br/> </strong>barak.saidoff@gmail.com</p>
+
                                 </Col> 
                             </Row>
                             <div id="iconList" style={{textAlign: "center"}}>

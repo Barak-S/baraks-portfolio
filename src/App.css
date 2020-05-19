@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+
 .App {
   max-width: 100%;
   position: relative;
@@ -5,6 +9,7 @@
   background: rgb(52,58,64);
   background: linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(255,255,255,1) 100%); 
   letter-spacing: .25px; 
+  
 }
 
 body{
@@ -63,6 +68,17 @@ span.carousel-control-prev-icon:hover{
   background-color: #E6EFF6;
   border-radius:8px;
   transition: 0.3s;
+}
+
+a.logo.nav-link{
+  font-family: 'Comfortaa', cursive;
+}
+
+a.logo.nav-link:hover{
+  background-color: #E6EFF6;
+  border-radius:10px;
+  transition: 0.5s;
+  
 }
 
   
