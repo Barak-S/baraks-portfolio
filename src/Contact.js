@@ -17,11 +17,11 @@ export default function Contact(){
                                 <Card.Text style={{color: "#D3D3D3", fontWeight: "600", paddingBottom:8.5}}>Full Stack Web Developer</Card.Text>
                                 </Col>
                                 <Col>
-                                <p style={{color: "#D3D3D3"}}>I am a full stack web developer experienced in Ruby on Rails, JavaScript and ReactJS/ React Native based programming.</p>
+                                <p style={{color: "#D3D3D3"}}>I am a full stack web developer experienced in Ruby on Rails and JavaScript based programming.</p>
                                 <p style={{color: "#D3D3D3"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
                                 <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Sergeant in the IDF <strong>|</strong> I Achieved award of excellence upon advanced training graduation receiving commander’s Beret.</p>
 
-                                <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, JavaScript, React, React Native based programming</p>
+                                <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQLite, PostgreSQL, CSS, HTML5, Bootstrap, JavaScript, React, React Native</p>
 
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 15}}>Email:<br/> </strong>barak.saidoff@gmail.com</p>
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 15}}>Resume:<br/> </strong><a href="https://learn.co/baraksaidoff/resume" target="_blank">https://learn.co/baraksaidoff/resume</a></p>
