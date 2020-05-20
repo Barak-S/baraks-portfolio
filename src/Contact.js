@@ -24,7 +24,7 @@ export default function Contact(){
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQLite, PostgreSQL, CSS, HTML5, Bootstrap, JavaScript, React, React Native</p>
 
                                 <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 15}}>Email:<br/> </strong>barak.saidoff@gmail.com</p>
-                                <p style={{color: "#D3D3D3"}}><a href="https://learn.co/baraksaidoff/resume" target="_blank">Download Resume</a></p>
+                                <p style={{color: "#D3D3D3"}}><a href="https://learn.co/baraksaidoff/resume" target="_blank" style={{color: '#0377B5', fontWeight: "600"}}>Download Resume</a></p>
 
                                 </Col> 
                             </Row>
