@@ -5,10 +5,10 @@ import './App.css';
 
 export default function Contact(){
     return(
-        <div style={{margin: "1.25%", paddingBottom: 25}}>
+        <div style={{margin: "2%", paddingBottom: 25}}>
             <Card className="contactCard">
                 <Card.Body style={{backgroundColor:"#343A40"}}>
-                    <div>
+                    <div style={{margin: "2.5%"}}>
                         <Container>
                             <Row>
                                 <Col xs={6} md={3}>
@@ -41,8 +41,8 @@ export default function Contact(){
                                         </li>
                                     </ul>
                                 </div>
-                                {/* <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
-                            <ProjectCarousel/> */}
+                                <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
+                            <ProjectCarousel/>
                         </Container>
                     </div>
                 </Card.Body>
