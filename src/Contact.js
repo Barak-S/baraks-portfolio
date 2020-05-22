@@ -5,7 +5,7 @@ import './App.css';
 
 export default function Contact(){
     return(
-        <div style={{margin: "3%", paddingBottom: 25}}>
+        <div style={{margin: "1.25%", paddingBottom: 25}}>
             <Card className="contactCard">
                 <Card.Body style={{backgroundColor:"#343A40"}}>
                     <div>
