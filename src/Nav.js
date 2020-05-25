@@ -12,7 +12,7 @@ export default class Navigator extends React.Component{
             <div>
                 <Navbar bg="dark" expand="xl" className="main-navigation">
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav"/> */}
-                <Navbar.Collapse id="basic-navbar-nav">
+                {/* <Navbar.Collapse id="basic-navbar-nav"> */}
                 <Nav className="mr-auto">
                         {/* <Link to="/" style={{ textDecoration: 'none' }}>
                             <img src="./images/Logo.png" id="logo" style={{color:"#D3D3D3", height: 55, paddingLeft: 16.5}}></img>   
@@ -28,7 +28,7 @@ export default class Navigator extends React.Component{
                     <Form inline>
                     </Form>
                     </div>
-                </Navbar.Collapse>
+                {/* </Navbar.Collapse> */}
                 </Navbar>
             </div>
         )
