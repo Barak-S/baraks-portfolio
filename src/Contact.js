@@ -11,12 +11,12 @@ export default function Contact(){
                     <div style={{margin: "1%"}}>
                         <Container fluid>
                             <Row>
-                                <Col xs={6} md={3}>
+                                <Col xs={6} sm={4} md={3}>
                                 <Image className="profilePicture" src="../images/headshot2.jpeg" thumbnail/>
                                 <Card.Title style={{paddingTop:12, color: "#D3D3D3", fontSize: 25}}>Barak Saidoff</Card.Title>
                                 <Card.Text style={{color: "#D3D3D3", fontWeight: "600", paddingBottom:9}}>Full Stack Web Developer</Card.Text>
                                 </Col>
-                                <Col>
+                                <Col md={8}>
                                     <p style={{color: "#D3D3D3"}}>I am a full stack web developer experienced in Ruby on Rails and JavaScript based programming.</p>
                                     <p style={{color: "#D3D3D3"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
                                     <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Sergeant in the IDF <strong>|</strong> I Achieved award of excellence upon advanced training graduation receiving commander’s Beret.</p>
