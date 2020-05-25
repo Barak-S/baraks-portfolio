@@ -9,7 +9,7 @@ export default function Contact(){
             <Card className="contactCard">
                 <Card.Body style={{backgroundColor:"#343A40"}}>
                     <div style={{margin: "1%"}}>
-                        <Container>
+                        <Container fluid>
                             <Row>
                                 <Col xs={6} md={3}>
                                 <Image className="profilePicture" src="../images/headshot2.jpeg" thumbnail/>
@@ -41,7 +41,8 @@ export default function Contact(){
                                         </li>
                                     </ul>
                                 </div>
-                                
+                                {/* <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
+                            <ProjectCarousel/> */}
                         </Container>
                     </div>
                 </Card.Body>
