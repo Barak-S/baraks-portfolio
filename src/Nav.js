@@ -11,7 +11,7 @@ export default class Navigator extends React.Component{
         return(
             <div>
                 <Navbar bg="dark" expand="xl" className="main-navigation">
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                {/* <Navbar.Toggle aria-controls="basic-navbar-nav"/> */}
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                         {/* <Link to="/" style={{ textDecoration: 'none' }}>
