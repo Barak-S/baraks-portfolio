@@ -12,7 +12,7 @@ export default function Contact(){
                         <Container fluid>
                             <Row>
                                 <Col xs={6} sm={4} md={3}>
-                                <Image className="profilePicture" src="../images/headshot2.jpeg" thumbnail/>
+                                <Image className="profilePicture" src={require("./images/headshot2.jpeg")} thumbnail/>
                                 <Card.Title style={{paddingTop:12, color: "#D3D3D3", fontSize: 25}}>Barak Saidoff</Card.Title>
                                 <Card.Text style={{color: "#D3D3D3", fontWeight: "600", paddingBottom:9}}>Full Stack Web Developer</Card.Text>
                                 </Col>

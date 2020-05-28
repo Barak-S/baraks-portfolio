@@ -11,16 +11,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header >
           <Nav></Nav>
-        </header>
-        <body>
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
-            <Route exact path= "/contact" render={(routerProps) => <Contact {...routerProps}/>}/>
           </Switch>
-        </body>
-      
       </div>
     </Router>
 

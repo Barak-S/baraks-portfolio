@@ -6,7 +6,7 @@ import Contact from './Contact'
 export default class Home extends React.Component{
 
     state= {
-        projectImages: [{img:"../images/Covid.png", description: "Covid-19 Data UI"}, {img: "../images/addmovie11.png", description: "movie app"}, {img: "../images/cozyCabins.png", description: "Cozy cabins"}, {img: "../images/pirateWarsGame.png", description: "Pirate Wars"}],
+        projectImages: [{img:"./images/Covid.png", description: "Covid-19 Data UI"}, {img: "./images/addmovie11.png", description: "movie app"}, {img: "./images/cozyCabins.png", description: "Cozy cabins"}, {img: "./images/pirateWarsGame.png", description: "Pirate Wars"}],
         isClicked: false
     }
 
