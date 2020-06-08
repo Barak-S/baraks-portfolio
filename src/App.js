@@ -5,7 +5,7 @@ import './App.css';
 import Contact from './Contact'
 import Nav from './Nav'
 import Home from './Home'
-import About from './About'
+
 
 function App() {
   return (
