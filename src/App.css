@@ -3,20 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
 .App {
-  max-width: 100%;
-  position: relative;
   min-height: 100vh;
-  background: rgb(52,58,64);
-  background: linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(255,255,255,1) 100%); 
-  letter-spacing: .35px; 
 }
 
 body{
-  background-color: rgba(0,0,0,0);
+  background: rgb(52,58,64);
+  background: linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(255,255,255,1) 100%); 
   height: 100%;
   position: relative;
   min-height: 100vh;
   font-family: 'Roboto Slab', serif;
+  letter-spacing: .35px; 
 }
 
 .main-navigation {
@@ -41,7 +38,6 @@ ul#horizontal-list {
   padding-top: 20px;
   display: inline-block;
   padding-left: 0px;
-
 }
 
 ul#horizontal-list li {
