@@ -8,8 +8,7 @@
   min-height: 100vh;
   background: rgb(52,58,64);
   background: linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(255,255,255,1) 100%); 
-  letter-spacing: .25px; 
-  
+  letter-spacing: .35px; 
 }
 
 body{
@@ -23,10 +22,6 @@ body{
 .main-navigation {
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 } 
-
-/* button.navbar-toggler.collapsed{
-  
-} */
 
 .profilePicture{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
@@ -75,16 +70,17 @@ span.carousel-control-prev-icon:hover{
   transition: 0.3s;
 }
 span.carousel-control-next-icon{
-  transition:  0.3s ease-in-out
+  transition:  0.3s ease-in-out;
 }
 
 span.carousel-control-prev-icon{
-  transition:  0.3s ease-in-out
+  transition:  0.3s ease-in-out;
 }
 
 a.logo.nav-link{
   font-family: 'Comfortaa', cursive;
-  transition:  0.3s ease-in-out
+  transition:  0.3s ease-in-out;
+  margin-right: 12px;
 }
 
 a.logo.nav-link:hover{
@@ -92,7 +88,11 @@ a.logo.nav-link:hover{
   border-radius:10px;
 }
 
-  
+.homepage{
+  font-family: 'Comfortaa', cursive;
+  margin-right: 12px;
+}
+
 .table {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
