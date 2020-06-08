@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Contact from './Contact'
 import Nav from './Nav'
-import Home from './Home'
+import ProjectCarousel from './Home'
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Nav></Nav>
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
+            <Route exact path= "/projects" render={(routerProps) => <ProjectCarousel {...routerProps} />}/>
           </Switch>
       </div>
     </Router>
