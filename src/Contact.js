@@ -19,7 +19,7 @@ export default function Contact(){
                                 <Col md={8}>
                                     <p style={{color: "#D3D3D3"}}>I am a full stack web developer experienced in Ruby on Rails and JavaScript based programming.</p>
                                     <p style={{color: "#D3D3D3"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
-                                    <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Former Sergeant in the IDF <strong>|</strong> Achieved award of excellence upon advanced training graduation.</p>
+                                    <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Former Sergeant in the IDF <strong>|</strong> Achieved award of excellence upon advanced training graduation. </p>
 
                                     <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20}}>Technical Skills<br/> </strong>Ruby, Rails, SQLite, PostgreSQL, CSS, HTML5, Bootstrap, JavaScript, React, React Native, Express</p>
 
@@ -41,8 +41,6 @@ export default function Contact(){
                                         </li>
                                     </ul>
                                 </div>
-                                {/* <Card.Title style={{paddingTop:12, color: "#D3D3D3", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
-                            <ProjectCarousel/> */}
                         </Container>
                     </div>
                 </Card.Body>

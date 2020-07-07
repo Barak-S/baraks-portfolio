@@ -6,7 +6,7 @@ import Contact from './Contact'
 export default class Home extends React.Component{
 
     state= {
-        projectImages: [{img:"./images/Covid.png", description: "Covid-19 Data UI"}, {img: "./images/addmovie11.png", description: "movie app"}, {img: "./images/cozyCabins.png", description: "Cozy cabins"}, {img: "./images/pirateWarsGame.png", description: "Pirate Wars"}],
+        projectImages: [{img: require("./images/Covid.png"), description: "Covid-19 Data UI"}, {img: require("./images/addmovie11.png"), description: "movie app"}, {img: require("./images/cozyCabins.png"), description: "Cozy cabins"}, {img: require("./images/pirateWarsGame.png"), description: "Pirate Wars"}],
         isClicked: false
     }
 
@@ -39,8 +39,9 @@ export default class Home extends React.Component{
     render(){
         return(
             <div>
+                <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
                 {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
-                    <div style={{border: '2px solid #0377B5', borderRadius: 8}}>
+                    <div>
                         <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%", paddingRight: "10.5%", paddingLeft: "10.5%" }} >
                             {this.mapPictures()}
                         </Carousel>
