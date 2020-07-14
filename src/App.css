@@ -32,6 +32,13 @@ body{
   cursor:pointer;
 }
 
+.blogIntro::first-letter{
+  font-size: 175%;
+}
+
+.blogHover.card:hover{
+  cursor: pointer;
+}
 
 ul#horizontal-list {
 	list-style: none;
