@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Col, Row, Image, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 export default class Blog extends Component {
 
@@ -36,29 +36,9 @@ export default class Blog extends Component {
     }
 
     getDateString(timestamp){
-        // let formattedDate = new Date(timestamp.replace(/\s/, 'T'))
-        // console.log(formattedDate)
-
-
             var arr = timestamp.split(/[- :]/);
             timestamp = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
-
             return timestamp.toDateString()
-        
-                
-        
-        // const plus0 = num => `0${num.toString()}`.slice(-2)
-      
-        // const d = new Date(timestamp)
-      
-        // const year = d.getFullYear()
-        // const monthTmp = d.getMonth() + 1
-        // const month = plus0(monthTmp)
-        // const date = plus0(d.getDate())
-        // const hour = plus0(d.getHours())
-        // const minute = plus0(d.getMinutes())
-      
-        // return `${date}-${month}-${year} at ${hour}:${minute}`
     }
 
     previewBlogContent(content){
@@ -74,7 +54,8 @@ export default class Blog extends Component {
             <div>
                 <Card className="blogHover">
                     <Card.Body style={{backgroundColor:"#343A40", textAlign: "center"}}>
-                        <h4 style={{color: "#57A773"}}>Latest Blog Post: {this.getDateString(this.state.publishDate)}</h4>
+                        <h5 style={{color: "#57A773"}}>Latest Blog Post: </h5> 
+                        <h4 style={{color: "#57A773"}}>{this.getDateString(this.state.publishDate)}</h4>
                         <h4 style={{fontWeight: 600, color: "#D3D3D3"}}>{this.state.BlogTitle}</h4>
                         <div className='blogIntro' style={{color: "#D3D3D3", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</div>
                     </Card.Body>
