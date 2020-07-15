@@ -40,6 +40,13 @@ body{
   cursor: pointer;
 }
 
+.blogHighlight:hover{
+  background-color: #ffffff;
+  opacity: 0.95;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear ease-in-out;
+}
+
 ul#horizontal-list {
 	list-style: none;
   padding-top: 20px;
