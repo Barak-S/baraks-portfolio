@@ -32,15 +32,13 @@ body{
   cursor:pointer;
 }
 
-.blogIntro::first-letter{
-  font-size: 175%;
-}
+/* #blogIntro::first-letter{
+  font-size: 200%;
+} */
 
-.blogHover.card:hover{
+
+.blogHighlight.card-body:hover{
   cursor: pointer;
-}
-
-.blogHighlight:hover{
   background-color: #ffffff;
   opacity: 0.95;
   -webkit-transition: all 0.1s linear;

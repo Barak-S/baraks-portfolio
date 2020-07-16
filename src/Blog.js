@@ -52,12 +52,12 @@ export default class Blog extends Component {
 
         return (
             <div>
-                <Card className="blogHover" onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
+                <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
                     <Card.Body className="blogHighlight" style={{backgroundColor:"#343A40", textAlign: "center"}}>
                         <h5 style={{color: "#57A773"}}>Latest Blog Post: </h5> 
                         <h4 style={{color: "#57A773"}}>{this.getDateString(this.state.publishDate)}</h4>
                         <h4 style={{fontWeight: 600, color: "#D3D3D3"}}>{this.state.BlogTitle}</h4>
-                        <div className='blogIntro' style={{color: "#D3D3D3", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</div>
+                        <p id='blogIntro' style={{color: "#D3D3D3", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
                     </Card.Body>
                 </Card>
             </div>
