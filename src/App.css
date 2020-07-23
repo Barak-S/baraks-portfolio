@@ -96,9 +96,10 @@ a.logo.nav-link:hover{
   border-radius:10px;
 }
 
-.homepage{
+.NavLinks{
   font-family: 'Comfortaa', cursive;
-  margin-right: 12px;
+  font-weight: 500;
+  
 }
 
 .table {

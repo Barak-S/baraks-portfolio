@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
+import SocialHandles from './SocialHandles'
+import './App.css';
+
 
 export default class Blog extends Component {
 
@@ -43,7 +46,7 @@ export default class Blog extends Component {
 
     previewBlogContent(content){
         let parsedText = this.toText(content)
-        return `${parsedText.slice(0,360)} ...`
+        return `${parsedText.slice(0,425)} ...`
     }
     
 
@@ -51,7 +54,10 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{margin: "2.5%", paddingBottom: 25}}>
+            <Card className="contactCard">
+                <Card.Body style={{backgroundColor:"#343A40"}}>
+                    <div style={{margin: "1%"}}>
                 <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
                     <Card.Body className="blogHighlight" style={{backgroundColor:"#343A40", textAlign: "center"}}>
                         <h5 style={{color: "#57A773"}}>Latest Blog Post: </h5> 
@@ -59,7 +65,11 @@ export default class Blog extends Component {
                         <h4 style={{fontWeight: 600, color: "#D3D3D3"}}>{this.state.BlogTitle}</h4>
                         <p id='blogIntro' style={{color: "#D3D3D3", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
                     </Card.Body>
-                </Card>
+                        </Card>
+                        <SocialHandles/>
+                    </div>   
+                </Card.Body>
+            </Card>
             </div>
         )
     }
