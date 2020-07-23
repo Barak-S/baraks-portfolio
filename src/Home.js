@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel, Card } from 'react-bootstrap';
 import Modal from './Modal'
-import Contact from './Contact'
+import './App.css';
 
 export default class Home extends React.Component{
 
