@@ -43,7 +43,7 @@ export default class Blog extends Component {
 
     previewBlogContent(content){
         let parsedText = this.toText(content)
-        return `${parsedText.slice(0,360)} ...`
+        return `${parsedText.slice(0,425)} ...`
     }
     
 
@@ -51,7 +51,10 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{margin: "2.5%", paddingBottom: 25}}>
+            <Card className="contactCard">
+                <Card.Body style={{backgroundColor:"#343A40"}}>
+                    <div style={{margin: "1%"}}>
                 <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
                     <Card.Body className="blogHighlight" style={{backgroundColor:"#343A40", textAlign: "center"}}>
                         <h5 style={{color: "#57A773"}}>Latest Blog Post: </h5> 
@@ -59,7 +62,23 @@ export default class Blog extends Component {
                         <h4 style={{fontWeight: 600, color: "#D3D3D3"}}>{this.state.BlogTitle}</h4>
                         <p id='blogIntro' style={{color: "#D3D3D3", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
                     </Card.Body>
-                </Card>
+                        </Card>
+                        <div id="iconList" style={{textAlign: "center"}}>
+                            <ul id="horizontal-list">
+                                <li>
+                                    <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" className="buttonIcon" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")} alt="Barak Saidoff LinkedIn"></img>
+                                </li>
+                                <li>
+                                    <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}alt="Barak Saidoff GitHub Barak-S"></img>
+                                </li>
+                                <li>
+                                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}alt="Barak Saidoff Medium Blog"></img>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </Card.Body>
+            </Card>
             </div>
         )
     }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Col, Row, Image, Card } from 'react-bootstrap';
 import ProjectCarousel from './Home'
-import MyBlog from './Blog'
 import './App.css';
 
 export default function Contact(){
@@ -44,7 +43,7 @@ export default function Contact(){
                                 </div>
                         </Container>
                     </div>
-                    <MyBlog/>
+                    {/* <MyBlog/> */}
                 </Card.Body>
             </Card>
         </div>

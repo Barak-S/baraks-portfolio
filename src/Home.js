@@ -38,16 +38,22 @@ export default class Home extends React.Component{
     
     render(){
         return(
-            <div>
-                <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
-                {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
-                    <div>
-                        <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%", paddingRight: "10.5%", paddingLeft: "10.5%" }} >
-                            {this.mapPictures()}
-                        </Carousel>
-                    </div>
-                
-                }
+            <div style={{margin: "2.5%", paddingBottom: 25}}>
+                <Card className="contactCard">
+                    <Card.Body style={{backgroundColor:"#343A40"}}>
+                        <div style={{margin: "1%"}}>
+                            <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
+                            {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
+                                <div>
+                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%", paddingRight: "10.5%", paddingLeft: "10.5%" }} >
+                                        {this.mapPictures()}
+                                    </Carousel>
+                                </div>
+                            
+                            }
+                        </div>
+                    </Card.Body>
+                </Card>
             </div>
         )
     }
