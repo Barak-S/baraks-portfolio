@@ -15,7 +15,7 @@ function App() {
           <Nav></Nav>
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
-            <Route exact path= "/projects" render={(routerProps) => <ProjectCarousel {...routerProps} />}/>
+            <Route exact path= "/Projects" render={(routerProps) => <ProjectCarousel {...routerProps} />}/>
             <Route exact path= "/Blog" render={(routerProps) => <MyBlog {...routerProps} />}/>
           </Switch>
       </div>

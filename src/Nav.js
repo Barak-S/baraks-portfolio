@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Form } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import './App.css';
 
 
@@ -17,12 +17,12 @@ export default class Navigator extends React.Component{
                         <Link to="/" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5", fontSize: 19.5}}>Barak</Nav.Link>   
                         </Link>
-                        {/* <Link to="/projects" style={{ textDecoration: 'none' }}>
-                            <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5"}}>Projects</Nav.Link>   
-                        </Link> */}
                         <Link to="/Blog" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5"}}>Blog</Nav.Link>   
                         </Link>
+                        {/* <Link to="/Projects" style={{ textDecoration: 'none' }}>
+                            <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5"}}>Projects</Nav.Link>   
+                        </Link> */}
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>

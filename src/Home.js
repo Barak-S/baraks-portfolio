@@ -1,7 +1,12 @@
 import React from 'react'
-import { Carousel, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+// import { Carousel } from 'react-bootstrap';
 import Modal from './Modal'
 import './App.css';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
 
 export default class Home extends React.Component{
 
@@ -34,14 +39,27 @@ export default class Home extends React.Component{
 
         )
     }
+
+    newCarousel(){
+        return(
+            this.state.projectImages.map((img, index)=>{
+                return(
+                    <div>
+                        <img src={img.img} />
+                        <p className="legend">Legend 1</p>
+                    </div>
+                )
+            })
+        )
+    }
     
     
     render(){
         return(
             <div style={{margin: "2.5%", paddingBottom: 25}}>
                 <Card className="contactCard">
-                    <Card.Body style={{backgroundColor:"#343A40"}}>
-                        <div style={{margin: "1%"}}>
+                    <Card.Body style={{backgroundColor:"#343A40", minHeight: "100vh"}}>
+                        {/* <div style={{margin: "1%"}}>
                             <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
                             {this.state.isClicked? <Modal closeModal={this.toggleModal}/> : 
                                 <div>
@@ -51,6 +69,14 @@ export default class Home extends React.Component{
                                 </div>
                             
                             }
+                        </div> */}
+
+                        <div style={{margin: "1%"}}>
+
+                            <Carousel>
+                                {this.newCarousel()}
+                            </Carousel>
+
                         </div>
                     </Card.Body>
                 </Card>
