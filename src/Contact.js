@@ -21,7 +21,7 @@ export default function Contact(){
                                     <p style={{color: "#D3D3D3"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
                                     <p style={{color: "#D3D3D3"}}>Military Leadership <strong>|</strong> Former Sergeant in the IDF <strong>|</strong> Achieved award of excellence upon advanced training graduation. </p>
 
-                                    <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20, color: "#57A773"}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, NoSQL, PostgreSQL, Mongo DB, CSS3, HTML5, Bootstrap, JavaScript, React, React Native, Node, Express, Git workflow</p>
+                                    <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 20, color: "#57A773"}}>Technical Skills<br/> </strong>Ruby, Rails, SQL, NoSQL, PostgreSQL, Mongo DB, CSS3, HTML5, Bootstrap, JavaScript, React, React Native, Node, Express, and Git workflow based programming.</p>
 
                                     <p style={{color: "#D3D3D3"}}><strong style={{fontSize: 15}}>Email:<br/> </strong>barak.saidoff@gmail.com</p>
                                     <p style={{color: "#D3D3D3"}}><a href="https://learn.co/baraksaidoff/resume" target="_blank" title="Barak Saidoff Resume" style={{color: '#0377B5', fontWeight: "600"}}>Download Resume</a></p>
