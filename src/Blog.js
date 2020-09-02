@@ -19,10 +19,10 @@ export default class Blog extends Component {
         fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@baraksaidoff")
         .then(resp=>resp.json())
         .then(data=> this.setState({
-            latestBlog: data.items[0].content,
-            BlogTitle: data.items[0].title,
-            publishDate: data.items[0].pubDate,
-            articleLink: data.items[0].link
+            latestBlog: data.items[2].content,
+            BlogTitle: data.items[2].title,
+            publishDate: data.items[2].pubDate,
+            articleLink: data.items[2].link
         }))
     }
 
