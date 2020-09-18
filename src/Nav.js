@@ -20,9 +20,9 @@ export default class Navigator extends React.Component{
                         <Link to="/Blog" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5"}}>Blog</Nav.Link>   
                         </Link>
-                        {/* <Link to="/Projects" style={{ textDecoration: 'none' }}>
+                        <Link to="/Projects" style={{ textDecoration: 'none' }}>
                             <Nav.Link href="#link" className="NavLinks" style={{color: "#0377B5"}}>Projects</Nav.Link>   
-                        </Link> */}
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>
