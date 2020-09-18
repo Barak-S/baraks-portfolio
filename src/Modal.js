@@ -10,7 +10,7 @@ export default class ProjectModal extends React.Component{
             <div>
                 <Modal.Dialog>
                     <Modal.Header closeButton>
-                        <Modal.Title>Project title</Modal.Title>
+                        <Modal.Title>{this.props.projectName}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p>Project description goes here.</p>
