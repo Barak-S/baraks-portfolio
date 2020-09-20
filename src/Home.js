@@ -6,21 +6,17 @@ import './App.css';
 
 import {projects} from './projects'
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-
-
 export default class Home extends React.Component{
 
     state= {
         isClicked: false,
-        pojectName: ""
+        project: {}
     }
 
-    toggleModal=(pojectName)=>{
+    toggleModal=(projectObj)=>{
         this.setState({
             isClicked: !this.state.isClicked,
-            pojectName: pojectName
+            project: projectObj
         })
     }
 
@@ -28,14 +24,14 @@ export default class Home extends React.Component{
         return(
             projects.map((img, index)=>{
                 return(
-                    <Carousel.Item interval={1000} onClick={()=>this.toggleModal(img.description)}>
+                    <Carousel.Item interval={1000} onClick={()=>this.toggleModal(img)}>
                         <img
                         className="d-block w-100"
                         src={require(`${img.img}`)}
-                        alt={img.description}
+                        alt={img.title}
                         />
                         <Carousel.Caption>
-                        <h3>{img.description}</h3>
+                        <h3>{img.title}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 )
@@ -63,9 +59,12 @@ export default class Home extends React.Component{
                                     keyboard={false}
                                 >
                                     <Modal.Header closeButton>
-                                        <Modal.Title>{this.state.pojectName}</Modal.Title>
+                                        <Modal.Title>{this.state.project.title}</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>Project details</Modal.Body>
+                                    <Modal.Body>
+                                        <Card.Text>{this.state.project.description}</Card.Text>
+                                        <Card.Text><strong>Technologies: </strong>{this.state.project.technologies}</Card.Text>
+                                    </Modal.Body>
                                     <Modal.Footer>
                                     <Button variant="secondary" onClick={this.toggleModal}>Close</Button>
                                     </Modal.Footer>
