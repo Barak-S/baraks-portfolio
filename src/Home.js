@@ -22,7 +22,7 @@ export default class Home extends React.Component{
         return(
             projects.map((img, index)=>{
                 return(
-                    <Carousel.Item interval={1000} onClick={()=>this.toggleModal(img)}>
+                    <Carousel.Item onClick={()=>this.toggleModal(img)}>
                         <img
                         className="d-block w-100"
                         src={require(`${img.img}`)}
@@ -47,7 +47,7 @@ export default class Home extends React.Component{
                         <div>
                             <Row>
                                 <Col className="carouselProjects" xs={12} sm={12} md={10} lg={10}>
-                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} >
+                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 1000 : null}>
                                         {this.newCarousel()}
                                     </Carousel>
                                 </Col>
