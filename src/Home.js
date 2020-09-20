@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Carousel, Button, Modal, Row, Col } from 'react-bootstrap';
+import { Card, Carousel, Button, Modal, Row, Col, Image } from 'react-bootstrap';
 import SocialHandles from './SocialHandles'
 import { projects } from './projects'
 import './App.css';
@@ -23,10 +23,11 @@ export default class Home extends React.Component{
             projects.map((img, index)=>{
                 return(
                     <Carousel.Item onClick={()=>this.toggleModal(img)}>
-                        <img
+                        <Image
                         className="d-block w-100"
                         src={require(`${img.img}`)}
                         alt={img.title}
+                        thumbnail 
                         />
                         <Carousel.Caption>
                         <h3 style={{color: '#0377B5', fontWeight: "600"}}>{img.title}</h3>
@@ -43,7 +44,7 @@ export default class Home extends React.Component{
             <div style={{margin: "2.5%", paddingBottom: 25}}>
                 <Card className="contactCard">
                     <Card.Body style={{backgroundColor:"#343A40", minHeight: "100vh"}}>
-                        <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
+                        <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5, fontWeight: "600"}}>Projects</Card.Title>
                         <div>
                             <Row>
                                 <Col className="carouselProjects" xs={12} sm={12} md={10} lg={10}>
@@ -61,7 +62,7 @@ export default class Home extends React.Component{
                                     keyboard={false}
                                 >
                                     <Modal.Header closeButton>
-                                        <Modal.Title style={{color: '#0377B5', fontWeight: "500"}}>{this.state.project.title}</Modal.Title>
+                                        <Modal.Title style={{color: '#0377B5', fontWeight: "600"}}>{this.state.project.title}</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
                                         <Card.Text>{this.state.project.description}</Card.Text>
