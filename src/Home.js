@@ -1,10 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import { Carousel, Button, Modal } from 'react-bootstrap';
-// import Modal from './Modal'
 import SocialHandles from './SocialHandles'
-
 import './App.css';
+
+import {projects} from './projects'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Carousel } from 'react-responsive-carousel';
@@ -13,7 +13,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 export default class Home extends React.Component{
 
     state= {
-        projectImages: [{img: require("./images/Covid.png"), description: "Covid-19 Data UI"}, {img: require("./images/addmovie11.png"), description: "What We Watchin'"}, {img: require("./images/cozyCabins.png"), description: "Cozy cabins"}, {img: require("./images/pirateWarsGame.png"), description: "Pirate Wars"}],
         isClicked: false,
         pojectName: ""
     }
@@ -27,12 +26,12 @@ export default class Home extends React.Component{
 
     newCarousel(){
         return(
-            this.state.projectImages.map((img, index)=>{
+            projects.map((img, index)=>{
                 return(
                     <Carousel.Item interval={1000} onClick={()=>this.toggleModal(img.description)}>
                         <img
                         className="d-block w-100"
-                        src={img.img}
+                        src={require(`${img.img}`)}
                         alt={img.description}
                         />
                         <Carousel.Caption>
