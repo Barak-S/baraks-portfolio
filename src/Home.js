@@ -1,10 +1,8 @@
 import React from 'react'
-import { Card } from 'react-bootstrap';
-import { Carousel, Button, Modal } from 'react-bootstrap';
+import { Card, Carousel, Button, Modal, Row, Col } from 'react-bootstrap';
 import SocialHandles from './SocialHandles'
+import { projects } from './projects'
 import './App.css';
-
-import {projects} from './projects'
 
 export default class Home extends React.Component{
 
@@ -47,9 +45,13 @@ export default class Home extends React.Component{
                     <Card.Body style={{backgroundColor:"#343A40", minHeight: "100vh"}}>
                         <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
                         <div>
-                            <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} >
-                                {this.newCarousel()}
-                            </Carousel>
+                            <Row>
+                                <Col className="carouselProjects" xs={12} sm={12} md={10} lg={10}>
+                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} >
+                                        {this.newCarousel()}
+                                    </Carousel>
+                                </Col>
+                            </Row>
                             {this.state.isClicked === true &&
                                 <>
                                 <Modal
