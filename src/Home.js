@@ -29,7 +29,7 @@ export default class Home extends React.Component{
                         alt={img.title}
                         />
                         <Carousel.Caption>
-                        <h3>{img.title}</h3>
+                        <h3 style={{color: '#0377B5', fontWeight: "600"}}>{img.title}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 )
