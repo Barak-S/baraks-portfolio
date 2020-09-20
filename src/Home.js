@@ -47,7 +47,7 @@ export default class Home extends React.Component{
                     <Card.Body style={{backgroundColor:"#343A40", minHeight: "100vh"}}>
                         <Card.Title style={{paddingTop:12, color: "#0377B5", textAlign: "center", fontSize: 25.5}}>Projects</Card.Title>
                         <div>
-                            <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%", paddingRight: "10.5%", paddingLeft: "10.5%" }} >
+                            <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} >
                                 {this.newCarousel()}
                             </Carousel>
                             {this.state.isClicked === true &&
