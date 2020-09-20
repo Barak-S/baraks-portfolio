@@ -6,18 +6,22 @@ import Nav from './Nav'
 import Contact from './Contact'
 import ProjectCarousel from './Home'
 import MyBlog from './Blog'
+import SocialHandles from './SocialHandles'
+import Footer from './Footer'
+
 
 
 function App() {
   return (
     <Router>
       <div className="App">
-          <Nav></Nav>
+          <SocialHandles/>
           <Switch>
             <Route exact path= "/" render={(routerProps) => <Contact {...routerProps} />}/>
             <Route exact path= "/blog" render={(routerProps) => <MyBlog {...routerProps} />}/>
             <Route exact path= "/projects" render={(routerProps) => <ProjectCarousel {...routerProps} />}/>
           </Switch>
+          <Footer/>
       </div>
     </Router>
 

@@ -7,8 +7,7 @@
 }
 
 body{
-  background: rgb(52,58,64);
-  background: linear-gradient(0deg, rgba(52,58,64,1) 0%, rgba(255,255,255,1) 100%); 
+  background: #ffffff;
   height: 100%;
   position: relative;
   min-height: 100vh;
@@ -22,6 +21,14 @@ body{
 
 .profilePicture{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+  margin: 0 auto;
+}
+.profileCol{
+  margin: 0 auto;
+}
+
+div.card-body{
+  border-radius: 8px;
 }
 
 .contactCard{
@@ -110,4 +117,14 @@ a.NavLinks.nav-link {
 a.NavLinks.nav-link:hover {
   background-color: #E6EFF6;
   border-radius: 10px;
+}
+
+ul#horizontal-list{
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  z-index: 2;
+  background-color: #ffffff;
+  width: 100%;
+
 }
