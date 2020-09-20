@@ -3,13 +3,15 @@ export const projects = [
             "img": "./images/LoanCalculator.png", 
             "title": "Commercial Loan Calculator", 
             "description": "Full Stack web application created for calculating commercial and residential property mortgages.",
-            "technologies": "React.js, Node.js, Express.js, MongoDB, Google Maps API"
+            "technologies": "React.js, Node.js, Express.js, MongoDB, Google Maps API",
+            "live": "https://snco-calculator.vercel.app/"
         },
         {
             "img": "./images/Covid.png", 
             "title": "Covid-19 Data UI", 
             "description": "React.js application for tracking and displaying the Covid-19 disease spread and news.",
-            "technologies": "React.js, open-source Covid-19 statistic API"
+            "technologies": "React.js, open-source Covid-19 statistic API",
+            "live": "https://covid-19-ui.now.sh/"
         }, 
         {
             "img": "./images/addmovie11.png", 
@@ -27,6 +29,7 @@ export const projects = [
             "img": "./images/pirateWarsGame.png", 
             "title": "Pirate Wars", 
             "description": "JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.",
-            "technologies": "Ruby on Rails, JavaScript, PostgreSQL"
+            "technologies": "Ruby on Rails, JavaScript, PostgreSQL",
+            "live": "http://pirate-wars.herokuapp.com/"
         }
     ]

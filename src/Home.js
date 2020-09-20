@@ -59,11 +59,14 @@ export default class Home extends React.Component{
                                     keyboard={false}
                                 >
                                     <Modal.Header closeButton>
-                                        <Modal.Title>{this.state.project.title}</Modal.Title>
+                                        <Modal.Title style={{color: '#0377B5', fontWeight: "500"}}>{this.state.project.title}</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
                                         <Card.Text>{this.state.project.description}</Card.Text>
-                                        <Card.Text><strong>Technologies: </strong>{this.state.project.technologies}</Card.Text>
+                                        <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
+                                        {this.state.project.live && 
+                                            <div><p style={{color: "#D3D3D3"}}><a href={`${this.state.project.live}`} target="_blank" title={`${this.state.project.title}`} style={{color: '#0377B5', fontWeight: "600"}}>Live</a></p></div>
+                                        }
                                     </Modal.Body>
                                     <Modal.Footer>
                                     <Button variant="secondary" onClick={this.toggleModal}>Close</Button>
