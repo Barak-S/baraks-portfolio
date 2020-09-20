@@ -56,11 +56,17 @@ ul#horizontal-list li {
   padding: 8.5px;
 }
 
-ul#horizontal-list li :hover {
-  height: 38px;
+img.buttonIcon{
+  display: inline;
+  padding: 8.5px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+img.buttonIcon:hover{
   background-color: #E6EFF6;
-  border-radius:10px;
-  transition: 0.5s;
+  border-radius: 10px;
+
 }
 
 span.carousel-control-next-icon:hover{
@@ -84,22 +90,6 @@ span.carousel-control-prev-icon{
   transition:  0.3s ease-in-out;
 }
 
-a.logo.nav-link{
-  font-family: 'Comfortaa', cursive;
-  transition:  0.3s ease-in-out;
-  margin-right: 12px;
-}
-
-a.logo.nav-link:hover{
-  background-color: #E6EFF6;
-  border-radius:10px;
-}
-
-.NavLinks{
-  font-family: 'Comfortaa', cursive;
-  font-weight: 500;
-  
-}
 
 .table {
 	display: table;   /* Allow the centering to work */
@@ -108,5 +98,16 @@ a.logo.nav-link:hover{
 
 .carouselProjects{
   margin: 0 auto;
+}
 
+a.NavLinks.nav-link {
+  font-family: 'Comfortaa', cursive;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  margin-right: 12px;
+}
+
+a.NavLinks.nav-link:hover {
+  background-color: #E6EFF6;
+  border-radius: 10px;
 }
