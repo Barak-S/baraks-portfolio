@@ -47,7 +47,7 @@ export default class Home extends React.Component{
                         <div>
                             <Row>
                                 <Col className="carouselProjects" xs={12} sm={12} md={10} lg={10}>
-                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 1000 : null}>
+                                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 3000 : null}>
                                         {this.newCarousel()}
                                     </Carousel>
                                 </Col>
