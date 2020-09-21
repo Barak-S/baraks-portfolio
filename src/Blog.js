@@ -56,7 +56,7 @@ export default class Blog extends Component {
                 <Col className="profileCol" xs={12} sm={12} md={10} lg={10}>
                     <div>
                         <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
-                            <Card.Body className="blogHighlight" style={{backgroundColor:"#ffffff", textAlign: "center"}}>
+                            <Card.Body className="blogHighlight" style={{ textAlign: "center"}}>
                                 <h5 style={{color: "#000000", fontWeight: "500"}}>Latest Blog Post: </h5> 
                                 <h4 style={{color: "#000000"}}>{this.getDateString(this.state.publishDate)}</h4>
                                 <h4 style={{fontWeight: 600, color: "#000000"}}>{this.state.BlogTitle}</h4>
