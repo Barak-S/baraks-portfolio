@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Col, Row, Image, Card } from 'react-bootstrap';
-import SocialHandles from './SocialHandles'
 import Projects from './Home'
 import Blog from './Blog'
 import './App.css';

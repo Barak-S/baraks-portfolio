@@ -41,11 +41,11 @@ export default class Home extends React.Component{
     
     render(){
         return(
-            <div style={{margin: "2.5%", paddingBottom: 25}}>
+            <div style={{margin: "2%", paddingBottom: 25}}>
                 <div>
                     <Row>
                         <Col className="carouselProjects" xs={12} sm={12} md={10} lg={10}>
-                            <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 3000 : null}>
+                            <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 5000 : null}>
                                 {this.newCarousel()}
                             </Carousel>
                         </Col>
@@ -67,6 +67,22 @@ export default class Home extends React.Component{
                                 {this.state.project.live && 
                                     <div><p style={{color: "#D3D3D3"}}><a href={`${this.state.project.live}`} target="_blank" title={`${this.state.project.title}`} style={{color: '#0377B5', fontWeight: "600"}}>Live</a></p></div>
                                 }
+                                <Row>
+                                    <Col xs={12} sm={12} md={6} lg={6}>
+                                        <Image
+                                            src={require(`${this.state.project.img}`)}
+                                            alt={this.state.project.title}
+                                            thumbnail 
+                                        />  
+                                    </Col>  
+                                    <Col xs={12} sm={12} md={6} lg={6}>
+                                        <Image
+                                            src={require(`${this.state.project.img}`)}
+                                            alt={this.state.project.title}
+                                            thumbnail 
+                                        />  
+                                    </Col>  
+                                </Row>
                             </Modal.Body>
                             <Modal.Footer>
                             <Button variant="secondary" onClick={this.toggleModal}>Close</Button>

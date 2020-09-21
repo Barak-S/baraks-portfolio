@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap';
-import SocialHandles from './SocialHandles'
+import { Card, Col } from 'react-bootstrap';
 import './App.css';
-
 
 export default class Blog extends Component {
 
@@ -54,18 +52,19 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div style={{margin: "2.5%", paddingBottom: 25, fontWeight: "600"}}>
-                    <div style={{margin: "1%"}}>
-                    <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
-                    <Card.Body className="blogHighlight" style={{backgroundColor:"#ffffff", textAlign: "center"}}>
-                        <h5 style={{color: "#000000", fontWeight: "500"}}>Latest Blog Post: </h5> 
-                        <h4 style={{color: "#000000"}}>{this.getDateString(this.state.publishDate)}</h4>
-                        <h4 style={{fontWeight: 600, color: "#000000"}}>{this.state.BlogTitle}</h4>
-                        <p id='blogIntro' style={{color: "#000000", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
-                    </Card.Body>
+            <div style={{marginBottom: "2%"}}>
+                <Col className="profileCol" xs={12} sm={12} md={10} lg={10}>
+                    <div>
+                        <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
+                            <Card.Body className="blogHighlight" style={{backgroundColor:"#ffffff", textAlign: "center"}}>
+                                <h5 style={{color: "#000000", fontWeight: "500"}}>Latest Blog Post: </h5> 
+                                <h4 style={{color: "#000000"}}>{this.getDateString(this.state.publishDate)}</h4>
+                                <h4 style={{fontWeight: 600, color: "#000000"}}>{this.state.BlogTitle}</h4>
+                                <p id='blogIntro' style={{color: "#000000", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
+                            </Card.Body>
                         </Card>
-                        {/* <SocialHandles/> */}
                     </div>   
+                </Col>
             </div>
         )
     }
