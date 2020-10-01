@@ -87,27 +87,30 @@ export default class Home extends React.Component{
                                             <Card.Text style={{padding: 10}}>{this.state.project.description[0].use}</Card.Text>
                                         </Col>
                                     </Row>  
+                                </Row>  
                                     { this.state.project.details[2].img && this.state.project.details[3].img ?
                                         <Row>
-                                            <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                                <Image
-                                                    src={require(`${this.state.project.details[2].img}`)}
-                                                    alt={this.state.project.title}
-                                                    thumbnail 
-                                                />  
-                                            </Col>  
-                                            <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                                <Image
-                                                    src={require(`${this.state.project.details[3].img}`)}
-                                                    alt={this.state.project.title}
-                                                    thumbnail 
-                                                /> 
-                                            </Col>
-                                            <Row>
-                                                <Col>
-                                                    <Card.Text style={{padding: 10}}>{this.state.project.description[0].show}</Card.Text>
+                                            
+                                                <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
+                                                    <Image
+                                                        src={require(`${this.state.project.details[2].img}`)}
+                                                        alt={this.state.project.title}
+                                                        thumbnail 
+                                                    />  
+                                                </Col>  
+                                                <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
+                                                    <Image
+                                                        src={require(`${this.state.project.details[3].img}`)}
+                                                        alt={this.state.project.title}
+                                                        thumbnail 
+                                                    /> 
                                                 </Col>
-                                            </Row>  
+                                                <Row>
+                                                    <Col>
+                                                        <Card.Text style={{padding: 10}}>{this.state.project.description[0].show}</Card.Text>
+                                                    </Col>
+                                                </Row>  
+                                            
                                             { this.state.project.details[4].img &&
                                                 <Col xs={12} sm={12} md={12} lg={12}>
                                                     <Image
@@ -120,7 +123,6 @@ export default class Home extends React.Component{
                                         </Row>  
                                     : 
                                     null}
-                                </Row>
                             </Modal.Body>
                             <Modal.Footer>
                             <Button variant="secondary" onClick={this.toggleModal}>Close</Button>
