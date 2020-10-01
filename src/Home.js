@@ -88,7 +88,7 @@ export default class Home extends React.Component{
                                         </Col>
                                     </Row>  
                                 </Row>  
-                                    { this.state.project.details[2].img && this.state.project.details[3].img ?
+                                    { this.state.project.details[2] && this.state.project.details[3] ?
                                         <Row>
                                             
                                                 <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
@@ -111,7 +111,7 @@ export default class Home extends React.Component{
                                                     </Col>
                                                 </Row>  
                                             
-                                            { this.state.project.details[4].img &&
+                                            { this.state.project.details[4] &&
                                                 <Col xs={12} sm={12} md={12} lg={12}>
                                                     <Image
                                                     src={require(`${this.state.project.details[4].img}`)}
@@ -122,7 +122,12 @@ export default class Home extends React.Component{
                                             }
                                         </Row>  
                                     : 
-                                    null}
+                                        <Row>
+                                            <Col>
+                                                <Card.Text>{this.state.project.description[0].show}</Card.Text>
+                                            </Col>
+                                        </Row>
+                                    }
                             </Modal.Body>
                             <Modal.Footer>
                             <Button variant="secondary" onClick={this.toggleModal}>Close</Button>

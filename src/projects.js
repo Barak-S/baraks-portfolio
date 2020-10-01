@@ -33,10 +33,10 @@ export const projects = [
             "img": "./images/Covid.png", 
             "title": "Covid-19 Data UI", 
             "description": [
-                { 
+                {
                     "intro": "React.js application for tracking and displaying the Covid-19 disease spread and news.",
                     "use" : " The Covid-19 data that is displayed in the app is from an ope-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
-                    "show" : ""
+                    "show" : "showing"
                 }
             ],
             "technologies": "React.js, open-source Covid-19 statistic API",
@@ -47,9 +47,9 @@ export const projects = [
                 }, 
                 { 
                     "img": "./images/Covid.png",
-                }
+                },
             ]
-        }, 
+        },
         {
             "img": "./images/addmovie11.png", 
             "title": "What We Watchin'", 
