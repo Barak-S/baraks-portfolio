@@ -30,23 +30,23 @@ export const projects = [
             ]
         },
         {
-            "img": "./images/Covid.png", 
+            "img": "./images/Covid1.png", 
             "title": "Covid-19 Data UI", 
             "description": [
                 {
                     "intro": "React.js application for tracking and displaying the Covid-19 disease spread and news.",
                     "use" : " The Covid-19 data that is displayed in the app is from an ope-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
-                    "show" : "showing"
+                    "show" : "By default, the data is displayed in descending order from most confirmed cases to least. Clicking or selecting on the table headers will dynamically re-render the results based on the title of the header. The search bar in the top left will also filter through countires based on the search query from the user."
                 }
             ],
             "technologies": "React.js, open-source Covid-19 statistic API",
             "live": "https://covid-19-ui.now.sh/",
             "details": [ 
                 {
-                    "img": "./images/Covid.png", 
+                    "img": "./images/Covid2.png", 
                 }, 
                 { 
-                    "img": "./images/Covid.png",
+                    "img": "./images/Covid3.png",
                 },
             ]
         },
@@ -56,11 +56,11 @@ export const projects = [
             "description": [
                 {
                     "intro": "React Native social media app where users can come together and share their recommendations of movies/Tv shows they would like to watch with friends.",
-                    "use" : "",
-                    "show" : ""
+                    "use" : "The problem - How often do we find ourselves planning a movie night with friends and don’t know what to watch? We find ourselves scrolling for hours on Netflix or Hulu trying to find the right movie. By the time we pick something that looks half decent, the popcorn is all gone and everyone is already tired. A failed movie night.",
+                    "show" : "The Solution - What We Watchin’ - A React Native social media app where users can come together and share movies or tv shows that they’d recommend, or want to watch soon. This app provides interaction with your friends by clicking on one’s profile and seeing what tv shows or movies they really enjoyed watching. My app can solve the issue of spending countless hours trying to find something to watch when planning a movie night."
                 }
             ],
-            "technologies": "React Native, Ruby On Rails, PostgreSQL, OMDB API (Open Movie Database)",
+            "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a robust backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
             "details": [ 
                 {
                     "img": "./images/addmovie11.png", 
@@ -71,7 +71,7 @@ export const projects = [
             ]
         }, 
         {
-            "img": "./images/cozyCabins.png", 
+            "img": "./images/CozyCabins1.png", 
             "title": "Cozy Cabins", 
             "description": [
                 {
@@ -83,15 +83,15 @@ export const projects = [
             "technologies": "Ruby on Rails, SQLite3, Google Maps API",
             "details": [ 
                 {
-                    "img": "./images/cozyCabins.png", 
+                    "img": "./images/CozyCabins2.png", 
                 }, 
                 { 
-                    "img": "./images/cozyCabins.png",
+                    "img": "./images/CozyCabins3.png",
                 }
             ]
         },
         {
-            "img": "./images/pirateWarsGame.png", 
+            "img": "./images/PirateWars1.png", 
             "title": "Pirate Wars", 
             "description": [
                 {
@@ -104,10 +104,13 @@ export const projects = [
             "live": "http://pirate-wars.herokuapp.com/",
             "details": [ 
                 {
-                    "img": "./images/pirateWarsGame.png", 
+                    "img": "./images/PirateWars2.png", 
                 }, 
                 { 
-                    "img": "./images/pirateWarsGame.png",
+                    "img": "./images/PirateWars3.png",
+                },
+                { 
+                    "img": "./images/PirateWars4.png",
                 }
             ]
         }
