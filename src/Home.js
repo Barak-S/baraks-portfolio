@@ -122,7 +122,7 @@ export default class Home extends React.Component{
 
                                     <Row>
                                         <Col>
-                                            <Card.Text style={{paddingBottom: 15}}>{this.state.project.description[0].show}</Card.Text>
+                                            <Card.Text>{this.state.project.description[0].show}</Card.Text>
                                         </Col>
                                     </Row> 
                                         
