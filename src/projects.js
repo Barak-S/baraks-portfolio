@@ -9,7 +9,7 @@ export const projects = [
                     "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
                 }
             ],
-            "technologies": "React.js, Node.js, Express.js, MongoDB, Google Maps API",
+            "technologies": "Express.js backend server framework for creating API routes and handling user requests, React.js Single Page application designed with an interactive user experience for calculating and creating loans, Utilized Google Maps API for address auto-complete and map integration, MongoDB for persisting properties, users, and loan details",
             "live": "https://snco-calculator.vercel.app/",
             "details": [ 
                 {
@@ -35,7 +35,7 @@ export const projects = [
             "description": [
                 {
                     "intro": "React.js application for tracking and displaying the Covid-19 disease spread and news.",
-                    "use" : " The Covid-19 data that is displayed in the app is from an ope-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
+                    "use" : " The Covid-19 data that is displayed in the app is from an open-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
                     "show" : "By default, the data is displayed in descending order from most confirmed cases to least. Clicking or selecting on the table headers will dynamically re-render the results based on the title of the header. The search bar in the top left will also filter through countires based on the search query from the user."
                 }
             ],
@@ -76,11 +76,11 @@ export const projects = [
             "description": [
                 {
                     "intro": "Real Estate Application where users can list their homes for sale, and favorite other users listing for potential purchase.",
-                    "use" : "",
-                    "show" : ""
+                    "use" : "Create an account and post a listing to the webiste. Search all Listings on the webiste by state and add a listing to your wish list.",
+                    "show" : "A listing's show page uses embeded ruby and JavaScript for a dynamic map and street view, using the Google Maps API."
                 }
             ],
-            "technologies": "Ruby on Rails, SQLite3, Google Maps API",
+            "technologies": "Ruby on Rails application making use of MVC framework and setting up custom routes, Google Maps API for property listing’s show pages, SQLite3 database for persisting user accounts, property listings, and user wish lists",
             "details": [ 
                 {
                     "img": "./images/CozyCabins2.png", 
@@ -96,11 +96,11 @@ export const projects = [
             "description": [
                 {
                     "intro": "JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.",
-                    "use" : "",
+                    "use" : "Arcade styled gameplay, ",
                     "show" : ""
                 }
             ],
-            "technologies": "Ruby on Rails, JavaScript, PostgreSQL",
+            "technologies": "Ruby on Rails backend API for creating and updating the game leaderboard based on users gameplay, Vanilla JavaScript front end for creating the game board, gameplay, and DOM manipulation, PostgreSQL database for persisting a leaderboard for usernames and player scores",
             "live": "http://pirate-wars.herokuapp.com/",
             "details": [ 
                 {
