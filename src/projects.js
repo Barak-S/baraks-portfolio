@@ -13,7 +13,7 @@ export const projects = [
             "live": "https://snco-calculator.vercel.app/",
             "details": [ 
                 {
-                    "img": "./images/LoanCalculator.png", 
+                    "img": "./images/MaxRefi.png", 
                 }, 
                 { 
                     "img": "./images/Fix&Flip.png",

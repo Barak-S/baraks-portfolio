@@ -91,7 +91,7 @@ export default class Home extends React.Component{
                                     { this.state.project.details[2] ?
                                         this.state.project.details[2] && !this.state.project.details[3] ?
                                         <Row>
-                                            <Col xs={12} sm={12} md={12} lg={12}>
+                                            <Col xs={12} sm={12} md={12} lg={12} style={{marginBottom: 10}}>
                                                 <Image
                                                 src={require(`${this.state.project.details[2].img}`)}
                                                 alt={this.state.project.title}
@@ -101,14 +101,14 @@ export default class Home extends React.Component{
                                         </Row>
                                         :
                                         <Row>
-                                            <Col xs={12} sm={12} md={6} lg={6}>
+                                            <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
                                                 <Image
                                                 src={require(`${this.state.project.details[2].img}`)}
                                                 alt={this.state.project.title}
                                                 thumbnail 
                                             /> 
                                             </Col>
-                                            <Col xs={12} sm={12} md={6} lg={6}>
+                                            <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
                                                 <Image
                                                 src={require(`${this.state.project.details[3].img}`)}
                                                 alt={this.state.project.title}
