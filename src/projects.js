@@ -96,8 +96,8 @@ export const projects = [
             "description": [
                 {
                     "intro": "JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.",
-                    "use" : "Arcade styled gameplay, ",
-                    "show" : ""
+                    "use" : "Arcade styled gameplay. Create a username and get to playing. Place ships on game board by clicking and placing on grid. Ships by default are placed horizontally. Select ship and then rotate before placing to change orientation.",
+                    "show" : "Rules - Take turns firing shots by selecting coordinates on computer grid. If a player hits the opponent's boat, the coordinate turns red indicating a ship was hit. Player gets to go again. A ship is sunk when all the coordinates for each boat are hit. The coordinate turns black indicating a sunken ship."
                 }
             ],
             "technologies": "Ruby on Rails backend API for creating and updating the game leaderboard based on users gameplay, Vanilla JavaScript front end for creating the game board, gameplay, and DOM manipulation, PostgreSQL database for persisting a leaderboard for usernames and player scores",
