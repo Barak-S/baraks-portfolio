@@ -51,7 +51,7 @@ export const projects = [
             ]
         },
         {
-            "img": "./images/Movie2.png", 
+            "img": "./images/Movie1.png", 
             "title": "What We Watchin'", 
             "description": [
                 {
@@ -66,7 +66,7 @@ export const projects = [
                     "img": "./images/Movie3.png", 
                 }, 
                 { 
-                    "img": "./images/Movie1.png",
+                    "img": "./images/Movie2.png",
                 },
                 { 
                     "img": "./images/Movie6.png",
