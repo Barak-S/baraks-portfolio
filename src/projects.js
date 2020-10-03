@@ -43,7 +43,7 @@ export const projects = [
             "live": "https://covid-19-ui.now.sh/",
             "details": [ 
                 {
-                    "img": "./images/Covid2.png", 
+                    "img": "./images/Covid1.png", 
                 }, 
                 { 
                     "img": "./images/Covid3.png",
@@ -51,7 +51,7 @@ export const projects = [
             ]
         },
         {
-            "img": "./images/addmovie11.png", 
+            "img": "./images/Movie2.png", 
             "title": "What We Watchin'", 
             "description": [
                 {
@@ -63,11 +63,20 @@ export const projects = [
             "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a robust backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
             "details": [ 
                 {
-                    "img": "./images/addmovie11.png", 
+                    "img": "./images/Movie3.png", 
                 }, 
                 { 
-                    "img": "./images/addmovie11.png",
-                }
+                    "img": "./images/Movie1.png",
+                },
+                { 
+                    "img": "./images/Movie6.png",
+                },
+                { 
+                    "img": "./images/Movie4.png",
+                },
+                { 
+                    "img": "./images/Movie5.png",
+                },
             ]
         }, 
         {
