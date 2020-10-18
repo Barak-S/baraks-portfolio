@@ -15,7 +15,7 @@ export default function Contact(){
                         <Card.Text style={{color: "#0000000", fontWeight: "600", fontSize: 20, paddingBottom: 20 }}>Full Stack Web Developer</Card.Text>
                     </Col>
                     <Col xs={12} sm={12} md={10} lg={10} className="profileCol">
-                        <p style={{color: "#0000000", fontWeight: "600"}}>A creative individual with an entrepreneurial spirit, proficient at Web Application Development, using Git and modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a lot of value in a short amount of time.</p>
+                        <p style={{color: "#0000000", fontWeight: "600"}}>I'm a creative individual with an entrepreneurial spirit, proficient at Web Application Development, using Git and modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a lot of value in a short amount of time.</p>
                         <p style={{color: "#0000000", fontWeight: "600"}}>Background in Sales and Financial Services <strong>|</strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
                         <p style={{color: "#0000000", fontWeight: "600"}}>Military Leadership <strong>|</strong> Former Sergeant in the IDF <strong>|</strong> Achieved award of excellence upon advanced training graduation. </p>
 
