@@ -13,21 +13,16 @@ export default class Blog extends Component {
 
     }
 
-    getLatestBlog(){
+    componentDidMount(){
         fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@baraksaidoff")
         .then(resp=>resp.json())
         .then(data=> this.setState({
-            latestBlog: data.items[2].content,
-            BlogTitle: data.items[2].title,
-            publishDate: data.items[2].pubDate,
-            articleLink: data.items[2].link
+            latestBlog: data.items[1].content,
+            BlogTitle: data.items[1].title,
+            publishDate: data.items[1].pubDate,
+            articleLink: data.items[1].link
         }))
     }
-
-    componentDidMount(){
-        this.getLatestBlog()
-    }
-
 
     toText(node) {
          let tag = document.createElement('div')
@@ -44,7 +39,11 @@ export default class Blog extends Component {
 
     previewBlogContent(content){
         let parsedText = this.toText(content)
-        return `${parsedText.slice(0,425)} ...`
+        if (content.length > 424 ){
+            return `${parsedText.slice(0,425)} ...`
+        } else {
+            return `${parsedText.slice(0,425)}`
+        }
     }
     
 
