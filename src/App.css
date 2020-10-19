@@ -24,14 +24,6 @@ body{
   margin: 0 auto;
 }
 
-div.card-body{
-  border-radius: 8px;
-}
-
-.contactCard{
-  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
-}
-
 .buttonIcon{
   cursor: pointer;
 }
@@ -111,6 +103,7 @@ ul#horizontal-list{
   text-align: center;
   position: fixed;
   z-index: 2;
-  background-color: #ffffff;
   width: 100%;
+  backdrop-filter: blur(6px);
 }
+
