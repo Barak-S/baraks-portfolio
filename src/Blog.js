@@ -10,7 +10,6 @@ export default class Blog extends Component {
         publishDate: '',
         articleLink: '',
         formattedDate: ''
-
     }
 
     componentDidMount(){
@@ -46,7 +45,6 @@ export default class Blog extends Component {
         }
     }
     
-
 
     render() {
 
