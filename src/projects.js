@@ -1,4 +1,33 @@
 export const projects = [
+    {
+        "img": "./images/Movie1.png", 
+        "title": "What We Watchin'", 
+        "description": [
+            {
+                "intro": "React Native social media app where users can come together and share their recommendations of movies/Tv shows they would like to watch with friends.",
+                "use" : "The problem - How often do we find ourselves planning a movie night with friends and don’t know what to watch? We find ourselves scrolling for hours on Netflix or Hulu trying to find the right movie. By the time we pick something that looks half decent, the popcorn is all gone and everyone is already tired. A failed movie night.",
+                "show" : "The Solution - What We Watchin’ - A React Native social media app where users can come together and share movies or tv shows that they’d recommend, or want to watch soon. This app provides interaction with your friends by clicking on one’s profile and seeing what tv shows or movies they really enjoyed watching. My app can solve the issue of spending countless hours trying to find something to watch when planning a movie night."
+            }
+        ],
+        "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a robust backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
+        "details": [ 
+            {
+                "img": "./images/Movie3.png", 
+            }, 
+            { 
+                "img": "./images/Movie2.png",
+            },
+            { 
+                "img": "./images/Movie6.png",
+            },
+            { 
+                "img": "./images/Movie4.png",
+            },
+            { 
+                "img": "./images/Movie5.png",
+            },
+        ]
+    }, 
         {
             "img": "./images/MaxRefi2.png", 
             "title": "Commercial Loan Calculator", 
@@ -50,35 +79,6 @@ export const projects = [
                 },
             ]
         },
-        {
-            "img": "./images/Movie1.png", 
-            "title": "What We Watchin'", 
-            "description": [
-                {
-                    "intro": "React Native social media app where users can come together and share their recommendations of movies/Tv shows they would like to watch with friends.",
-                    "use" : "The problem - How often do we find ourselves planning a movie night with friends and don’t know what to watch? We find ourselves scrolling for hours on Netflix or Hulu trying to find the right movie. By the time we pick something that looks half decent, the popcorn is all gone and everyone is already tired. A failed movie night.",
-                    "show" : "The Solution - What We Watchin’ - A React Native social media app where users can come together and share movies or tv shows that they’d recommend, or want to watch soon. This app provides interaction with your friends by clicking on one’s profile and seeing what tv shows or movies they really enjoyed watching. My app can solve the issue of spending countless hours trying to find something to watch when planning a movie night."
-                }
-            ],
-            "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a robust backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
-            "details": [ 
-                {
-                    "img": "./images/Movie3.png", 
-                }, 
-                { 
-                    "img": "./images/Movie2.png",
-                },
-                { 
-                    "img": "./images/Movie6.png",
-                },
-                { 
-                    "img": "./images/Movie4.png",
-                },
-                { 
-                    "img": "./images/Movie5.png",
-                },
-            ]
-        }, 
         {
             "img": "./images/CozyCabins1.png", 
             "title": "Cozy Cabins", 
