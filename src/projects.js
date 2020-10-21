@@ -1,6 +1,6 @@
 export const projects = [
         {
-            "img": "./images/MaxRefi.png", 
+            "img": "./images/MaxRefi2.png", 
             "title": "Commercial Loan Calculator", 
             "description": [
                 {
@@ -13,19 +13,19 @@ export const projects = [
             "live": "https://snco-calculator.vercel.app/",
             "details": [ 
                 {
-                    "img": "./images/MaxRefi.png", 
+                    "img": "./images/MaxRefi2.png", 
                 }, 
                 { 
-                    "img": "./images/Fix&Flip.png",
+                    "img": "./images/Fix&Flip2.png",
                 },
                 {
-                    "img": "./images/AllLoans.png"
+                    "img": "./images/AllLoans2.png"
                 },
                 {
-                    "img": "./images/LoanShow.png"
+                    "img": "./images/LoanShow2.png"
                 },
                 {
-                    "img": "./images/LoanEdit.png"
+                    "img": "./images/LoanEdit2.png"
                 }
             ]
         },
