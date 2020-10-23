@@ -6,7 +6,7 @@ export default function Contact(){
     return(
         <div>
             <Row style={{margin: 10}}>
-                <Col lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
+                <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                     <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
                     <Card.Title style={{ paddingTop: 12, color: "#0377B5", fontSize: 25, fontWeight: "600" }}>Barak Saidoff</Card.Title>
                     <Card.Text style={{color: "#0000000", fontWeight: "600", fontSize: 20, paddingBottom: 20 }}>Full Stack Web Developer</Card.Text>
