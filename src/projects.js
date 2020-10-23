@@ -30,7 +30,7 @@ export const projects = [
     }, 
         {
             "img": "./images/MaxRefi2.png", 
-            "title": "Commercial Loan Calculator", 
+            "title": "Mortage Loan Calculator", 
             "description": [
                 {
                     "intro": "Full Stack web application created for calculating commercial and residential property mortgages.",
