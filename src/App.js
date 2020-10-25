@@ -15,9 +15,9 @@ import Seclipse from './images/small-eclipse.svg'
 function App() {
   return (
       <div className="App">
-        {/* <img class="big-circle" src={Beclipse} alt="" />
+        <img class="big-circle" src={Beclipse} alt="" />
         <img class="medium-circle" src={Meclipse} alt="" />
-        <img class="small-circle" src={Seclipse} alt="" /> */}
+        <img class="small-circle" src={Seclipse} alt="" />
           <SocialHandles/>
           <Contact/>
           <Projects/>
