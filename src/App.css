@@ -8,14 +8,10 @@
   letter-spacing: .35px; 
 }
 
-/* body{
-  background: #ffffff;
-  height: 100%;
-  position: relative;
-  min-height: 100vh;
+body{
   font-family: 'Roboto Slab', serif;
   letter-spacing: .35px; 
-} */
+}
 
 .profilePicture{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
