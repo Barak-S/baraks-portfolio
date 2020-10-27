@@ -12,6 +12,7 @@ import Meclipse from './images/mid-eclipse.svg'
 import Seclipse from './images/small-eclipse.svg'
 
 
+
 function App() {
   return (
       <div className="App">
