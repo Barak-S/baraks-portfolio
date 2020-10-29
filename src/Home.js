@@ -30,6 +30,7 @@ export default class Home extends React.Component{
                         src={require(`${img.img}`)}
                         alt={img.title}
                         thumbnail 
+                        style={{ cursor: "pointer"}}
                         />
                     </Carousel.Item>
                 )
@@ -41,9 +42,8 @@ export default class Home extends React.Component{
     render(){
         return(
             <div id="projects">
-                {/* <hr/> */}
                 <Col className="carouselProjects" xs={12} sm={12} md={7} lg={7}>
-                    <Carousel style={{ display: "flex", marginTop:"3.5%", marginBottom:"3.5%" }} interval={ this.state.isClicked === false ? 5000 : null}>
+                    <Carousel style={{ marginTop:"3%", marginBottom:"3%" }} interval={ this.state.isClicked === false ? 5000 : null}>
                         {this.newCarousel()}
                     </Carousel>
                 </Col>
@@ -59,7 +59,7 @@ export default class Home extends React.Component{
                             <Modal.Title style={{color: '#0377B5', fontWeight: "600"}}>{this.state.project.title}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <Card.Text style={{fontWeight: "600"}}>{this.state.project.description[0].intro}</Card.Text>
+                            <Card.Text style={{fontWeight: "600", fontSize:17}}>{this.state.project.description[0].intro}</Card.Text>
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
                             {this.state.project.live && 
                                 <div><p style={{color: "#D3D3D3"}}><a href={`${this.state.project.live}`} target="_blank" title={`${this.state.project.title}`} style={{color: '#0377B5', fontWeight: "600"}}>Live</a></p></div>
