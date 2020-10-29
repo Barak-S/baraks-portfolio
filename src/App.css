@@ -83,6 +83,7 @@ img.buttonIcon{
 img.buttonIcon:hover{
   background-color: #FFE485;
   border-radius: 10px;
+  margin: 0 15px;
 }
 
 span.carousel-control-next-icon:hover{
