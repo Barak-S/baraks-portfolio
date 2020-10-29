@@ -179,3 +179,19 @@ div.active.carousel-item{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
+.resume-button{
+  background-color: #0377B5;
+  font-weight: 600;
+  font-size: 20;
+  border-radius: 6px;
+  border:none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.resume-button:hover{
+  background-color: #191919;
+  padding-right: 22px;
+  padding-left: 22px;
+}
+

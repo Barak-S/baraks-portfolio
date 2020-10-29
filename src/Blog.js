@@ -52,7 +52,8 @@ export default class Blog extends Component {
 
         return (
             <div id="blog" style={{margin: 8, marginBottom: "2%"}}>
-                <Col className="profileCol" xs={12} sm={12} md={10} lg={10}>
+                <hr/>
+                <Col className="profileCol" xs={12} sm={12} md={9} lg={9}>
                     <div>
                         <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
                             <Card.Body className="blogHighlight" style={{ textAlign: "center"}}>
@@ -61,12 +62,12 @@ export default class Blog extends Component {
                                         <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={this.state.thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
                                     </Col>
                                     <Col xs={9} sm={9} md={8} lg={8} >
-                                        <h5 style={{color: "#000000", fontWeight: "600"}}>Latest Blog Post: </h5> 
-                                        <h4 style={{color: "#000000"}}>{this.getDateString(this.state.publishDate)}</h4>
+                                        <h5 style={{color: "#191919", fontWeight: "600"}}>Latest Blog Post: </h5> 
+                                        <h4 style={{color: "#191919"}}>{this.getDateString(this.state.publishDate)}</h4>
                                         <h4 style={{fontWeight: 600, color: "#0377B5"}}>{this.state.BlogTitle}</h4>
                                     </Col>
                                 </Row>
-                                <p id='blogIntro' style={{color: "#000000", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
+                                <p id='blogIntro' style={{color: "#191919", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
                             </Card.Body>
                         </Card>
                     </div>   
