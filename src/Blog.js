@@ -51,7 +51,7 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div id="blog" style={{margin: 8, marginBottom: "2%"}}>
+            <div id="blog" style={{marginBottom: "2%"}}>
                 <Col className="profileCol" xs={12} sm={12} md={9} lg={9}>
                 <hr/>    
                     <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
