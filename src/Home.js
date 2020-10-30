@@ -62,7 +62,9 @@ export default class Home extends React.Component{
                             <Card.Text style={{fontWeight: "600", fontSize:17}}>{this.state.project.description[0].intro}</Card.Text>
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
                             {this.state.project.live && 
-                                <div><p style={{color: "#D3D3D3"}}><a href={`${this.state.project.live}`} target="_blank" title={`${this.state.project.title}`} style={{color: '#0377B5', fontWeight: "600"}}>Live</a></p></div>
+                                <div style={{textAlign: "center", marginBottom: 12}}>
+                                    <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
+                                </div>
                             }
                             <Row>
                                 <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>

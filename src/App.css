@@ -86,25 +86,33 @@ img.buttonIcon:hover{
 }
 
 span.carousel-control-next-icon:hover{
-  height: 34px;
-  background-color: #FFE485;
+  width: 23px;
+  background-color: #191919;
   border-radius:8px;
-  transition: 0.3s ;
+  transition: 0.2s ;
 }
 
 span.carousel-control-prev-icon:hover{
-  height: 34px;
-  background-color: #FFE485;
+  width: 23px;
+  background-color: #191919;
   border-radius:8px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 span.carousel-control-next-icon{
-  transition:  0.3s ease-in-out;
+  transition:  0.2s ease-in-out;
+  background-color: #191919;
+  border-radius:8px;
+  height: 30px;
+
 }
 
 span.carousel-control-prev-icon{
-  transition:  0.3s ease-in-out;
+  transition:  0.2s ease-in-out;
+  background-color: #191919;
+  border-radius:8px;
+  height: 30px;
+
 }
 
 .carouselProjects{
