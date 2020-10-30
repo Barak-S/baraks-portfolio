@@ -87,6 +87,7 @@ img.buttonIcon:hover{
 
 span.carousel-control-next-icon:hover{
   width: 23px;
+  height: 30px;
   background-color: #191919;
   border-radius:8px;
   transition: 0.2s ;
@@ -94,6 +95,7 @@ span.carousel-control-next-icon:hover{
 
 span.carousel-control-prev-icon:hover{
   width: 23px;
+  height: 30px;
   background-color: #191919;
   border-radius:8px;
   transition: 0.2s;
@@ -103,16 +105,12 @@ span.carousel-control-next-icon{
   transition:  0.2s ease-in-out;
   background-color: #191919;
   border-radius:8px;
-  height: 30px;
-
 }
 
 span.carousel-control-prev-icon{
   transition:  0.2s ease-in-out;
   background-color: #191919;
   border-radius:8px;
-  height: 30px;
-
 }
 
 .carouselProjects{
@@ -207,4 +205,16 @@ div.active.carousel-item{
 p#blogIntro::first-letter{
   font-weight: 500;
   font-size: 45px;
+}
+
+.close-modal{
+  background-color: #0377B5;
+  border: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.close-modal:hover{
+  background-color: #191919;
 }

@@ -138,7 +138,7 @@ export default class Home extends React.Component{
                                 </Row>  
                             </Modal.Body>
                         <Modal.Footer>
-                        <Button style={{backgroundColor: "#0377B5", border: "none"}} onClick={this.toggleModal}>Close</Button>
+                            <Button className="close-modal" onClick={this.toggleModal}>Close</Button>
                         </Modal.Footer>
                     </Modal>
                     </>
