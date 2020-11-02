@@ -49,7 +49,7 @@ export const projects = [
         ]
     }, 
     {
-        "img": "./images/MaxRefi2.png", 
+        "img": "./images/AllLoans2.png", 
         "title": "Mortage Loan Calculator", 
         "description": [
             {
