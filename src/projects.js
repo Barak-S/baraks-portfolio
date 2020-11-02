@@ -10,6 +10,7 @@ export const projects = [
             }
         ],
         "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a robust backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
+        "code": "https://github.com/Barak-S/Movies-App",
         "details": [ 
             {
                 "img": "./images/Movie3.png", 
@@ -38,6 +39,7 @@ export const projects = [
             }
         ],
         "technologies": "React.js, GSAP (GreenSock Animation Platform), React Bootstrap, React Hooks.",
+        "code": "https://github.com/Barak-S/Tech-Lounge-v2",
         "live": "https://tech-lounge-v2.vercel.app/",
         "details": [ 
             {
@@ -59,6 +61,7 @@ export const projects = [
             }
         ],
         "technologies": "Express.js backend server framework for creating API routes and handling user requests, React.js Single Page application designed with an interactive user experience for calculating and creating loans, Utilized Google Maps API for address auto-complete and map integration, MongoDB for persisting properties, users, and loan details",
+        "code": "https://github.com/Barak-S/SNCO-Calculator",
         "live": "https://snco-calculator.vercel.app/",
         "details": [ 
             {
@@ -89,6 +92,7 @@ export const projects = [
             }
         ],
         "technologies": "React.js, open-source Covid-19 statistic API",
+        "code": "https://github.com/Barak-S/Covid-19-UI",
         "live": "https://covid-19-ui.now.sh/",
         "details": [ 
             {
@@ -110,6 +114,7 @@ export const projects = [
             }
         ],
         "technologies": "Ruby on Rails application making use of MVC framework and setting up custom routes, Google Maps API for property listing’s show pages, SQLite3 database for persisting user accounts, property listings, and user wish lists",
+        "code": "https://github.com/hasibulc/cozy-cabins",
         "details": [ 
             {
                 "img": "./images/CozyCabins2.png", 

@@ -121,7 +121,8 @@ export default class Home extends React.Component{
 
                                 <Row>
                                     <Col>
-                                        <Card.Text>{this.state.project.description[0].show}</Card.Text>
+                                        { this.state.project.description[0].show && <Card.Text style={{marginBottom: 0}}>{this.state.project.description[0].show}</Card.Text>}
+                                        { this.state.project.code &&  <div style={{textAlign: "center"}}><Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button></div> }
                                     </Col>
                                 </Row> 
                                     

@@ -218,3 +218,7 @@ p#blogIntro::first-letter{
 .close-modal:hover{
   background-color: #191919;
 }
+
+.view-code:hover{
+  opacity: 0.8;
+}
