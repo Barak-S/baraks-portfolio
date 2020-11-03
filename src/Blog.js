@@ -16,13 +16,27 @@ export default class Blog extends Component {
     componentDidMount(){
         fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@baraksaidoff")
         .then(resp=>resp.json())
-        .then(data=> this.setState({
-            latestBlog: data.items[0].content,
-            BlogTitle: data.items[0].title,
-            publishDate: data.items[0].pubDate,
-            articleLink: data.items[0].link,
-            thumbnail: data.items[0].thumbnail
-        },()=>console.log(data)))
+        .then(data=> {
+            if (data.items){
+                this.setState({
+                    latestBlog: data.items[0].content,
+                    BlogTitle: data.items[0].title,
+                    publishDate: data.items[0].pubDate,
+                    articleLink: data.items[0].link,
+                    thumbnail: data.items[0].thumbnail
+                })
+            } else {
+                this.setState({
+                    latestBlog: "Click here to go to my Medium blog page.",
+                    BlogTitle: "Can't get latest blog right now :(",
+                    publishDate: 'N/A',
+                    thumbnail: 'N/A',
+                    articleLink: "https://medium.com/@baraksaidoff/latest",
+
+
+                })
+            }
+        })
     }
 
     toText(node) {
@@ -33,9 +47,11 @@ export default class Blog extends Component {
     }
 
     getDateString(timestamp){
+        if (timestamp !== "N/A"){
             var arr = timestamp.split(/[- :]/);
             timestamp = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
             return timestamp.toDateString()
+        }
     }
 
     previewBlogContent(content){
