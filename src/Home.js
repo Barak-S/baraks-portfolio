@@ -30,7 +30,7 @@ export default class Home extends React.Component{
                         src={require(`${img.img}`)}
                         alt={img.title}
                         thumbnail 
-                        style={{ cursor: "pointer"}}
+                        style={{ cursor: "pointer" }}
                         />
                     </Carousel.Item>
                 )
@@ -42,7 +42,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <div id="projects">
-                <Col className="carouselProjects" xs={12} sm={12} md={7} lg={7}>
+                <Col className="carouselProjects" xs={12} sm={12} md={6} lg={6}>
                     <Carousel style={{ marginTop:"3%", marginBottom:"3%" }} interval={ this.state.isClicked === false ? 5000 : null}>
                         {this.newCarousel()}
                     </Carousel>
