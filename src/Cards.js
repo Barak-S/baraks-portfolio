@@ -81,9 +81,13 @@ export default class Home extends React.Component{
                         <Modal.Body>
                             <Card.Text style={{fontWeight: "600", fontSize:17}}>{this.state.project.description[0].intro}</Card.Text>
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
-                            {this.state.project.live && 
+                            {this.state.project.live ? 
                                 <div style={{textAlign: "center", marginBottom: 12}}>
                                     <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
+                                </div>
+                                :
+                                <div style={{textAlign: "center", marginBottom: 12}}>
+                                    <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
                                 </div>
                             }
                             <Row>
@@ -142,7 +146,7 @@ export default class Home extends React.Component{
                                 <Row>
                                     <Col>
                                         { this.state.project.description[0].show && <Card.Text style={{marginBottom: 0}}>{this.state.project.description[0].show}</Card.Text>}
-                                        { this.state.project.code &&  <div style={{textAlign: "center"}}><Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button></div> }
+                                        { this.state.project.live && this.state.project.code &&  <div style={{textAlign: "center"}}><Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button></div> }
                                     </Col>
                                 </Row> 
                                     

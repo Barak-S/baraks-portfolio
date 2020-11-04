@@ -82,6 +82,30 @@ export const projects = [
         ]
     },
     {
+        "img": "./images/SkateSpot1.jpg", 
+        "title": "Skate Park Finder", 
+        "description": [
+            {
+                "intro": "A web app created for the skateboarding community where users can upload new skate spots/ skate parks, and see all the nearby places to skate.",
+                "use": "Using the Google Maps API for address auto-complete, users can upload a skate spot or skate park, and list which kind of feature the park has.",
+                "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered in distance using the dropdown to display all the skate parks nearby."
+            }
+        ],
+        "technologies": "MERN Stack, MongoDB for persisting user accounts, Skate parks, and Skate parks likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, Redux for state management.",
+        "code": "https://github.com/Barak-S/React-Leaflet-App",
+        "details": [ 
+            {
+                "img": "./images/SkateSpot2.jpg", 
+            }, 
+            { 
+                "img": "./images/SkateSpot3.jpg",
+            },
+            {
+                "img": "./images/SkateSpot1.jpg"
+            },
+        ]
+    },
+    {
         "img": "./images/Covid1.png", 
         "title": "Covid-19 Data UI", 
         "description": [
