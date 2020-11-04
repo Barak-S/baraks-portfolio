@@ -91,7 +91,7 @@ export const projects = [
                 "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered in distance using the dropdown to display all the skate parks nearby."
             }
         ],
-        "technologies": "MERN Stack, MongoDB for persisting user accounts, Skate parks, and Skate parks likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, Redux for state management.",
+        "technologies": "MERN Stack, MongoDB for persisting user accounts, skate parks, and skate park likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
         "details": [ 
             {
