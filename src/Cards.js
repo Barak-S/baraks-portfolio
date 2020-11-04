@@ -42,15 +42,16 @@ export default class Home extends React.Component{
             projects.map((img)=>{
                 return(
                     <article className="card1" onClick={()=>this.toggleModal(img)}>
-                        <header className="card1-header">
-                            <h3>{img.title}</h3>
-                            <p>{ img.description[0].intro.length > 100 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
-                        </header>
                         <Image
                             src={require(`${img.img}`)}
-                            alt={this.state.project.title}
+                            alt={img.title}
+                            style={{marginBottom: 6}}
                             thumbnail 
                         /> 
+                        <header className="card1-header">
+                            <h3 style={{color: "#0377B5", fontWeight: "600"}}>{img.title}</h3>
+                            <p>{ img.description[0].intro.length > 100 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
+                        </header>
                     </article>
                 )
             })
@@ -61,7 +62,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <div id="projects">
-                    <Col xs={12} sm={12} md={9} lg={9} className="profileCol">
+                    <Col xs={12} sm={12} md={9} lg={9} className="cards-column">
                         <section className="card1-list">
                             {this.newCards()}
                         </section>
