@@ -10,6 +10,7 @@ import Blog from './Blog';
 import Beclipse from './images/big-eclipse.svg'
 import Meclipse from './images/mid-eclipse.svg'
 import Seclipse from './images/small-eclipse.svg'
+import Cards from './Cards'
 
 
 
@@ -21,7 +22,8 @@ function App() {
         {/* <img class="small-circle" src={Seclipse} alt="" /> */}
           <SocialHandles/>
           <Contact/>
-          <Projects/>
+          {/* <Projects/> */}
+          <Cards/>
           <Blog/>
           <Footer/>
       </div>

@@ -222,3 +222,24 @@ p#blogIntro::first-letter{
 .view-code:hover{
   opacity: 0.8;
 }
+
+.card1-list{
+  display: flex; 
+  padding: 3rem;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.card1{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: #F4F5F5;
+  box-shadow: -0.25rem 0 3rem;
+
+}
