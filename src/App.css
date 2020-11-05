@@ -258,7 +258,7 @@ p#blogIntro::first-letter{
 }
 
 .card1:not(:first-child){
-  margin-left: -90px;
+  margin-left: -75px;
 }
 
 

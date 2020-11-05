@@ -17,26 +17,6 @@ export default class Home extends React.Component{
         })
     }
 
-    // newCarousel(){
-    //     return(
-    //         projects.map((img, index)=>{
-    //             return(
-    //                 <Carousel.Item onClick={()=>this.toggleModal(img)}>
-    //                 <Card.Text>
-    //                 <h3 style={{color: '#0377B5', fontWeight: "600"}}>{img.title}</h3>
-    //                 </Card.Text>
-    //                     <Image
-    //                     className="d-block w-100"
-    //                     src={require(`${img.img}`)}
-    //                     alt={img.title}
-    //                     thumbnail 
-    //                     style={{ cursor: "pointer" }}
-    //                     />
-    //                 </Carousel.Item>
-    //             )
-    //         })
-    //     )
-    // }
     newCards(){
         return(
             projects.map((img)=>{
