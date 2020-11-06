@@ -20,6 +20,7 @@ export default function Contact(){
                     <Button className="resume-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</Button>
                 </div>
                 <hr/>
+                <h4 style={{fontWeight: "600", color: "#0377B5", textAlign: "center", padding:0, margin: 0}}>Projects</h4>
             </Col>  
         </div>   
     )

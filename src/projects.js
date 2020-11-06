@@ -110,7 +110,7 @@ export const projects = [
         "title": "Covid-19 Data UI", 
         "description": [
             {
-                "intro": "This project was created back in march of 2020, when the spread of the Coronavirus was extreemely rapid world wide. This app is intended for tracking daily updated for ever single countries covid-19 infection statistics.",
+                "intro": "This project was created back in march of 2020, when the Coronavirus outbreak was extremely rapid worldwide. This app is intended for tracking daily updates for every country's covid-19 infection statistics.",
                 "use" : " The Covid-19 data that is displayed in the app is from an open-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
                 "show" : "By default, the data is displayed in descending order from most confirmed cases to least. Clicking or selecting on the table headers will dynamically re-render the results based on the title of the header. The search bar in the top left will also filter through countires based on the search query from the user."
             }
