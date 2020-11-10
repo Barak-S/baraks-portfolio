@@ -5,6 +5,7 @@ import './App.css';
 export default function Contact(){
     return(
         <div>
+            {/* <Image style={{ height: "32vh", width: "100%", objectFit: "cover" }} src={require("./images/telaviv.jpeg")} className="tlv-img"/> */}
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                 <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
                 <Card.Title style={{ paddingTop: 12, color: "#0377B5", fontSize: 25, fontWeight: "600" }}>Barak Saidoff</Card.Title>

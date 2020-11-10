@@ -46,6 +46,11 @@ img.rounded-circle{
   animation: drop 1.5s ease;
 }
 
+/* .tlv-img{
+  position: absolute;
+  top: -10%;
+} */
+
 @keyframes drop {
   0% {
     opacity: 0;
