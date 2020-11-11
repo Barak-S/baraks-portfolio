@@ -9,8 +9,8 @@ export default function Contact(){
     let introText = useRef(null)
 
     useEffect(()=>{
-        TweenMax.to( introText, 1, { y: -60, opacity: 1, ease: Power1.easeIn, stagger: 0.25 })
-        TweenMax.to( intro, 1, { y: '-100vh',  ease: Power3.easeIn, delay: 1.5})
+        TweenMax.to( introText, 1, { y: -60, opacity: 1, ease: Power1.easeIn })
+        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 1.5,})
     }, [])
 
     return(

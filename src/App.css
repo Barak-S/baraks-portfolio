@@ -284,15 +284,18 @@ p#blogIntro::first-letter{
 
 .intro{
 	z-index: 99;
-	background: #191919;
-	position: fixed;
+  background: rgb(7,83,124);
+  background: linear-gradient(0deg, rgba(7,83,124,1) 0%, rgba(25,25,25,1) 100%);
+  position: fixed;
 	top: 0;
 	left: 0;
-	height: 100vh;
+	height: 110vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+  align-items: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
 .intro-text{
