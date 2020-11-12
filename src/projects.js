@@ -60,7 +60,7 @@ export const projects = [
                 "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
             }
         ],
-        "technologies": "Express.js backend server framework for creating API routes and handling user requests, React.js Single Page application designed with an interactive user experience for calculating and creating loans, Utilized Google Maps API for address auto-complete and map integration, MongoDB for persisting properties, users, and loan details",
+        "technologies": "Express.js backend server for creating API routes and handling user requests, React.js Single Page application designed with an interactive user experience for calculating and creating loans, Utilized Google Maps API for address auto-complete and map integration, MongoDB for persisting properties, users, and loan details",
         "code": "https://github.com/Barak-S/SNCO-Calculator",
         "live": "https://snco-calculator.vercel.app/",
         "details": [ 

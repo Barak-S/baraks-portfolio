@@ -1,23 +1,27 @@
 import React, { useRef, useEffect } from 'react';
 import { Col, Button, Image, Card } from 'react-bootstrap';
-import { gsap, TweenMax, TweenLite, Power3, Power1 }  from 'gsap';
+import { TweenMax, Power3, Power1 }  from 'gsap';
 import './App.css';
 
 export default function Contact(){
 
     let intro = useRef(null)
-    let introText = useRef(null)
+    let introText1 = useRef(null)
+    let introText2 = useRef(null)
 
     useEffect(()=>{
-        TweenMax.to( introText, 1, { y: -60, opacity: 1, ease: Power1.easeIn })
-        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 1.5,})
+        TweenMax.staggerTo([introText1,introText2], 1, { opacity: 1, y: -75, ease: Power1.easeIn }, .6)
+        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 1.8,})
     }, [])
 
     return(
         <div>
             {/* <Image style={{ height: "32vh", width: "100%", objectFit: "cover" }} src={require("./images/telaviv.jpeg")} className="tlv-img"/> */}
             <div ref={el => (intro = el)} className="intro">
-                <p ref={el => (introText = el)} className="intro-text">Barak Saidoff <br/> Full Stack Developer</p>
+                <div>
+                    <h1 ref={el => (introText1 = el)} className="intro-text">Barak Saidoff</h1>
+                    <h1 ref={el => (introText2 = el)} className="intro-text">Full Stack Developer</h1>
+                </div>
             </div>
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                 <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
@@ -30,7 +34,7 @@ export default function Contact(){
                 <p><strong style={{fontSize: 18, fontWeight: "600"}}>Military Leadership |</strong> Former Sergeant in the IDF <strong>|</strong> Achieved award of excellence upon advanced training graduation. </p>
                 <div style={{textAlign: "center"}}>
                     <p style={{fontSize: 20, color: "#0377B5"}}>Technical Skills</p>
-                    <p>Ruby, Rails, SQL, NoSQL, PostgreSQL, MongoDB, CSS3, HTML5, Bootstrap, JavaScript, GSAP, React, React Native, Redux, Node, Express, and Git workflow based programming.</p>
+                    <p>JavaScript, React.js, React Native, Redux, Node.js, Express.js, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
                     <Button className="resume-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</Button>
                 </div>
                 <hr/>
