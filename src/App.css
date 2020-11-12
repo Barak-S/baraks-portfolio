@@ -152,17 +152,17 @@ ul#horizontal-list{
 	right: 59%;
 	z-index: -1;
 	height: 38%;
-  opacity: 0.5;
+  opacity: 0.8;
   animation: float1 6s ease-in-out infinite;
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .small-circle,
   .medium-circle,
   .big-circle {
     opacity: 0.2;
   }
-}
+} */
 
 @keyframes float1 {
 	0% {
@@ -289,6 +289,7 @@ p#blogIntro::first-letter{
 .intro{
     z-index: 99;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/intro-bg4.jpg');
+    background-color: #191919;
     background-size: cover;
     position: fixed;
 	top: 0;
