@@ -136,7 +136,7 @@ ul#horizontal-list{
 	top: 0px;
 	right: 0px;
 	z-index: -1;
-	opacity: 0.5;
+	opacity: 0.4;
   height: 78%;
   animation: float1 6s ease-in-out infinite;
 }
@@ -146,7 +146,7 @@ ul#horizontal-list{
 	right: 32%;
 	z-index: -1;
 	height: 60%;
-  opacity: 0.6;
+  opacity: 0.5;
   animation: float2 6s ease-in-out infinite;
 }
 .small-circle {
