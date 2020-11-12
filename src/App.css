@@ -156,13 +156,17 @@ ul#horizontal-list{
   animation: float1 6s ease-in-out infinite;
 }
 
-/* @media screen and (max-width: 1024px) {
-  .small-circle,
-  .medium-circle,
-  .big-circle {
+@media screen and (max-width: 1024px) {
+  .small-circle{
     opacity: 0.2;
   }
-} */
+  .medium-circle{
+    opacity: 0.4;
+  }
+  .big-circle {
+    opacity: 0.6;
+  }
+}
 
 @keyframes float1 {
 	0% {
@@ -301,6 +305,7 @@ p#blogIntro::first-letter{
     align-items: center;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    transform: scale(1.2,1.2);
 }
 
 .intro-text{
@@ -309,3 +314,4 @@ p#blogIntro::first-letter{
     opacity: 0;
     padding: 0.25rem 0.5rem;
 }
+

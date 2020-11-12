@@ -10,13 +10,13 @@ export default function Contact(){
     let introText2 = useRef(null)
 
     useEffect(()=>{
-        TweenMax.staggerTo([introText1,introText2], 1, { opacity: 1, y: -25, ease: Power1.easeIn }, 1)
-        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 2.3,})
+        TweenMax.to( intro, 1.9, { scale: 1, ease: Power3.easeOut, delay: 0.3 }, 1)
+        TweenMax.staggerTo([introText1,introText2], 1, { opacity: 1, y: -25, ease: Power1.easeOut }, 1)
+        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 2 })
     }, [])
 
     return(
         <div>
-            {/* <Image style={{ height: "32vh", width: "100%", objectFit: "cover" }} src={require("./images/telaviv.jpeg")} className="tlv-img"/> */}
             <div ref={el => (intro = el)} className="intro">
                 <div>
                     <h1 ref={el => (introText1 = el)} className="intro-text">Barak Saidoff</h1>
