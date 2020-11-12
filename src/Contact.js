@@ -19,8 +19,8 @@ export default function Contact(){
         <div>
             <div ref={el => (intro = el)} className="intro">
                 <div>
-                    <h1 ref={el => (introText1 = el)} className="intro-text">Barak Saidoff</h1>
-                    <h1 ref={el => (introText2 = el)} className="intro-text">Full Stack Developer</h1>
+                    <h1 ref={el => (introText1 = el)} className="intro-text1">Barak Saidoff</h1>
+                    <h1 ref={el => (introText2 = el)} className="intro-text2">Full Stack Developer</h1>
                 </div>
             </div>
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>

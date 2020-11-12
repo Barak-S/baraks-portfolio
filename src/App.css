@@ -156,18 +156,6 @@ ul#horizontal-list{
   animation: float1 6s ease-in-out infinite;
 }
 
-@media screen and (max-width: 1024px) {
-  .small-circle{
-    opacity: 0.2;
-  }
-  .medium-circle{
-    opacity: 0.3;
-  }
-  .big-circle {
-    opacity: 0.4;
-  }
-}
-
 @keyframes float1 {
 	0% {
 		transform: translatey(0px);
@@ -308,10 +296,24 @@ p#blogIntro::first-letter{
     transform: scale(1.2,1.2);
 }
 
-.intro-text{
+.intro-text1, .intro-text2{
 	color: #F4F5F5;
 	font-size: 2.5rem;
     opacity: 0;
     padding: 0.25rem 0.5rem;
 }
 
+@media screen and (max-width: 1024px) {
+    .small-circle{
+      opacity: 0.2;
+    }
+    .medium-circle{
+      opacity: 0.3;
+    }
+    .big-circle {
+      opacity: 0.4;
+    }
+    .intro-text2{
+        font-size: 2rem;
+    }
+  }
