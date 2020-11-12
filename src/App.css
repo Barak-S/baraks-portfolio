@@ -97,7 +97,6 @@ img.buttonIcon:hover{
   border-radius:8px;
   transition: 0.2s ;
 }
-
 span.carousel-control-prev-icon:hover{
   width: 23px;
   height: 30px;
@@ -105,13 +104,11 @@ span.carousel-control-prev-icon:hover{
   border-radius:8px;
   transition: 0.2s;
 }
-
 span.carousel-control-next-icon{
   transition:  0.2s ease-in-out;
   background-color: #191919;
   border-radius:8px;
 }
-
 span.carousel-control-prev-icon{
   transition:  0.2s ease-in-out;
   background-color: #191919;
@@ -286,33 +283,28 @@ p#blogIntro::first-letter{
   box-shadow: insert 2ppx 2ppx 2ppx hsla(0,0%,100%,.25);
 }
 .card1-list::webkit-scrollbar-track {
-
 } */
 
 
 .intro{
-	z-index: 99;
-  background: rgb(4,55,83);
-  background: linear-gradient(0deg, rgba(4,55,83,1) 0%, rgba(25,25,25,1) 100%);
-  position: fixed;
+    z-index: 99;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/intro-bg4.jpg');
+    background-size: cover;
+    position: fixed;
 	top: 0;
 	left: 0;
 	height: 110vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-  align-items: center;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    align-items: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
 .intro-text{
 	color: #F4F5F5;
 	font-size: 2.5rem;
-  opacity: 0;
-  padding: 0.25rem 0.5rem;
+    opacity: 0;
+    padding: 0.25rem 0.5rem;
 }
-
-/* .contact-home{
-  transform: translateY(100%);
-} */
