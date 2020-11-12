@@ -142,7 +142,7 @@ ul#horizontal-list{
 }
 .medium-circle {
   position: absolute;
-	top: 32%;
+	top: 34%;
 	right: 32%;
 	z-index: -1;
 	height: 60%;
@@ -151,11 +151,11 @@ ul#horizontal-list{
 }
 .small-circle {
   position: absolute;
-	top: 70%;
-	right: 58%;
+	top: 74%;
+	right: 59%;
 	z-index: -1;
-	height: 35%;
-  opacity: 1;
+	height: 38%;
+  opacity: 0.5;
   animation: float1 6s ease-in-out infinite;
 }
 

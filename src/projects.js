@@ -91,7 +91,7 @@ export const projects = [
                 "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered in distance using the dropdown to display all the skate parks nearby."
             }
         ],
-        "technologies": "MERN Stack, MongoDB for persisting user accounts, skate parks, and skate park likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, Redux for state management.",
+        "technologies": "MERN Stack, MongoDB for persisting user accounts, skate parks, and skate park likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, and Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
         "details": [ 
             {
@@ -127,49 +127,49 @@ export const projects = [
             },
         ]
     },
-    {
-        "img": "./images/CozyCabins1.png", 
-        "title": "Cozy Cabins", 
-        "description": [
-            {
-                "intro": "Real Estate Application where users can list their homes for sale, and favorite other users listing for potential purchase.",
-                "use" : "Create an account and post a listing to the webiste. Search all Listings on the webiste by state and add a listing to your wish list.",
-                "show" : "A listing's show page uses embeded ruby and JavaScript for a dynamic map and street view, using the Google Maps API."
-            }
-        ],
-        "technologies": "Ruby on Rails application making use of MVC framework and setting up custom routes, Google Maps API for property listing’s show pages, SQLite3 database for persisting user accounts, property listings, and user wish lists",
-        "code": "https://github.com/hasibulc/cozy-cabins",
-        "details": [ 
-            {
-                "img": "./images/CozyCabins2.png", 
-            }, 
-            { 
-                "img": "./images/CozyCabins3.png",
-            }
-        ]
-    },
-    {
-        "img": "./images/PirateWars1.png", 
-        "title": "Pirate Wars", 
-        "description": [
-            {
-                "intro": "JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.",
-                "use" : "Arcade styled gameplay. Create a username and get to playing. Place ships on game board by clicking and placing on grid. Ships by default are placed horizontally. Select ship and then rotate before placing to change orientation.",
-                "show" : "Rules - Take turns firing shots by selecting coordinates on computer grid. If a player hits the opponent's boat, the coordinate turns red indicating a ship was hit. Player gets to go again. A ship is sunk when all the coordinates for each boat are hit. The coordinate turns black indicating a sunken ship."
-            }
-        ],
-        "technologies": "Ruby on Rails backend API for creating and updating the game leaderboard based on users gameplay, Vanilla JavaScript front end for creating the game board, gameplay, and DOM manipulation, PostgreSQL database for persisting a leaderboard for usernames and player scores",
-        "live": "http://pirate-wars.herokuapp.com/",
-        "details": [ 
-            {
-                "img": "./images/PirateWars2.png", 
-            }, 
-            { 
-                "img": "./images/PirateWars3.png",
-            },
-            { 
-                "img": "./images/PirateWars4.png",
-            }
-            ]
-        }
+    // {
+    //     "img": "./images/CozyCabins1.png", 
+    //     "title": "Cozy Cabins", 
+    //     "description": [
+    //         {
+    //             "intro": "Real Estate Application where users can list their homes for sale, and favorite other users listing for potential purchase.",
+    //             "use" : "Create an account and post a listing to the webiste. Search all Listings on the webiste by state and add a listing to your wish list.",
+    //             "show" : "A listing's show page uses embeded ruby and JavaScript for a dynamic map and street view, using the Google Maps API."
+    //         }
+    //     ],
+    //     "technologies": "Ruby on Rails application making use of MVC framework and setting up custom routes, Google Maps API for property listing’s show pages, SQLite3 database for persisting user accounts, property listings, and user wish lists",
+    //     "code": "https://github.com/hasibulc/cozy-cabins",
+    //     "details": [ 
+    //         {
+    //             "img": "./images/CozyCabins2.png", 
+    //         }, 
+    //         { 
+    //             "img": "./images/CozyCabins3.png",
+    //         }
+    //     ]
+    // },
+    // {
+    //     "img": "./images/PirateWars1.png", 
+    //     "title": "Pirate Wars", 
+    //     "description": [
+    //         {
+    //             "intro": "JavaScript application game that models after the classic Battleship board game with its own unique touch in styling and gameplay.",
+    //             "use" : "Arcade styled gameplay. Create a username and get to playing. Place ships on game board by clicking and placing on grid. Ships by default are placed horizontally. Select ship and then rotate before placing to change orientation.",
+    //             "show" : "Rules - Take turns firing shots by selecting coordinates on computer grid. If a player hits the opponent's boat, the coordinate turns red indicating a ship was hit. Player gets to go again. A ship is sunk when all the coordinates for each boat are hit. The coordinate turns black indicating a sunken ship."
+    //         }
+    //     ],
+    //     "technologies": "Ruby on Rails backend API for creating and updating the game leaderboard based on users gameplay, Vanilla JavaScript front end for creating the game board, gameplay, and DOM manipulation, PostgreSQL database for persisting a leaderboard for usernames and player scores",
+    //     "live": "http://pirate-wars.herokuapp.com/",
+    //     "details": [ 
+    //         {
+    //             "img": "./images/PirateWars2.png", 
+    //         }, 
+    //         { 
+    //             "img": "./images/PirateWars3.png",
+    //         },
+    //         { 
+    //             "img": "./images/PirateWars4.png",
+    //         }
+    //         ]
+    //     }
     ]
