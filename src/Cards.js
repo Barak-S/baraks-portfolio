@@ -57,89 +57,44 @@ export default class Home extends React.Component{
                         <Modal.Header closeButton>
                             <Modal.Title style={{color: '#0377B5', fontWeight: "600"}}>{this.state.project.title}</Modal.Title>
                         </Modal.Header>
+                        <div className="modalImgContainer">
+                            <Carousel interval={9500}>
+                                {this.state.project.details.map(img=>{
+                                    return(
+                                        <Carousel.Item>
+                                            <Image
+                                            src={require(`${img.img}`)}
+                                            alt={this.state.project.title}
+                                            thumbnail 
+                                            className="modal-thumbnail"
+                                            />
+                                        </Carousel.Item>
+                                    )
+                                })}
+                            </Carousel>
+                        </div>
                         <Modal.Body>
                             <Card.Text style={{fontWeight: "600", fontSize:17}}>{this.state.project.description[0].intro}</Card.Text>
+                            <hr/>
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
-                            {this.state.project.live ? 
-                                <div style={{textAlign: "center", marginBottom: 12}}>
-                                    <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
-                                </div>
-                                :
-                                <div style={{textAlign: "center", marginBottom: 12}}>
-                                    <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
-                                </div>
-                            }
                             <Row>
-                                <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                    <Image
-                                        src={require(`${this.state.project.details[0].img}`)}
-                                        alt={this.state.project.title}
-                                        thumbnail 
-                                    />  
-                                </Col>  
-                                <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                    <Image
-                                        src={require(`${this.state.project.details[1].img}`)}
-                                        alt={this.state.project.title}
-                                        thumbnail 
-                                    /> 
-                                </Col>
-                                
                                 <Col>
                                     <Card.Text style={{paddingBottom: 15}}>{this.state.project.description[0].use}</Card.Text>
-                                </Col>
-                                
+                                </Col>  
                             </Row>  
-                                { this.state.project.details[2] ?
-                                    this.state.project.details[2] && !this.state.project.details[3] ?
-                                    <Row>
-                                        <Col xs={12} sm={12} md={12} lg={12} style={{marginBottom: 10}}>
-                                            <Image
-                                            src={require(`${this.state.project.details[2].img}`)}
-                                            alt={this.state.project.title}
-                                            thumbnail 
-                                            /> 
-                                        </Col>
-                                    </Row>
-                                    :
-                                    <Row>
-                                        <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                            <Image
-                                            src={require(`${this.state.project.details[2].img}`)}
-                                            alt={this.state.project.title}
-                                            thumbnail 
-                                        /> 
-                                        </Col>
-                                        <Col xs={12} sm={12} md={6} lg={6} style={{marginBottom: 10}}>
-                                            <Image
-                                            src={require(`${this.state.project.details[3].img}`)}
-                                            alt={this.state.project.title}
-                                            thumbnail 
-                                        /> 
-                                        </Col>
-                                    </Row>
-                                    
-                                :
-                                null}
-
-                                <Row>
-                                    <Col>
-                                        { this.state.project.description[0].show && <Card.Text style={{marginBottom: 0}}>{this.state.project.description[0].show}</Card.Text>}
-                                        { this.state.project.live && this.state.project.code &&  <div style={{textAlign: "center"}}><Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button></div> }
-                                    </Col>
-                                </Row> 
-                                    
-                                <Row>                                        
-                                    { this.state.project.details[4] &&
-                                        <Col xs={12} sm={12} md={12} lg={12}>
-                                            <Image
-                                            src={require(`${this.state.project.details[4].img}`)}
-                                            alt={this.state.project.title}
-                                            thumbnail 
-                                        /> 
-                                        </Col>
+                            <Row>
+                                <Col>
+                                    { this.state.project.description[0].show && <Card.Text style={{marginBottom: 0}}>{this.state.project.description[0].show}</Card.Text>}
+                                    <div style={{textAlign: "center", marginBottom: 12}}>
+                                    {this.state.project.live && 
+                                        <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
                                     }
-                                </Row>  
+                                    { this.state.project.code &&  
+                                        <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
+                                    }
+                                    </div> 
+                                </Col>
+                            </Row> 
                             </Modal.Body>
                         <Modal.Footer>
                             <Button className="close-modal" onClick={this.toggleModal}>Close</Button>

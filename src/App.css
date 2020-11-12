@@ -303,6 +303,28 @@ p#blogIntro::first-letter{
     padding: 0.25rem 0.5rem;
 }
 
+.modal-thumbnail{
+    margin: 0;
+    padding: 0;
+    animation: zoomThumbnail 10s infinite;
+}
+
+.modalImgContainer{
+    display: inline-block; 
+    overflow: hidden;
+}
+@keyframes zoomThumbnail {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .small-circle{
       opacity: 0.2;
