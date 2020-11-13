@@ -1,6 +1,5 @@
 export const projects = [
-    {
-        "img": "./images/Movie1.png", 
+    { 
         "title": "What We Watchin'", 
         "description": [
             {
@@ -12,6 +11,9 @@ export const projects = [
         "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
         "code": "https://github.com/Barak-S/Movies-App",
         "details": [ 
+            {
+                "img": "./images/Movie1.png"
+            }, 
             {
                 "img": "./images/Movie3.png", 
             }, 
@@ -30,7 +32,6 @@ export const projects = [
         ]
     }, 
     {
-        "img": "./images/TechLounge1.jpg", 
         "title": "Tech Lounge", 
         "description": [
             {
@@ -43,6 +44,9 @@ export const projects = [
         "live": "https://tech-lounge-v2.vercel.app/",
         "details": [ 
             {
+                "img": "./images/TechLounge1.jpg", 
+            }, 
+            {
                 "img": "./images/TechLounge2.jpg", 
             }, 
             { 
@@ -51,7 +55,6 @@ export const projects = [
         ]
     }, 
     {
-        "img": "./images/AllLoans2.png", 
         "title": "Mortage Loan Calculator", 
         "description": [
             {
@@ -65,13 +68,13 @@ export const projects = [
         "live": "https://snco-calculator.vercel.app/",
         "details": [ 
             {
+                "img": "./images/AllLoans2.png", 
+            }, 
+            {
                 "img": "./images/MaxRefi2.png", 
             }, 
             { 
                 "img": "./images/Fix&Flip2.png",
-            },
-            {
-                "img": "./images/AllLoans2.png"
             },
             {
                 "img": "./images/LoanShow2.png"
@@ -82,7 +85,6 @@ export const projects = [
         ]
     },
     {
-        "img": "./images/SkateSpot1.jpg", 
         "title": "Skate Park Finder", 
         "description": [
             {
@@ -95,6 +97,9 @@ export const projects = [
         "code": "https://github.com/Barak-S/React-Leaflet-App",
         "details": [ 
             {
+                "img": "./images/SkateSpot1.jpg", 
+            }, 
+            {
                 "img": "./images/SkateSpot2.jpg", 
             }, 
             { 
@@ -106,7 +111,6 @@ export const projects = [
         ]
     },
     {
-        "img": "./images/Covid1.png", 
         "title": "Covid-19 Data UI", 
         "description": [
             {

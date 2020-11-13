@@ -22,7 +22,7 @@ export default class Home extends React.Component{
                 return(
                     <article className="card1" onClick={()=>this.toggleModal(img)}>
                         <Image
-                            src={require(`${img.img}`)}
+                            src={require(`${img.details[0].img}`)}
                             alt={img.title}
                             style={{marginBottom: 6}}
                             thumbnail 
