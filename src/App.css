@@ -46,9 +46,9 @@ img.rounded-circle{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2); 
 }
 
-/* .HeadshotDrop{
+.HeadshotDrop{
   animation: drop 1.5s ease;
-} */
+}
 
 @keyframes drop {
   0% {

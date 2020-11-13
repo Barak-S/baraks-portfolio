@@ -8,7 +8,7 @@ export const projects = [
                 "show" : "The Solution - What We Watchin’ - A React Native social media app where users can come together and share movies or tv shows that they’d recommend, or want to watch soon. This app provides interaction with your friends by clicking on one’s profile and seeing what tv shows or movies they really enjoyed watching. My app solves the issue of spending countless hours trying to find something to watch when planning a movie night."
             }
         ],
-        "technologies": "React Native optimized for IOS and Android. Ruby on Rails MVC framework for creating a backend API server. PostgreSQL database for persisting user accounts, watch later playlists, and user friendships. OMDB API (Open Movie Database)",
+        "technologies": "React Native, Ruby on Rails, PostgreSQL, OMDB API (Open Movie Database)",
         "code": "https://github.com/Barak-S/Movies-App",
         "details": [ 
             {
@@ -63,7 +63,7 @@ export const projects = [
                 "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
             }
         ],
-        "technologies": "Express.js backend server for creating API routes and handling user requests, React.js Single Page application designed with an interactive user experience for calculating and creating loans, Utilized Google Maps API for address auto-complete and map integration, MongoDB for persisting properties, users, and loan details",
+        "technologies": "React.js, Express.js, Google Maps API for address auto-complete and map integration, MongoDB",
         "code": "https://github.com/Barak-S/SNCO-Calculator",
         "live": "https://snco-calculator.vercel.app/",
         "details": [ 
@@ -93,7 +93,7 @@ export const projects = [
                 "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered in distance using the dropdown to display all the skate parks nearby."
             }
         ],
-        "technologies": "MERN Stack, MongoDB for persisting user accounts, skate parks, and skate park likes. Passport.js for Open Authorization using JSON Web Tokens, React Leaflet, Google Maps API, and Redux for state management.",
+        "technologies": "MongoDB, Exprress, React.js, Node.js, Passport.js for Open Authorization using JSON Web Tokens, Google Maps API, and Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
         "details": [ 
             {
