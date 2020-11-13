@@ -278,7 +278,7 @@ p#blogIntro::first-letter{
 } */
 
 
-.intro{
+/* .intro1, .intro2{
     z-index: 99;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/intro-bg4.jpg');
     background-color: #191919;
@@ -286,7 +286,7 @@ p#blogIntro::first-letter{
     position: fixed;
 	top: 0;
 	left: 0;
-	height: 110vh;
+	height: 50vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -296,11 +296,20 @@ p#blogIntro::first-letter{
     transform: scale(1.2,1.2);
 }
 
+.intro2{
+    top: 50vh;
+}
+
 .intro-text1, .intro-text2{
 	color: #F4F5F5;
 	font-size: 2.5rem;
     opacity: 0;
     padding: 0.25rem 0.5rem;
+} */
+
+.modalImgContainer{
+    display: inline-block; 
+    overflow: hidden;
 }
 
 .modal-thumbnail{
@@ -310,10 +319,6 @@ p#blogIntro::first-letter{
     border: none;
 }
 
-.modalImgContainer{
-    display: inline-block; 
-    overflow: hidden;
-}
 @keyframes zoomThumbnail {
     0% {
         transform: scale(1,1);

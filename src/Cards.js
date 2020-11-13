@@ -77,24 +77,18 @@ export default class Home extends React.Component{
                             <Card.Text style={{fontWeight: "600", fontSize:17}}>{this.state.project.description[0].intro}</Card.Text>
                             <hr/>
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
-                            <Row>
-                                <Col>
-                                    <Card.Text style={{paddingBottom: 15}}>{this.state.project.description[0].use}</Card.Text>
-                                </Col>  
-                            </Row>  
-                            <Row>
-                                <Col>
-                                    { this.state.project.description[0].show && <Card.Text style={{marginBottom: 0}}>{this.state.project.description[0].show}</Card.Text>}
-                                    <div style={{textAlign: "center", marginBottom: 12}}>
-                                    {this.state.project.live && 
-                                        <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
-                                    }
-                                    { this.state.project.code &&  
-                                        <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", margin: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
-                                    }
-                                    </div> 
-                                </Col>
-                            </Row> 
+                            <Card.Text>{this.state.project.description[0].use}</Card.Text>
+                            { this.state.project.description[0].show && <Card.Text>{this.state.project.description[0].show}</Card.Text>}
+                            <hr/>
+                            <div style={{textAlign: "center"}}>
+                            {this.state.project.live && 
+                                <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
+                            }
+                            { this.state.project.code &&  
+                                <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", marginLeft: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
+                            }
+                            </div> 
+                                
                             </Modal.Body>
                         <Modal.Footer>
                             <Button className="close-modal" onClick={this.toggleModal}>Close</Button>

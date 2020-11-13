@@ -1,28 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Col, Button, Image, Card } from 'react-bootstrap';
-import { TweenMax, Power3, Power1 }  from 'gsap';
+import { TweenMax, Power3 }  from 'gsap';
 import './App.css';
 
 export default function Contact(){
 
-    let intro = useRef(null)
-    let introText1 = useRef(null)
-    let introText2 = useRef(null)
-
-    useEffect(()=>{
-        TweenMax.to( intro, 2, { scale: 1, ease: Power3.easeOut, delay: 0.2 })
-        TweenMax.staggerTo([introText1,introText2], 1, { opacity: 1, y: -25, ease: Power1.easeOut, delay: 0.4 }, 0.9)
-        TweenMax.to( intro, 1, { y: '-110vh', ease: Power3.easeIn, delay: 2.2 })
-    }, [])
-
     return(
         <div>
-            <div ref={el => (intro = el)} className="intro">
-                <div>
-                    <h1 ref={el => (introText1 = el)} className="intro-text1">Barak Saidoff</h1>
-                    <h1 ref={el => (introText2 = el)} className="intro-text2">Full Stack Developer</h1>
-                </div>
-            </div>
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                 <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
                 <Card.Title style={{ paddingTop: 12, color: "#0377B5", fontSize: 25, fontWeight: "600" }}>Barak Saidoff</Card.Title>
