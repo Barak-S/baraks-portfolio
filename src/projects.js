@@ -100,14 +100,11 @@ export const projects = [
                 "img": "./images/SkateSpot1.jpg", 
             }, 
             {
+                "img": "./images/SkateSpot4.jpg", 
+            }, 
+            {
                 "img": "./images/SkateSpot2.jpg", 
             }, 
-            { 
-                "img": "./images/SkateSpot3.jpg",
-            },
-            {
-                "img": "./images/SkateSpot1.jpg"
-            },
         ]
     },
     {
