@@ -12,22 +12,22 @@ export const projects = [
         "code": "https://github.com/Barak-S/Movies-App",
         "details": [ 
             {
-                "img": "./images/Movie1.png"
+                "img": "./images/Movie1.jpg"
             }, 
             {
-                "img": "./images/Movie3.png", 
+                "img": "./images/Movie3.jpg", 
             }, 
             { 
-                "img": "./images/Movie2.png",
+                "img": "./images/Movie2.jpg",
             },
             { 
-                "img": "./images/Movie6.png",
+                "img": "./images/Movie6.jpg",
             },
             { 
-                "img": "./images/Movie4.png",
+                "img": "./images/Movie4.jpg",
             },
             { 
-                "img": "./images/Movie5.png",
+                "img": "./images/Movie5.jpg",
             },
         ]
     }, 
@@ -68,19 +68,19 @@ export const projects = [
         "live": "https://snco-calculator.vercel.app/",
         "details": [ 
             {
-                "img": "./images/AllLoans2.png", 
+                "img": "./images/Calculator1.jpg", 
             }, 
             {
-                "img": "./images/MaxRefi2.png", 
+                "img": "./images/Calculator2.jpg", 
             }, 
             { 
-                "img": "./images/Fix&Flip2.png",
+                "img": "./images/Calculator3.jpg",
             },
             {
-                "img": "./images/LoanShow2.png"
+                "img": "./images/Calculator4.jpg"
             },
             {
-                "img": "./images/LoanEdit2.png"
+                "img": "./images/Calculator5.jpg"
             }
         ]
     },
@@ -121,10 +121,10 @@ export const projects = [
         "live": "https://covid-19-ui.now.sh/",
         "details": [ 
             {
-                "img": "./images/Covid1.png", 
+                "img": "./images/Covid1.jpg", 
             }, 
             { 
-                "img": "./images/Covid3.png",
+                "img": "./images/Covid2.jpg",
             },
         ]
     },
