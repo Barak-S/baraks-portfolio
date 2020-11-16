@@ -131,12 +131,13 @@ ul#horizontal-list{
 .big-circle {
   position: absolute;
 	top: 0px;
-	right: 0px;
-	z-index: -1;
+  right: 0px;
+  z-index: -1;
 	opacity: 0.4;
   height: 78%;
   animation: float1 6s ease-in-out infinite;
 }
+
 .medium-circle {
   position: absolute;
 	top: 34%;
@@ -333,13 +334,13 @@ p#blogIntro::first-letter{
 
 @media screen and (max-width: 1024px) {
     .small-circle{
-      opacity: 0.2;
-    }
-    .medium-circle{
       opacity: 0.3;
     }
-    .big-circle {
+    .medium-circle{
       opacity: 0.4;
+    }
+    .big-circle {
+      opacity: 0.5;
     }
     .intro-text2{
         font-size: 2rem;
