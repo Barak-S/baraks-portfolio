@@ -170,14 +170,14 @@ ul#horizontal-list{
 }
 
 @keyframes float2 {
-	0% {
-		transform: translatey(0px);
+  0% {
+    transform: translatey(0px);
 	}
 	50% {
-		transform: translatey(15px);
+    transform: translatey(15px);
 	}
 	100% {
-		transform: translatey(0px);
+    transform: translatey(0px);
 	}
 }
 
@@ -187,6 +187,15 @@ ul#horizontal-list{
 
 div.active.carousel-item{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+}
+
+hr{
+  background-color: #16307D;
+  opacity: 0.4;
+}
+
+p{
+  color: #191919;
 }
 
 .resume-button{
@@ -334,10 +343,10 @@ p#blogIntro::first-letter{
 
 @media screen and (max-width: 1024px) {
     .small-circle{
-      opacity: 0.3;
+      opacity: 0.5;
     }
     .medium-circle{
-      opacity: 0.4;
+      opacity: 0.6;
     }
     .big-circle {
       opacity: 0.5;
