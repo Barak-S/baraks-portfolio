@@ -337,16 +337,16 @@ p#blogIntro::first-letter{
 }
 
 @media screen and (max-width: 1024px) {
-    .small-circle{
-      opacity: 0.5;
-    }
-    .medium-circle{
-      opacity: 0.6;
-    }
-    .big-circle {
-      opacity: 0.5;
-    }
-    .intro-text2{
-        font-size: 2rem;
-    }
+  .small-circle{
+    opacity: 0.5;
   }
+  .medium-circle{
+    opacity: 0.6;
+  }
+  .big-circle {
+    opacity: 0.5;
+  }
+  .intro-text2{
+    font-size: 2rem;
+  }
+}

@@ -95,6 +95,7 @@ export const projects = [
         ],
         "technologies": "MongoDB, Exprress, React.js, Node.js, Passport.js for Open Authorization using JSON Web Tokens, Google Maps API, and Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
+        "live": "https://react-leaflet-app.vercel.app/",
         "details": [ 
             {
                 "img": "./images/SkateSpot1.jpg", 

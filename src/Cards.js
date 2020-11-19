@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Carousel, Button, Modal, Row, Col, Image } from 'react-bootstrap';
+import { Card, Carousel, Button, Modal, Col, Image } from 'react-bootstrap';
 import { projects } from './projects'
 import './App.css';
 
