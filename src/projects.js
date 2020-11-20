@@ -98,16 +98,16 @@ export const projects = [
         "live": "https://react-leaflet-app.vercel.app/",
         "details": [ 
             {
-                "img": "./images/SkateSpot2.png", 
+                "img": "./images/SkateSpot1.jpg", 
             }, 
             {
-                "img": "./images/SkateSpot1.png", 
+                "img": "./images/SkateSpot2.jpg", 
             }, 
             {
-                "img": "./images/SkateSpot3.png", 
+                "img": "./images/SkateSpot3.jpg", 
             }, 
             {
-                "img": "./images/SkateSpot4.png", 
+                "img": "./images/SkateSpot4.jpg", 
             }
         ]
     },
