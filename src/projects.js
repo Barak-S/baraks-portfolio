@@ -60,27 +60,28 @@ export const projects = [
             {
                 "intro": "Full Stack web application created for calculating commercial and residential property mortgages.",
                 "use": "Using react-router-dom, the calculator tab in the the nav bar takes the user to the real estate mortgage calculators. From there you can select from the dropdown to use either the “Multi-Family Max Refi” calculator for calculating multi family properties, or the “1-4 Family” property calculator.",
-                "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details.    PLEASE NOTE: I use a free heroku account, it may take some time for the data to load."
+                "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
             }
         ],
         "technologies": "React.js, Express.js, Google Maps API for address auto-complete and map integration, MongoDB",
         "code": "https://github.com/Barak-S/SNCO-Calculator",
         "live": "https://snco-calculator.vercel.app/",
+        "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
         "details": [ 
+            {
+                "img": "./images/Calculator5.jpg", 
+            }, 
             {
                 "img": "./images/Calculator1.jpg", 
             }, 
-            {
-                "img": "./images/Calculator2.jpg", 
-            }, 
             { 
-                "img": "./images/Calculator3.jpg",
+                "img": "./images/Calculator2.jpg",
+            },
+            {
+                "img": "./images/Calculator3.jpg"
             },
             {
                 "img": "./images/Calculator4.jpg"
-            },
-            {
-                "img": "./images/Calculator5.jpg"
             }
         ]
     },
@@ -90,21 +91,22 @@ export const projects = [
             {
                 "intro": "A web app created for the skateboarding community where users can upload new skate spots/ skate parks, and see where all the nearby places to skate are.",
                 "use": "Using the Google Maps API for address auto-complete, users can upload a skate spot or skate park, and list which features the park has.",
-                "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered using the dropdown.     PLEASE NOTE: I use a free heroku account, it may take some time for the data to load."
+                "show": "Based on the users current location, and the latitude and longitude for each skate park, the distance in miles from the user is calculated and can be filtered using the dropdown."
             }
         ],
         "technologies": "MongoDB, Exprress, React.js, Node.js, Passport.js for Open Authorization using JSON Web Tokens, Google Maps API, and Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
         "live": "https://react-leaflet-app.vercel.app/",
+        "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
         "details": [ 
+            {
+                "img": "./images/SkateSpot3.jpg", 
+            }, 
             {
                 "img": "./images/SkateSpot1.jpg", 
             }, 
             {
                 "img": "./images/SkateSpot2.jpg", 
-            }, 
-            {
-                "img": "./images/SkateSpot3.jpg", 
             }, 
             {
                 "img": "./images/SkateSpot4.jpg", 

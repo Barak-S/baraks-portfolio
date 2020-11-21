@@ -79,6 +79,7 @@ export default class Home extends React.Component{
                             <Card.Text><strong style={{color: '#0377B5', fontWeight: "600"}}>Technologies: </strong>{this.state.project.technologies}</Card.Text>
                             <Card.Text>{this.state.project.description[0].use}</Card.Text>
                             { this.state.project.description[0].show && <Card.Text>{this.state.project.description[0].show}</Card.Text>}
+                            { this.state.project.note && <Card.Text style={{fontWeight: "600"}}>{this.state.project.note}</Card.Text>}
                             <hr/>
                             <div style={{textAlign: "center"}}>
                             {this.state.project.live && 
