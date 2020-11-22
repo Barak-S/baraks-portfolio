@@ -96,7 +96,7 @@ export const projects = [
         ],
         "technologies": "MongoDB, Exprress, React.js, Node.js, Passport.js for Open Authorization using JSON Web Tokens, Google Maps API, and Redux for state management.",
         "code": "https://github.com/Barak-S/React-Leaflet-App",
-        "live": "https://react-leaflet-app.vercel.app/",
+        "live": "https://condescending-noether-6d53b8.netlify.app/",
         "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
         "details": [ 
             {
