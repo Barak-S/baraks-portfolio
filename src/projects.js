@@ -52,6 +52,9 @@ export const projects = [
             { 
                 "img": "./images/TechLounge3.jpg",
             },
+            { 
+                "img": "./images/TechLounge4.jpg",
+            },
         ]
     }, 
     {
