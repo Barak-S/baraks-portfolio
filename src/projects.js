@@ -67,8 +67,8 @@ export const projects = [
             }
         ],
         "technologies": "React.js, Express.js, Google Maps API for address auto-complete and map integration, MongoDB",
-        "code": "https://github.com/Barak-S/SNCO-Calculator",
-        "live": "https://snco-calculator.vercel.app/",
+        "code": "https://github.com/Barak-S/Mortgage-Loan-Calculator",
+        "live": "https://mortgage-loan-calculator.vercel.app/",
         "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
         "details": [ 
             {
