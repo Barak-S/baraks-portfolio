@@ -67,10 +67,10 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div id="blog" style={{marginBottom: "2%"}}>
+            <div id="blog">
                 <Col className="profileCol" xs={12} sm={12} md={9} lg={9} style={{color: "#191919"}}>
                 <hr/>    
-                    <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>
+                    <Card onClick={()=> window.open( `${this.state.articleLink}`, "_blank")} style={{marginBottom: '2%'}}>
                         <Card.Body className="blogHighlight" style={{ textAlign: "center"}}>
                             <Row style={{ textAlign: "left", marginBottom: 5}}>
                                 <Col xs={3} sm={3} md={2} lg={2} >
@@ -84,7 +84,7 @@ export default class Blog extends Component {
                             </Row>
                             <p id='blogIntro' style={{color: "#191919", textAlign: "left"}}>{this.previewBlogContent(this.state.latestBlog)}</p>
                         </Card.Body>
-                    </Card>   
+                    </Card>  
                 </Col>
             </div>
         )
