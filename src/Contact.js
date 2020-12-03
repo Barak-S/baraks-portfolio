@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Button, Image, Card } from 'react-bootstrap';
+import { Col, Image, Card } from 'react-bootstrap';
 import './App.css';
 
 export default function Contact(){
@@ -18,7 +18,7 @@ export default function Contact(){
                 <div style={{textAlign: "center"}}>
                     <p style={{fontSize: 20, color: "#0377B5"}}>Technical Skills</p>
                     <p>JavaScript, React.js, React Native, Redux, Node.js, Express.js, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
-                    <Button className="resume-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</Button>
+                    <button className="resume-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</button>
                 </div>
                 <hr/>
                 <h4 style={{fontWeight: "600", color: "#0377B5", textAlign: "center", padding:0, margin: 0}}>Projects</h4>
