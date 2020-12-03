@@ -261,7 +261,7 @@ p#blogIntro::first-letter{
   min-width: 250px;
   padding: 1.25rem;
   border-radius: 16px;
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(10px);
   /* background-color: #F4F5F5; */
   box-shadow: -0.125rem 0 1.25rem #000;
   transition: .3s;
