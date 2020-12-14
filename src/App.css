@@ -258,7 +258,7 @@ p#blogIntro::first-letter{
   flex-direction: column;
   height: 400px;
   width: 400px;
-  min-width: 250px;
+  min-width: 256px;
   padding: 1.25rem;
   border-radius: 16px;
   backdrop-filter: blur(10px);
