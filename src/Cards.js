@@ -83,10 +83,10 @@ export default class Home extends React.Component{
                             <hr/>
                             <div style={{textAlign: "center"}}>
                             {this.state.project.live && 
-                                <Button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</Button>
+                                <button className="resume-button" onClick={()=> window.open(`${this.state.project.live}`, "_blank")}>Live</button>
                             }
                             { this.state.project.code &&  
-                                <Button className="view-code" style={{backgroundColor: "#000000", fontWeight: "600", border: "none", marginLeft: 8}} onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></Button>
+                                <button className="view-code" onClick={()=> window.open(`${this.state.project.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>
                             }
                             </div> 
                                 

@@ -21,11 +21,33 @@ body{
   letter-spacing: .35px; 
 }
 
-.profilePicture{
-  margin: 0 auto;
+.name-header{
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: #0377B5;
+  font-size: 32px;
+  font-weight: 600;
+}
+.title-header{
+  padding-bottom: 1rem;
+  color: #191919;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.profileCol{
+.skills-banner{
+  font-size: 24px;
+  color: #0377B5; 
+}
+
+.about-banner{
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 16;
+  color: #191919;
+}
+
+.align-auto{
   margin: 0 auto;
 }
 
@@ -202,7 +224,6 @@ p{
 .resume-button{
   background-color: #0377B5;
   font-weight: 600;
-  font-size: 20;
   border-radius: 6px;
   border: none;
   outline: none;
@@ -210,12 +231,19 @@ p{
   transition: 0.3s ease-in-out;
   color: white;
   padding: 0.25rem 0.75rem;
+  margin: 0.5rem 1rem;
 }
 
 .resume-button:hover{
   background-color: #191919;
   padding-right: 22px;
   padding-left: 22px;
+}
+
+.projects-banner{
+  font-weight: 600; 
+  color: #0377B5; 
+  text-align: center;
 }
 
 
@@ -236,8 +264,22 @@ p#blogIntro::first-letter{
   background-color: #191919;
 }
 
+.view-code{
+  background-color: #000000; 
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem 0rem;
+
+}
+
 .view-code:hover{
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .card1-list{

@@ -68,7 +68,7 @@ export default class Blog extends Component {
 
         return (
             
-            <Col className="profileCol" xs={12} sm={12} md={9} lg={9}>
+            <Col className="align-auto" xs={12} sm={12} md={9} lg={9}>
                 <hr/>    
                 <div className="blog-highlight" onClick={()=> window.open( `${this.state.articleLink}`, "_blank")}>   
                     <Row style={{ textAlign: "left", marginBottom: 5}}>
