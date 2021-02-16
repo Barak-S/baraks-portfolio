@@ -7,18 +7,14 @@ import Footer from './Footer';
 import Blog from './Blog';
 import Cards from './Cards'
 import Video from './images/video.mp4'
-import { Player } from 'video-react';
  
 function App() {
 
   const videoRef= useRef();
 
   useEffect(()=>{
-
     const player = videoRef.current.children[0]
-
     videoRef.current.play()
-    videoRef.current.playbackRate = 0.75;
     player.setAttribute("muted", "")
     player.autoplay = true;
     player.controls = false;
