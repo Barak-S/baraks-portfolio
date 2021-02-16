@@ -349,15 +349,22 @@ svg.wave1{
 }
 
 #background-video{
-  top: 0;
+  /* top: 0;
+  left: 0;
   padding: none;
-  position: fixed; /* optional depending on what you want to do in your app */
+  position: fixed; 
   min-width: 100%; 
   min-height: 100%; 
   width: auto; 
   height: auto;
   z-index: -1000; 
-  overflow: hidden;
+  overflow: hidden; */
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 
