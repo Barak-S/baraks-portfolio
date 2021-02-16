@@ -5,8 +5,6 @@ import Contact from './Contact';
 import SocialHandles from './SocialHandles';
 import Footer from './Footer';
 import Blog from './Blog';
-import Beclipse from './images/big-eclipse.svg'
-import Meclipse from './images/mid-eclipse.svg'
 import Cards from './Cards'
 import Video from './images/video.mp4'
 
@@ -21,7 +19,7 @@ function App() {
 
   return (
       <div className="App">
-        <video ref={videoRef} id="background-video" autoPlay loop muted onCanPlay={() => setPlayBack()}>
+        <video id="background-video" webkit-playsinline playsinline autoplay="autoplay" muted defaultMuted loop >
           <source src={Video} type="video/mp4" />
         </video>
         <SocialHandles/>
