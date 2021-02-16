@@ -19,7 +19,7 @@ function App() {
 
   return (
       <div className="App">
-        <video id="background-video" webkit-playsinline playsinline autoplay="autoplay" muted defaultMuted loop >
+        <video ref={videoRef} id="background-video" autoPlay={true} loop muted={true} >
           <source src={Video} type="video/mp4" />
         </video>
         <SocialHandles/>

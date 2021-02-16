@@ -349,7 +349,6 @@ svg.wave1{
 }
 
 #background-video{
-  float: left;
   top: 0;
   padding: none;
   position: fixed; /* optional depending on what you want to do in your app */
