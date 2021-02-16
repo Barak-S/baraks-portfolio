@@ -5,7 +5,7 @@ import './App.css';
 export default function Contact(){
 
     return(
-        <div>
+        <div style={{marginTop: 100}}>
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                 <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
                 <h3 className="name-header">Barak Saidoff</h3>
@@ -18,7 +18,7 @@ export default function Contact(){
                 <div style={{textAlign: "center"}}>
                     <p className="skills-banner">Technical Skills</p>
                     <p>JavaScript, React.js, React Native, Redux, Node.js, Express.js, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
-                    <button className="resume-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</button>
+                    <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}>Download Resume</button>
                 </div>
                 <hr/>
                 <h4 className="projects-banner">Projects</h4>

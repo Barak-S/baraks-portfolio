@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 
 export default function SocialHandles(){
 
+    const [show, handleShow] = useState(false)
+    const [sidebar, setSidebar] = useState(false);
+
+    const showSidebar = () => setSidebar(!sidebar);
+
+    useEffect(()=>{
+        window.addEventListener('scroll', ()=>{
+            if (window.scrollY > 1){
+                handleShow(true)
+            } else {
+                handleShow(false)
+            }
+        })
+        return ()=>{
+            window.removeEventListener('scroll')
+        }
+    }, [])
+
     return (
-        <div style={{paddingBottom:100}}>
+        <div className={`nav ${show && "nav-black"}`}>
             <ul id="horizontal-list">
                 <li>
                     <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" alt="Barak Saidoff LinkedIn" className="buttonIcon" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")} alt="Barak Saidoff LinkedIn"></img>
