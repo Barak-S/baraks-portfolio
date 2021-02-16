@@ -11,6 +11,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  color: #fff;
 }
 
 body{
@@ -19,6 +20,7 @@ body{
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   letter-spacing: .35px; 
+  color: #fff;
 }
 
 .name-header{
@@ -30,21 +32,21 @@ body{
 }
 .title-header{
   padding-bottom: 1rem;
-  color: #191919;
+  color: #fff;
   font-size: 24px;
   font-weight: 600;
 }
 
 .skills-banner{
   font-size: 24px;
-  color: #0377B5; 
+  color: #fff; 
 }
 
 .about-banner{
   margin: 0 auto;
   font-weight: 600;
   font-size: 16;
-  color: #191919;
+  color: #fff;
 }
 
 .align-auto{
@@ -64,6 +66,7 @@ body{
   transition: 0.3s ease-in-out;
   border-radius: 8px;
   padding: 20px;
+  border: 1px solid white;
 }
 
 .blog-highlight:hover{
@@ -121,25 +124,25 @@ img.buttonIcon:hover{
 span.carousel-control-next-icon:hover{
   width: 23px;
   height: 30px;
-  background-color: #191919;
+  background-color: #fff;
   border-radius:8px;
   transition: 0.2s ;
 }
 span.carousel-control-prev-icon:hover{
   width: 23px;
   height: 30px;
-  background-color: #191919;
+  background-color: #fff;
   border-radius:8px;
   transition: 0.2s;
 }
 span.carousel-control-next-icon{
   transition:  0.2s ease-in-out;
-  background-color: #191919;
+  background-color: #fff;
   border-radius:8px;
 }
 span.carousel-control-prev-icon{
   transition:  0.2s ease-in-out;
-  background-color: #191919;
+  background-color: #fff;
   border-radius:8px;
 }
 
@@ -218,7 +221,7 @@ div.active.carousel-item{
 }
 
 p{
-  color: #191919;
+  color: #fff;
 }
 
 .resume-button{
@@ -242,10 +245,9 @@ p{
 
 .projects-banner{
   font-weight: 600; 
-  color: #0377B5; 
+  color: #fff; 
   text-align: center;
 }
-
 
 p#blogIntro::first-letter{
   font-weight: 500;
@@ -307,6 +309,7 @@ p#blogIntro::first-letter{
   /* background-color: #F4F5F5; */
   box-shadow: -0.125rem 0 1.25rem #000;
   transition: .3s;
+  border: 1px solid white;
 }
 
 .card1:hover{
@@ -390,4 +393,18 @@ svg.wave2{
   100% {
     transform: scale(1,1);
   }
+}
+
+#background-video{
+  float: left;
+  top: 0;
+  padding: none;
+  position: fixed; /* optional depending on what you want to do in your app */
+  min-width: 100%; 
+  min-height: 100%; 
+  width: auto; 
+  height: auto;
+  z-index: -1000; 
+  overflow: hidden;
+  
 }

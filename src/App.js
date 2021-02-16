@@ -8,20 +8,24 @@ import Blog from './Blog';
 import Beclipse from './images/big-eclipse.svg'
 import Meclipse from './images/mid-eclipse.svg'
 import Cards from './Cards'
+import Video from './images/video.mp4'
 
 
 function App() {
 
   return (
       <div className="App">
-        <img class="big-circle" src={Beclipse} alt="" />
+        {/* <img class="big-circle" src={Beclipse} alt="" />
         <img class="medium-circle" src={Meclipse} alt="" />
-        <img class="small-circle" src={Meclipse} alt="" />
-          <SocialHandles/>
-          <Contact/>
-          <Cards/>
-          <Blog/>
-          <Footer/>
+        <img class="small-circle" src={Meclipse} alt="" /> */}
+        <video id="background-video" autoPlay loop muted>
+          <source src={Video} type="video/mp4" />
+        </video>
+        <SocialHandles/>
+        <Contact/>
+        <Cards/>
+        <Blog/>
+        <Footer/>
       </div>
   );
 }
