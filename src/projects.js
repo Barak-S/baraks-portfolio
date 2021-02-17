@@ -32,32 +32,6 @@ export const projects = [
         ]
     }, 
     {
-        "title": "Tech Lounge", 
-        "description": [
-            {
-                "intro": "A JavaScript landing page utilizing the GSAP animations library for creating a professional and interactive landing page.",
-                "use" : "Using React Hooks and GSAP, the user is able to dynamically re-render the background image while maintaining the CSS Keyframes animation flow. In addition to its responsive design, The Tech Lounge React app is an incredibly modern landing page that displays industry standard UX/UI design principles.",
-            }
-        ],
-        "technologies": "React.js, GSAP (GreenSock Animation Platform), React Bootstrap, React Hooks.",
-        "code": "https://github.com/Barak-S/Tech-Lounge-v2",
-        "live": "https://tech-lounge-v2.vercel.app/",
-        "details": [ 
-            {
-                "img": "./images/TechLounge1.jpg", 
-            }, 
-            {
-                "img": "./images/TechLounge2.jpg", 
-            }, 
-            { 
-                "img": "./images/TechLounge3.jpg",
-            },
-            { 
-                "img": "./images/TechLounge4.jpg",
-            },
-        ]
-    }, 
-    {
         "title": "Mortage Loan Calculator", 
         "description": [
             {
@@ -137,6 +111,33 @@ export const projects = [
             },
         ]
     },
+    {
+        "title": "Tech Lounge", 
+        "description": [
+            {
+                "intro": "A JavaScript landing page utilizing the GSAP animations library for creating a professional and interactive landing page.",
+                "use" : "Using React Hooks and GSAP, the user is able to dynamically re-render the background image while maintaining the CSS Keyframes animation flow. In addition to its responsive design, The Tech Lounge React app is an incredibly modern landing page that displays industry standard UX/UI design principles.",
+            }
+        ],
+        "technologies": "React.js, GSAP (GreenSock Animation Platform), React Bootstrap, React Hooks.",
+        "code": "https://github.com/Barak-S/Tech-Lounge-v2",
+        "live": "https://tech-lounge-v2.vercel.app/",
+        "details": [ 
+            {
+                "img": "./images/TechLounge1.jpg", 
+            }, 
+            {
+                "img": "./images/TechLounge2.jpg", 
+            }, 
+            { 
+                "img": "./images/TechLounge3.jpg",
+            },
+            { 
+                "img": "./images/TechLounge4.jpg",
+            },
+        ]
+    }, 
+
     // {
     //     "img": "./images/CozyCabins1.png", 
     //     "title": "Cozy Cabins", 

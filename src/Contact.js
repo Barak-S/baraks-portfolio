@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Image, Card } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 import './App.css';
 
 export default function Contact(){

@@ -11,6 +11,7 @@
   padding: 0px;
   box-sizing: border-box;
   color: #fff;
+  background-color: #131313;
 }
 
 body{
@@ -122,12 +123,12 @@ span.carousel-control-prev-icon:hover{
 }
 span.carousel-control-next-icon{
   transition:  0.2s ease-in-out;
-  background-color: #191919;
+  background-color: #131313;
   border-radius:8px;
 }
 span.carousel-control-prev-icon{
   transition:  0.2s ease-in-out;
-  background-color: #191919;
+  background-color: #131313;
   border-radius:8px;
 }
 
@@ -187,13 +188,13 @@ p{
 
 .live-button:hover{
   background-color: white;
-  color: #191919;
+  color: #131313;
   padding-right: 22px;
   padding-left: 22px;
 }
 
 .resume-button:hover{
-  background-color: #191919;
+  background-color: #131313;
   padding-right: 22px;
   padding-left: 22px;
 }
@@ -210,7 +211,7 @@ p#blogIntro::first-letter{
 }
 
 div.modal-header, div.modal-body, div.modal-footer{
-  background-color: #191919;
+  background-color: #131313;
 }
 
 div.modal-footer{
@@ -243,7 +244,7 @@ hr{
 
 .close-modal:hover{
   background-color: #fff;
-  color: #191919;
+  color: #131313;
 }
 
 .view-code{
@@ -349,16 +350,6 @@ svg.wave1{
 }
 
 #background-video{
-  /* top: 0;
-  left: 0;
-  padding: none;
-  position: fixed; 
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto; 
-  height: auto;
-  z-index: -1000; 
-  overflow: hidden; */
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -367,13 +358,12 @@ svg.wave1{
   left: 0;
 }
 
-
 .nav{
   position: fixed;
   top: 0;
   width: 100%;
-  transition-timing-function: 0.3s ease-in-out !important;
-  -webkit-transition: 0.3s ease-in-out !important;
+  transition-timing-function: 0.4s ease-in-out !important;
+  -webkit-transition: 0.4s ease-in-out !important;
   z-index: 5;
   display: flex;
   justify-content: center;
