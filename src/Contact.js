@@ -5,7 +5,7 @@ import './App.css';
 export default function Contact(){
 
     return(
-        <div style={{marginTop: 100}}>
+        <div style={{paddingTop: 100}}>
             <Col className="HeadshotDrop" lg={12} md={12} sm={12} xs={12} style={{ textAlign: "center" }}>
                 <Image style={{ height: 200, width: 200 }} src={require("./images/headshot5.jpg")} roundedCircle alt="Barak Saidoff Profile Picture Headshot"/>
                 <h3 className="name-header">Barak Saidoff</h3>
