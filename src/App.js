@@ -20,6 +20,18 @@ function App() {
     player.controls = false;
     player.playsinline = true;
     player.muted = true;
+
+    // window.addEventListener('scroll', ()=>{
+    //   if (window.scrollY > 1){
+    //     videoRef.current.pause()
+    //   } else {
+    //     videoRef.current.play()
+    //   }
+    // })
+    // return ()=>{
+    //     window.removeEventListener('scroll')
+    // }
+
   })
 
   return (
@@ -114,6 +126,7 @@ function Footer() {
 }
 
 export default App;
+
 
 
 

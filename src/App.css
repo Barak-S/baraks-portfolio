@@ -304,6 +304,10 @@ hr{
   margin-left: -60px;
 }
 
+video {
+  filter: brightness(75%);
+}
+
 .modalImgContainer{
     display: inline-block; 
     overflow: hidden;
