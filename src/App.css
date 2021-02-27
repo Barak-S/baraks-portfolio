@@ -57,7 +57,7 @@ body{
 
 .blog-highlight{
   margin: 1.75rem 0rem;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   z-index: 1;
   box-shadow: -0.125rem 0 1rem #000;
   -webkit-transition: 0.3s ease-in-out;
@@ -290,6 +290,7 @@ hr{
   box-shadow: -0.125rem 0 1.25rem #000;
   transition: .3s;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 .card1:hover{
