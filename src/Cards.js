@@ -25,8 +25,9 @@ export default function Home(){
                             thumbnail 
                         /> 
                         <header className="card1-header">
+                            <hr/>
                             <h3 style={{color: "#0377B5", fontWeight: "600"}}>{img.title}</h3>
-                            <p>{ img.description[0].intro.length > 100 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
+                            <p style={{textOverflow: 'ellipsis'}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
                         </header>
                     </article>
                 )
@@ -37,7 +38,7 @@ export default function Home(){
 
     return(
         <div id="projects">
-            <Col xs={12} sm={12} md={9} lg={9} className="cards-column">
+            <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
                 <section className="card1-list">
                     {newCards()}
                 </section>
@@ -85,8 +86,9 @@ export default function Home(){
                         }
                         </div> 
                     </Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Footer closeButton className="project-footer">
                         <Button className="close-modal" onClick={toggleModal}>Close</Button>
+                        
                     </Modal.Footer>
                 </Modal>
                 </>

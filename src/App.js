@@ -20,18 +20,6 @@ function App() {
     player.controls = false;
     player.playsinline = true;
     player.muted = true;
-
-    // window.addEventListener('scroll', ()=>{
-    //   if (window.scrollY > 1){
-    //     videoRef.current.pause()
-    //   } else {
-    //     videoRef.current.play()
-    //   }
-    // })
-    // return ()=>{
-    //     window.removeEventListener('scroll')
-    // }
-
   })
 
   return (
@@ -94,9 +82,9 @@ function Blog(){
   }
 
   return(
-    <Col className="align-auto" xs={12} sm={12} md={9} lg={9}>
-      <hr/>    
+    <Col className="align-auto" xs={12} sm={12} md={10} lg={9}>
       <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
+      <hr/>    
           <Row style={{ textAlign: "left", marginBottom: 5}}>
               <Col xs={3} sm={3} md={2} lg={2} >
                   <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
@@ -117,10 +105,7 @@ function Blog(){
 function Footer() {
   return (
       <div className="div-footer">
-          <p className="footer-text">© 2021, Barak Web Development</p>
-          {/* <svg className="wave1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-              <path fill="#16307D" fill-opacity="0.4" d="M0,160L80,186.7C160,213,320,267,480,245.3C640,224,800,128,960,96C1120,64,1280,96,1360,112L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-          </svg> */}
+          <p className="footer-text">{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
       </div>
   )
 }
