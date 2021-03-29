@@ -57,6 +57,11 @@ body{
     padding: 0px 15px;
   }
 }
+@media (max-width: 1280px){
+  p.headline{
+    text-align: center;
+  }
+}
 
 .align-auto{
   margin: 0 auto;
