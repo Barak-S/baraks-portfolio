@@ -25,9 +25,11 @@ export default function Home(){
                             thumbnail 
                         /> 
                         <header className="card1-header">
-                            <hr/>
-                            <h3 style={{color: "#0377B5", fontWeight: "600"}}>{img.title}</h3>
-                            <p style={{textOverflow: 'ellipsis'}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
+                            <div>
+                                <hr/>
+                                <h3 style={{color: "#0377B5", fontWeight: "600"}}>{img.title}</h3>
+                                <p style={{textOverflow: 'ellipsis'}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
+                            </div>
                         </header>
                     </article>
                 )
