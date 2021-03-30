@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Col, Image } from 'react-bootstrap';
 import './App.css';
 import Video from './images/city-scene.mp4'
-import { gsap, TweenMax, TweenLite, Power3 }  from 'gsap';
-
+import { gsap, TweenMax, Power2 }  from 'gsap';
+import { useIntersection } from "react-use";
 import { CgMouse } from "react-icons/cg";
 
 
@@ -13,6 +13,29 @@ export default function Contact(){
     let profilePic = useRef(null);
     let textMessage = useRef(null);
     let textMessage2 = useRef(null);
+    let mouseRef = useRef(null);
+
+    const intersection = useIntersection(mouseRef, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1
+    })
+
+    const fadeIn = el =>{
+        gsap.to(el,1,{
+            opacity: 1,
+            ease: "Power4.out",
+        })
+    }
+    const fadeOut = el =>{
+        gsap.to(el,1,{
+            opacity: 0,
+            ease: "Power4.out",
+        })
+    }
+
+    intersection && intersection.intersectionRatio < 1
+    ? fadeOut('.fadeIn') : fadeIn(".fadeIn")
 
     useEffect(()=>{
         const player = videoRef.current.children[0]
@@ -25,9 +48,9 @@ export default function Contact(){
         player.muted = true;
 
 
-        TweenMax.to( profilePic, 1.2, { opacity: 1, y: '-75%', ease: Power3.easeInOut, delay: 0.2 })
-        TweenMax.to( textMessage, 0.8, { opacity: 1, y: '-125px', ease: Power3.easeInOut, delay: 1.2 })
-        TweenMax.to( textMessage2, 0.8, { opacity: 1, y: '-125px', ease: Power3.easeInOut, delay: 2.5 })
+        TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 0.3 })
+        TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 0.3 })
+        TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1.5 })
 
     })
   
@@ -39,7 +62,7 @@ export default function Contact(){
                 <source src={Video} type="video/mp4" />
             </video>
 
-            <Col lg={8} md={9} sm={12} xs={12} style={{ margin:' 0 auto'}}>
+            <Col xl={7} lg={8} md={9} sm={12} xs={12} style={{ margin:' 0 auto'}}>
                 <div >
                     <div className='chat-div'>
                         <div class="chat">
@@ -66,11 +89,12 @@ export default function Contact(){
                         <h3 className="name-header">Barak Saidoff</h3>
                         <h5 className="title-header">Full Stack Developer</h5>
                     </div>
-                    <div>
-                        <span><CgMouse/></span>
-                    </div>
+                </div>
+                <div style={{textAlign: 'center'}} ref={mouseRef} className="fadeIn">
+                    <span className="mouse-scroll"><CgMouse size={25}/></span>
                 </div>
             </Col>
+
         </div>   
     )
 }

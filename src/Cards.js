@@ -41,12 +41,15 @@ export default function Home(){
     return(
         <div id="projects">
             <Col xs={12} sm={12} md={10} lg={9} className="about-banner">
-                <p className="headline">I'm a creative Full Stack Developer with an entrepreneurial spirit, proficient at Web Application Development using Git and modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a lot of value in a short amount of time.</p>
-                <div className="tech-skills">
-                    <p className="skills-banner">Technical Skills</p>
-                    <p>JavaScript, React, React Native, Redux, TypeScript, Node, Express, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
-                    <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20}}>Download Resume</button>
+                <div className='headline-section'>
+                    <p className="headline">I'm a creative Full Stack Developer with an entrepreneurial spirit, proficient at Web Application Development using modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a ton of value in a short amount of time.</p>
+                    <div className="tech-skills">
+                        <p className="skills-banner">Technical Skills</p>
+                        <p>JavaScript, React, React Native, Redux, TypeScript, Node, Express, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
+                        <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20}}>Download Resume</button>
+                    </div>
                 </div>
+
             </Col>  
             <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
                 <section className="card1-list">
