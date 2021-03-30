@@ -4,6 +4,8 @@ import './App.css';
 import Video from './images/city-scene.mp4'
 import { gsap, TweenMax, TweenLite, Power3 }  from 'gsap';
 
+import { CgMouse } from "react-icons/cg";
+
 
 export default function Contact(){
 
@@ -63,6 +65,9 @@ export default function Contact(){
                     <div >
                         <h3 className="name-header">Barak Saidoff</h3>
                         <h5 className="title-header">Full Stack Developer</h5>
+                    </div>
+                    <div>
+                        <span><CgMouse/></span>
                     </div>
                 </div>
             </Col>

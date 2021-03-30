@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-      <div className="App" style={{backgroundColor: "#131313"}}>
+      <div className="App">
         <NavBar/>
         <Contact/>
         <Cards/>
@@ -68,6 +68,12 @@ function Blog(){
 
   return(
     <Col className="align-auto" xs={12} sm={12} md={10} lg={9}>
+      <div className="about-section">
+        <p style={{ maxWidth: 320}}><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#6DDBAF"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#6DDBAF"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
+        <p style={{ maxWidth: 320}}><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
+        <p style={{ maxWidth: 320}}><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in fast-paces development environments <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
+      </div>
+
       <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
       <hr/>    
           <Row style={{ textAlign: "left", marginBottom: 5}}>
