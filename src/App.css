@@ -126,7 +126,7 @@ body{
 
 .blog-highlight{
   max-width: 1500px;
-  margin: 0rem 0rem 2rem auto;
+  margin: 0rem auto 2rem auto;
   background-color: #131313;
   color: #fff;
   z-index: 1;

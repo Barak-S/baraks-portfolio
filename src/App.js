@@ -5,7 +5,6 @@ import './App.css';
 import NavBar from './NavBar'
 import Contact from './Contact'
 import Cards from './Cards'
-import Video from './images/city-scene.mp4'
  
 function App() {
 
