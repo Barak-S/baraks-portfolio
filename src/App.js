@@ -5,6 +5,10 @@ import './App.css';
 import NavBar from './NavBar'
 import Contact from './Contact'
 import Cards from './Cards'
+
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
+
  
 function App() {
 
@@ -69,7 +73,7 @@ function Blog(){
     <Col className="align-auto" xs={12} sm={12} md={10} lg={9}>
       <div className="about-section">
         <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#6DDBAF"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#6DDBAF"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
-        <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#6DDBAF"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and probelm solving</p>
+        <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#6DDBAF"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving</p>
         <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
       </div>
       <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
@@ -95,6 +99,17 @@ function Footer() {
   return (
       <div className="div-footer">
           <p className="footer-text">{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
+          <ul style={{ color: '#6DDBAF', display: 'flex', justifyContent: 'center', margin: 0, paddingBottom: 12, paddingLeft: 0}}>
+            <li className="social-button-footer">
+              <span><TiSocialLinkedinCircular size={23} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
+            </li>
+            <li className="social-button-footer">
+              <span><AiFillGithub size={23} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
+            </li>
+            <li className="social-button-footer">
+              <span><AiFillMediumCircle size={23} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
+            </li>
+          </ul>
       </div>
   )
 }
