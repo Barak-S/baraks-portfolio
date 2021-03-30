@@ -12,12 +12,36 @@ import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
  
 function App() {
 
+  const [data, setData] = useState({ message: '' });
+  const [messages, setMessages] = useState([]);
+  const { message } = data;
+
+  const handleTextFieldChanged = (e) => {
+      setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const submit = (e) => {
+      console.log(data)
+      let newMessage = messages.concat([data])
+      setMessages(newMessage)
+      setData({ message: '' })
+      console.log(messages)
+  };
+
+
+
 
   return (
       <div className="App">
         <NavBar/>
-        <Contact/>
-        <Cards/>
+        <Contact
+          messages={messages}
+        />
+        <Cards
+          value={message}
+          handleSubmit={submit}
+          handleChange={handleTextFieldChanged}
+        />
         <Blog/>
         <Footer/>
       </div>

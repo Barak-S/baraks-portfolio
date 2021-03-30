@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import { Col, Image } from 'react-bootstrap';
+import { Col, Image, Form } from 'react-bootstrap';
 import './App.css';
 import Video from './images/city-scene.mp4'
 import { gsap, TweenMax, Power2 }  from 'gsap';
 import { useIntersection } from "react-use";
 import { CgMouse } from "react-icons/cg";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 
-export default function Contact(){
+export default function Contact({ messages }){
 
     const videoRef = useRef();
     let profilePic = useRef(null);
@@ -61,8 +62,8 @@ export default function Contact(){
             <Col xl={7} lg={8} md={9} sm={12} xs={12} className='align-auto'>
                 <div >
                     <div className='chat-div'>
-                        <div class="chat">
-                            <div class="mine messages">
+                        <div className="chat">
+                            <div className="mine messages">
                                 <Image 
                                     ref={el => (profilePic = el)} 
                                     className="HeadshotDrop" 
@@ -71,14 +72,26 @@ export default function Contact(){
                                     roundedCircle 
                                     alt="Barak Saidoff Profile Picture"
                                     />
-                                <div class="message last" ref={el => (textMessage = el)} >
+                                <div className="message last" ref={el => (textMessage = el)} >
                                 Hey, I'm Barak!
                                 </div>
-                                <div class="message last" ref={el => (textMessage2 = el)} >
+                                <div className="message last" ref={el => (textMessage2 = el)} >
                                 Scroll down to view my portfolio!
                                 </div>
                             </div>
+
+                            <div className="yours messages">
+                                { messages.map((mssg)=>{
+                                    return(
+                                        <div className="message">
+                                        {mssg.message}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
                         </div>
+
 
                     </div>
                     <div >
@@ -86,9 +99,18 @@ export default function Contact(){
                         <h5 className="title-header">Full Stack Developer</h5>
                     </div>
                 </div>
-                <div style={{textAlign: 'center'}} ref={mouseRef} className="fadeIn">
+
+                {/* <div className="email-area">
+                    <Form.Label>Send me a message!</Form.Label>
+                    <Form.Group controlId="exampleForm.ControlTextarea1" style={{ display: "flex"}}>
+                        <Form.Control as="textarea" rows={3}/>
+                        <span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6"}}><FaArrowCircleUp size={25}/></span>
+                    </Form.Group>
+                </div> */}
+
+                {/* <div style={{textAlign: 'center'}} ref={mouseRef} className="fadeIn">
                     <span className="mouse-scroll"><CgMouse size={25}/></span>
-                </div>
+                </div> */}
             </Col>
 
         </div>   
