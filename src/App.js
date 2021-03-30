@@ -5,28 +5,13 @@ import './App.css';
 import NavBar from './NavBar'
 import Contact from './Contact'
 import Cards from './Cards'
-import Video from './images/video.mp4'
+import Video from './images/city-scene.mp4'
  
 function App() {
 
-  const videoRef= useRef();
-
-  useEffect(()=>{
-    const player = videoRef.current.children[0]
-    videoRef.current.play()
-    videoRef.current.playbackRate = 0.75;
-    player.setAttribute("muted", "")
-    player.autoplay = true;
-    player.controls = false;
-    player.playsinline = true;
-    player.muted = true;
-  })
 
   return (
       <div className="App" style={{backgroundColor: "#131313"}}>
-        <video ref={videoRef} id="background-video" autoPlay muted playsInline loop >
-          <source src={Video} type="video/mp4" />
-        </video>
         <NavBar/>
         <Contact/>
         <Cards/>
@@ -90,12 +75,12 @@ function Blog(){
                   <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
               </Col>
               <Col xs={9} sm={9} md={8} lg={8}>
-                  <h5 style={{color: "#fff", fontWeight: "600"}}>Latest Blog Post: </h5> 
-                  <h4 style={{color: "#fff"}}>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#0377B5"}}>{blogTitle}</h4>
+                  <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
+                  <h4>{getDateString(publishDate)}</h4>
+                  <h4 style={{fontWeight: 600, color: "#6DDBAF"}}>{blogTitle}</h4>
               </Col>
           </Row>                     
-          <p id='blogIntro' style={{color: "#fff", textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
+          <p id='blogIntro' style={{ textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
       </div>
     </Col>
   )
