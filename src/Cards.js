@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Carousel, Button, Modal, Col, Image } from 'react-bootstrap';
 import { projects } from './projects'
-import './App.css';
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function Home(){
 
@@ -64,8 +64,9 @@ export default function Home(){
                     backdrop="static"
                     keyboard={false}
                 >
-                    <Modal.Header closeButton >
+                    <Modal.Header>
                         <Modal.Title style={{color: '#6DDBAF', fontWeight: "600"}}>{selectedProject.title}</Modal.Title>
+                        <span><AiOutlineCloseCircle size={23} className="modal-close" onClick={toggleModal}/></span>
                     </Modal.Header>
                     <div className="modalImgContainer">
                         <Carousel interval={9500}>

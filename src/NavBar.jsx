@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { MdEmail } from "react-icons/md";
 
 export default function NavBar(){
 
@@ -30,6 +31,10 @@ export default function NavBar(){
                   <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" alt="Barak Saidoff Medium Blog" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}alt="Barak Saidoff Medium Blog"></img>
               </li>
           </ul>
+          {/* <div className="email-icon">
+            <span style={{ color: "#fff"}}><MdEmail size={25}/></span>
+            <div style={{backgroundColor: "#E95759", heght: 7, width: 7, borderRadius: '50%'}}></div>
+          </div> */}
       </div>
     )
   }

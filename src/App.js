@@ -99,7 +99,7 @@ function Footer() {
   return (
       <div className="div-footer">
           <p className="footer-text">{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
-          <ul style={{ color: '#6DDBAF', display: 'flex', justifyContent: 'center', margin: 0, paddingBottom: 12, paddingLeft: 0}}>
+          <ul className="social-footer">
             <li className="social-button-footer">
               <span><TiSocialLinkedinCircular size={23} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
             </li>

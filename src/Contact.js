@@ -47,22 +47,18 @@ export default function Contact(){
         player.playsinline = true;
         player.muted = true;
 
-
-        TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 0.3 })
-        TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 0.3 })
-        TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1.5 })
-
-    })
+        TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 1 })
+        TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1 })
+        TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 2.2 })
+    }, [])
   
 
     return(
         <div style={{ height: '100vh'}}>
-
             <video ref={videoRef} id="background-video" autoPlay muted playsInline loop >
                 <source src={Video} type="video/mp4" />
             </video>
-
-            <Col xl={7} lg={8} md={9} sm={12} xs={12} style={{ margin:' 0 auto'}}>
+            <Col xl={7} lg={8} md={9} sm={12} xs={12} className='align-auto'>
                 <div >
                     <div className='chat-div'>
                         <div class="chat">
@@ -76,7 +72,7 @@ export default function Contact(){
                                     alt="Barak Saidoff Profile Picture"
                                     />
                                 <div class="message last" ref={el => (textMessage = el)} >
-                                Hey I'm Barak!
+                                Hey, I'm Barak!
                                 </div>
                                 <div class="message last" ref={el => (textMessage2 = el)} >
                                 Scroll down to view my portfolio!

@@ -113,6 +113,9 @@ body{
     max-width: none;
     padding: 0px 0px;
   }
+  .social-footer{
+    padding-bottom: 24px !important; 
+  }
 }
 
 .align-auto{
@@ -221,6 +224,15 @@ div.active.carousel-item{
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
 
+.social-footer{
+  color: #6DDBAF; 
+  display: flex;
+  justify-content: center; 
+  margin: 0px;
+  padding-bottom: 12px; 
+  padding-left: 0px;
+}
+
 .social-button-footer{
   color: #6DDBAF;
   list-style: none;
@@ -271,6 +283,18 @@ div.modal-header, div.modal-body, div.modal-footer{
   border: none;
 }
 
+div.modal-header{
+  align-items: center;
+  color: #6DDBAF;
+}
+
+.modal-close{
+  cursor: pointer;
+}
+
+/* .email-icon{
+  position: absolute;
+} */
 
 div.modal-footer{
   border-top: 1px solid #6DDBAF;
@@ -490,8 +514,8 @@ ul#horizontal-list li {
   opacity: 0;
   margin-right: 105px;
 }
-
-/* .mine .message.last:before {
+/* 
+.mine .message.last:before {
   content: "";
   position: absolute;
   z-index: 0;
@@ -502,7 +526,7 @@ ul#horizontal-list li {
   background: linear-gradient(to bottom, #35c958 0%, #34c859 100%);
   background-attachment: fixed;
   border-bottom-left-radius: 15px;
-} */
+}
 
 .mine .message.last:after {
   content: "";
@@ -516,4 +540,4 @@ ul#horizontal-list li {
   background: linear-gradient(to bottom, #35c958 0%, #34c859 100%);
   border-bottom-left-radius: 10px;
   transform: translateY(4px) translateX(-10px);
-}
+} */
