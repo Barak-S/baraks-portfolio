@@ -132,7 +132,7 @@ function Footer() {
           <p className="footer-text">{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
           <ul className="social-footer">
             <li className="social-button-footer">
-              <span><TiSocialLinkedinCircular size={23} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
+              <span><TiSocialLinkedinCircular size={27} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
             </li>
             <li className="social-button-footer">
               <span><AiFillGithub size={23} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
