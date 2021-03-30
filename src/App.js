@@ -5,13 +5,12 @@ import './App.css';
 import NavBar from './NavBar'
 import Contact from './Contact'
 import Cards from './Cards'
-
+import emailjs from 'emailjs-com';
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
 
  
 function App() {
-
   const [data, setData] = useState({ message: '' });
   const [messages, setMessages] = useState([]);
   const { message } = data;
@@ -20,15 +19,23 @@ function App() {
       setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const submit = (e) => {
-      console.log(data)
-      let newMessage = messages.concat([data])
-      setMessages(newMessage)
-      setData({ message: '' })
-      console.log(messages)
+  const sendEmail = (e) => {
+    if (data.message.length){
+      var templateParams = {
+        subject: 'This email came from you BarakSaidoff.com',
+        message: data.message,
+      };
+      emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
+      .then((result) => {
+          console.log(result.text);
+          let newMessage = messages.concat([data])
+          setMessages(newMessage)
+          setData({ message: '' })
+      }, (error) => {
+          console.log(error.text);
+      });
+    }
   };
-
-
 
 
   return (
@@ -39,7 +46,7 @@ function App() {
         />
         <Cards
           value={message}
-          handleSubmit={submit}
+          handleSubmit={sendEmail}
           handleChange={handleTextFieldChanged}
         />
         <Blog/>

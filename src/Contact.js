@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { Col, Image, Form } from 'react-bootstrap';
+import { Col, Image } from 'react-bootstrap';
 import './App.css';
 import Video from './images/city-scene.mp4'
 import { gsap, TweenMax, Power2 }  from 'gsap';
 import { useIntersection } from "react-use";
-import { CgMouse } from "react-icons/cg";
-import { FaArrowCircleUp } from "react-icons/fa";
 
 
 export default function Contact({ messages }){
@@ -91,28 +89,13 @@ export default function Contact({ messages }){
                             </div>
 
                         </div>
-
-
                     </div>
                     <div >
                         <h3 className="name-header">Barak Saidoff</h3>
                         <h5 className="title-header">Full Stack Developer</h5>
                     </div>
                 </div>
-
-                {/* <div className="email-area">
-                    <Form.Label>Send me a message!</Form.Label>
-                    <Form.Group controlId="exampleForm.ControlTextarea1" style={{ display: "flex"}}>
-                        <Form.Control as="textarea" rows={3}/>
-                        <span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6"}}><FaArrowCircleUp size={25}/></span>
-                    </Form.Group>
-                </div> */}
-
-                {/* <div style={{textAlign: 'center'}} ref={mouseRef} className="fadeIn">
-                    <span className="mouse-scroll"><CgMouse size={25}/></span>
-                </div> */}
             </Col>
-
         </div>   
     )
 }

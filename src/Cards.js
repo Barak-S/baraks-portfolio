@@ -6,26 +6,8 @@ import { FaArrowCircleUp } from "react-icons/fa";
 
 
 export default function Home({ value, handleChange, handleSubmit}){
-
     const [clicked, setClicked] = useState(false)
     const [selectedProject, setSelectedProject] = useState({})
-
-    // const [data, setData] = useState({ message: '' });
-    // const [messages, setMessages] = useState([]);
-    // const { message } = data;
-
-    // const handleTextFieldChanged = (e) => {
-    //     setData({ ...data, [e.target.name]: e.target.value });
-    // };
-
-    // const submit = (e) => {
-    //     console.log(data)
-    //     let newMessage = messages.concat([data])
-    //     setMessages(newMessage)
-    //     setData({ message: '' })
-    //     console.log(messages)
-    // };
-
 
     const toggleModal=(project)=>{
         setClicked(!clicked)
@@ -61,9 +43,9 @@ export default function Home({ value, handleChange, handleSubmit}){
         <div id="projects">
             <Col xs={12} sm={12} md={10} lg={9} className="about-banner">
                 <div className="email-area">
-                    {/* <Form.Label>Send me a message!</Form.Label> */}
                     <Form.Group controlId="exampleForm.ControlTextarea1" style={{ display: "flex"}}>
                         <Form.Control 
+                            placeholder="Send me a message!"
                             as="textarea" 
                             name="message"
                             rows={1} 
@@ -73,7 +55,6 @@ export default function Home({ value, handleChange, handleSubmit}){
                         <span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6"}}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
                     </Form.Group>
                 </div>
-
                 <div className='headline-section'>
                     <p className="headline">I'm a creative Full Stack Developer with an entrepreneurial spirit, proficient at Web Application Development using modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a ton of value in a short amount of time.</p>
                     <div className="tech-skills">
@@ -82,7 +63,6 @@ export default function Home({ value, handleChange, handleSubmit}){
                         <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20}}>Download Resume</button>
                     </div>
                 </div>
-
             </Col>  
             <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
                 <section className="card1-list">

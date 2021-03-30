@@ -61,11 +61,6 @@ body{
   margin: 0 auto;
 }
 
-@media (min-width:1280px){
-}
-@media (max-width: 1280px){
-}
-
 @media (min-width:768px){
   div .mine{
     padding-top: 25%;
@@ -115,6 +110,9 @@ body{
   }
   .social-footer{
     padding-bottom: 24px !important; 
+  }
+  div.form-group{
+    margin-left: 30px;
   }
 }
 
@@ -573,6 +571,6 @@ div.yours.messages{
 textarea.form-control {
   border-radius: 16px;
   background: transparent;
-  backdrop-filter: blur(6px);
+  background-color: #131313;
   min-height: 38px;
 }
