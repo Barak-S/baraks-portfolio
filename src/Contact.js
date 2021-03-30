@@ -4,10 +4,9 @@ import './App.css';
 import Video from './images/city-scene.mp4'
 import { gsap, TweenMax, Power2 }  from 'gsap';
 import { useIntersection } from "react-use";
-import { CgMouse } from "react-icons/cg";
 
 
-export default function Contact(){
+export default function Contact({ messages }){
 
     const videoRef = useRef();
     let profilePic = useRef(null);
@@ -61,8 +60,8 @@ export default function Contact(){
             <Col xl={7} lg={8} md={9} sm={12} xs={12} className='align-auto'>
                 <div >
                     <div className='chat-div'>
-                        <div class="chat">
-                            <div class="mine messages">
+                        <div className="chat">
+                            <div className="mine messages">
                                 <Image 
                                     ref={el => (profilePic = el)} 
                                     className="HeadshotDrop" 
@@ -71,26 +70,32 @@ export default function Contact(){
                                     roundedCircle 
                                     alt="Barak Saidoff Profile Picture"
                                     />
-                                <div class="message last" ref={el => (textMessage = el)} >
+                                <div className="message last" ref={el => (textMessage = el)} >
                                 Hey, I'm Barak!
                                 </div>
-                                <div class="message last" ref={el => (textMessage2 = el)} >
+                                <div className="message last" ref={el => (textMessage2 = el)} >
                                 Scroll down to view my portfolio!
                                 </div>
                             </div>
-                        </div>
 
+                            <div className="yours messages">
+                                { messages.map((mssg)=>{
+                                    return(
+                                        <div className="message">
+                                        {mssg.message}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                        </div>
                     </div>
                     <div >
                         <h3 className="name-header">Barak Saidoff</h3>
                         <h5 className="title-header">Full Stack Developer</h5>
                     </div>
                 </div>
-                <div style={{textAlign: 'center'}} ref={mouseRef} className="fadeIn">
-                    <span className="mouse-scroll"><CgMouse size={25}/></span>
-                </div>
             </Col>
-
         </div>   
     )
 }
