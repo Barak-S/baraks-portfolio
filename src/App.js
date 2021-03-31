@@ -108,18 +108,17 @@ function Blog(){
         <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
       </div>
       <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
-      <hr/>    
-          <Row style={{ textAlign: "left", marginBottom: 5}}>
-              <Col xs={3} sm={3} md={2} lg={2} >
-                  <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
-              </Col>
-              <Col xs={9} sm={9} md={8} lg={8}>
-                  <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
-                  <h4>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#6DDBAF"}}>{blogTitle}</h4>
-              </Col>
-          </Row>                     
-          <p id='blogIntro' style={{ textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
+        <Row style={{ textAlign: "left", marginBottom: 5}}>
+            <Col xs={3} sm={3} md={2} lg={2} >
+                <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
+            </Col>
+            <Col xs={9} sm={9} md={8} lg={8}>
+                <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
+                <h4>{getDateString(publishDate)}</h4>
+                <h4 style={{fontWeight: 600, color: "#6DDBAF"}}>{blogTitle}</h4>
+            </Col>
+        </Row>                     
+        <p id='blogIntro' style={{ textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
       </div>
     </Col>
   )

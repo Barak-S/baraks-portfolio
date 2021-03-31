@@ -27,7 +27,6 @@ export default function Home({ value, handleChange, handleSubmit}){
                         /> 
                         <header className="card1-header">
                             <div>
-                                <hr/>
                                 <h3 style={{color: "#6DDBAF", fontWeight: "600"}}>{img.title}</h3>
                                 <p style={{textOverflow: 'ellipsis', fontWeight: 500}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
                             </div>
@@ -45,7 +44,7 @@ export default function Home({ value, handleChange, handleSubmit}){
                 <div className="email-area">
                     <Form.Group controlId="exampleForm.ControlTextarea1" style={{ display: "flex"}}>
                         <Form.Control 
-                            placeholder="Send me a message!"
+                            placeholder="Send your contact info"
                             as="textarea" 
                             name="message"
                             rows={1} 
