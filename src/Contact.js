@@ -2,55 +2,32 @@ import React, { useEffect, useRef } from 'react';
 import { Col, Image } from 'react-bootstrap';
 import './App.css';
 import Video from './images/city-scene.mp4'
-import { gsap, TweenMax, Power2 }  from 'gsap';
-import { useIntersection } from "react-use";
-
+import { TweenMax, Power2 }  from 'gsap';
 
 export default function Contact({ messages }){
 
-    const videoRef = useRef();
+    const videoRef = useRef(null);
     let profilePic = useRef(null);
     let textMessage = useRef(null);
     let textMessage2 = useRef(null);
-    let mouseRef = useRef(null);
-
-    const intersection = useIntersection(mouseRef, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 1
-    })
-
-    const fadeIn = el =>{
-        gsap.to(el,1,{
-            opacity: 1,
-            ease: "Power4.out",
-        })
-    }
-    const fadeOut = el =>{
-        gsap.to(el,1,{
-            opacity: 0,
-            ease: "Power4.out",
-        })
-    }
-
-    intersection && intersection.intersectionRatio < 1
-    ? fadeOut('.fadeIn') : fadeIn(".fadeIn")
 
     useEffect(()=>{
-        const player = videoRef.current.children[0]
-        videoRef.current.play()
-        videoRef.current.playbackRate = 0.75;
-        player.setAttribute("muted", "")
-        player.autoplay = true;
-        player.controls = false;
-        player.playsinline = true;
-        player.muted = true;
-
-        TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 1 })
-        TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1 })
-        TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 2.2 })
+        try{
+            const player = videoRef.current.children[0]
+            videoRef.current.play()
+            videoRef.current.playbackRate = 0.75;
+            player.setAttribute("muted", "")
+            player.autoplay = true;
+            player.controls = false;
+            player.playsinline = true;
+            player.muted = true;
+        } finally {
+            TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 1 })
+            TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1 })
+            TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 2.2 })
+        }
     }, [])
-  
+
 
     return(
         <div style={{ height: '100vh'}}>
