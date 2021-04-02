@@ -12,6 +12,7 @@ import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
  
 function App() {
   const [data, setData] = useState({ message: '' });
+  const [reply, setReply] = useState({ message: '' })
   const [messages, setMessages] = useState([]);
   const { message } = data;
 
@@ -27,10 +28,13 @@ function App() {
       };
       emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
       .then((result) => {
-          console.log(result.text);
+          console.log(result);
           let newMessage = messages.concat([data])
           setMessages(newMessage)
           setData({ message: '' })
+          if (reply.essage !== ''){
+            setTimeout(()=>setReply({ message: 'You have sent a message to my email, I will get back to you soon.'}), 1500)
+          }
       }, (error) => {
           console.log(error.text);
       });
@@ -43,6 +47,7 @@ function App() {
         <NavBar/>
         <Contact
           messages={messages}
+          reply={reply}
         />
         <Cards
           value={message}

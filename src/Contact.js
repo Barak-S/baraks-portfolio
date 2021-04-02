@@ -4,7 +4,7 @@ import './App.css';
 import Video from './images/city-scene.mp4'
 import { TweenMax, Power2 }  from 'gsap';
 
-export default function Contact({ messages }){
+export default function Contact({ messages, reply }){
 
     const videoRef = useRef(null);
     let profilePic = useRef(null);
@@ -64,6 +64,14 @@ export default function Contact({ messages }){
                                     )
                                 })}
                             </div>
+
+                            { reply.message === 'You have sent a message to my email, I will get back to you soon.' && 
+                            <div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
+                                <div className="message last" style={{ opacity: 1}}>
+                                {reply.message}
+                                </div>
+                            </div> 
+                            }
 
                         </div>
                     </div>
