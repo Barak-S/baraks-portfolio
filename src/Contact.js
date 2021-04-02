@@ -67,7 +67,7 @@ export default function Contact({ messages, reply }){
 
                             { reply.message === 'You have sent a message to my email, I will get back to you soon.' && 
                             <div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
-                                <div className="message last" style={{ opacity: 1}}>
+                                <div className="reply message" style={{ opacity: 1}}>
                                 {reply.message}
                                 </div>
                             </div> 
