@@ -32,8 +32,8 @@ function App() {
           let newMessage = messages.concat([data])
           setMessages(newMessage)
           setData({ message: '' })
-          if (reply.message !== ''){
-            setTimeout(()=>setReply({ message: 'You have sent a message to my email, I will get back to you soon.'}), 1500)
+          if (reply.message === ''){
+            setTimeout(()=>setReply({ message: 'You have sent a message to my email, I will get back to you soon.'}), 1300)
           }
       }, (error) => {
           console.log(error.text);
