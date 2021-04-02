@@ -6,26 +6,26 @@ import { TweenMax, Power2 }  from 'gsap';
 
 export default function Contact({ messages, reply }){
 
-    const videoRef = useRef(null);
+    let videoRef = useRef(null);
     let profilePic = useRef(null);
     let textMessage = useRef(null);
     let textMessage2 = useRef(null);
 
     useEffect(()=>{
-        try{
-            const player = videoRef.current.children[0]
-            videoRef.current.play()
+        const player = videoRef.current.children[0]
+        videoRef.current.play()
+        .then(()=> {
             videoRef.current.playbackRate = 0.75;
             player.setAttribute("muted", "")
             player.autoplay = true;
             player.controls = false;
             player.playsinline = true;
             player.muted = true;
-        } finally {
             TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 1 })
             TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1 })
-            TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 2.2 })
-        }
+            TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 2.2 })    
+        })
+        .catch((err)=>console.log(err))
     }, [])
 
 

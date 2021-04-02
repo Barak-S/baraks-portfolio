@@ -23,7 +23,7 @@ function App() {
   const sendEmail = (e) => {
     if (data.message.length){
       var templateParams = {
-        subject: 'This email came from you BarakSaidoff.com',
+        subject: 'This email is from BarakSaidoff.com',
         message: data.message,
       };
       emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
@@ -32,7 +32,7 @@ function App() {
           let newMessage = messages.concat([data])
           setMessages(newMessage)
           setData({ message: '' })
-          if (reply.essage !== ''){
+          if (reply.message !== ''){
             setTimeout(()=>setReply({ message: 'You have sent a message to my email, I will get back to you soon.'}), 1500)
           }
       }, (error) => {
