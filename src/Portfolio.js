@@ -5,12 +5,12 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaArrowCircleUp } from "react-icons/fa";
 
 
-export default function Home({ value, handleChange, handleSubmit}){
-    const [clicked, setClicked] = useState(false)
+export default function Portfolio({ value, handleChange, handleSubmit}){
+    const [modal, setModal] = useState(false)
     const [selectedProject, setSelectedProject] = useState({})
 
-    const toggleModal=(project)=>{
-        setClicked(!clicked)
+    const toggleModal =(project={}) =>{
+        setModal(!modal)
         setSelectedProject(project)
     }
 
@@ -68,10 +68,10 @@ export default function Home({ value, handleChange, handleSubmit}){
                     {newCards()}
                 </section>
             </Col>
-            { clicked &&
+            { modal &&
                 <>
                 <Modal
-                    show={clicked}
+                    show={modal}
                     onHide={toggleModal}
                     backdrop="static"
                     keyboard={false}

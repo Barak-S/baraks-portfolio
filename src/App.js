@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './NavBar'
 import Contact from './Contact'
-import Cards from './Cards'
+import Portfolio from './Portfolio'
 import emailjs from 'emailjs-com';
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
@@ -49,7 +49,7 @@ function App() {
           messages={messages}
           reply={reply}
         />
-        <Cards
+        <Portfolio
           value={message}
           handleSubmit={sendEmail}
           handleChange={handleTextFieldChanged}

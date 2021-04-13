@@ -87,23 +87,25 @@ body{
   div .mine{
     padding-top: 60%;
   }
+
   .about-section{
     flex-direction: column;
     align-items: center;
   }
+
   .tech-skills{
     text-align: center;
   }
+  
   p.headline{
     text-align: center;
   } 
+
   .about-banner{
     margin-top: 24px;
     margin-bottom: 24px;
   }
-  .mouse-scroll{
-    display: none;
-  }
+
   .skill-tag{
     max-width: none;
     padding: 0px 0px;
@@ -155,12 +157,6 @@ img.rounded-circle{
 
 .HeadshotDrop{
   opacity: 0;
-}
-
-.mouse-scroll{
-  color: #fff;
-  position: absolute;
-  top: 95vh;
 }
 
 img.d-block.w-100.img-thumbnail{
@@ -356,7 +352,7 @@ hr{
   display: flex; 
   padding: 2rem 15px;
   margin: 0 auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .cards-column{
@@ -473,7 +469,7 @@ ul#horizontal-list li {
   flex-direction: column;
   padding: 10px;
   max-height: 85vh;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .messages {
@@ -562,6 +558,7 @@ div.yours.messages{
   background: #eee;
   border-bottom-right-radius: 15px;
 }
+
 .yours .message.last:after {
   content: "";
   position: absolute;
