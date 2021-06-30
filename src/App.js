@@ -33,7 +33,7 @@ function App() {
           setMessages(newMessage)
           setData({ message: '' })
           if (reply.message === ''){
-            setTimeout(()=>setReply({ message: 'You have sent a message to my email, I will get back to you soon.'}), 1300)
+            setTimeout(()=>setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon.'}), 1400)
           }
       }, (error) => {
           console.log(error.text);

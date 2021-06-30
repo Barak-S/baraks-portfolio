@@ -43,7 +43,7 @@ body{
   font-size: 16;
   color: #fff;
   margin-top: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 2px;
 }
 
 .about-section{
@@ -100,11 +100,6 @@ body{
   p.headline{
     text-align: center;
   } 
-
-  .about-banner{
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
 
   .skill-tag{
     max-width: none;
@@ -172,7 +167,7 @@ img.buttonIcon{
 
 img.buttonIcon:hover{
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 span.carousel-control-next-icon:hover{

@@ -1,41 +1,41 @@
 import React, { useState } from 'react'
 import { Card, Carousel, Button, Modal, Col, Image, Form } from 'react-bootstrap';
-import { projects } from './projects'
-import { AiOutlineCloseCircle } from "react-icons/ai";
+// import { projects } from './projects'
+// import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaArrowCircleUp } from "react-icons/fa";
 
 
 export default function Portfolio({ value, handleChange, handleSubmit}){
-    const [modal, setModal] = useState(false)
-    const [selectedProject, setSelectedProject] = useState({})
+    // const [modal, setModal] = useState(false)
+    // const [selectedProject, setSelectedProject] = useState({})
 
-    const toggleModal =(project={}) =>{
-        setModal(!modal)
-        setSelectedProject(project)
-    }
+    // const toggleModal =(project={}) =>{
+    //     setModal(!modal)
+    //     setSelectedProject(project)
+    // }
 
-    function newCards(){
-        return(
-            projects.map((img)=>{
-                return(
-                    <article className="card1" onClick={()=>toggleModal(img)} key={img.title}>
-                        <Image
-                            src={require(`${img.details[0].img}`)}
-                            alt={img.title}
-                            style={{marginBottom: 6}}
-                            thumbnail 
-                        /> 
-                        <header className="card1-header">
-                            <div>
-                                <h3 style={{color: "#6DDBAF", fontWeight: "600"}}>{img.title}</h3>
-                                <p style={{textOverflow: 'ellipsis', fontWeight: 500}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
-                            </div>
-                        </header>
-                    </article>
-                )
-            })
-        )
-    }
+    // function newCards(){
+    //     return(
+    //         projects.map((img)=>{
+    //             return(
+    //                 <article className="card1" onClick={()=>toggleModal(img)} key={img.title}>
+    //                     <Image
+    //                         src={require(`${img.details[0].img}`)}
+    //                         alt={img.title}
+    //                         style={{marginBottom: 6}}
+    //                         thumbnail 
+    //                     /> 
+    //                     <header className="card1-header">
+    //                         <div>
+    //                             <h3 style={{color: "#6DDBAF", fontWeight: "600"}}>{img.title}</h3>
+    //                             <p style={{textOverflow: 'ellipsis', fontWeight: 500}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
+    //                         </div>
+    //                     </header>
+    //                 </article>
+    //             )
+    //         })
+    //     )
+    // }
 
 
     return(
@@ -58,12 +58,12 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                     <p className="headline">I'm a creative Full Stack Developer with an entrepreneurial spirit, proficient at Web Application Development using modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a ton of value in a short amount of time.</p>
                     <div className="tech-skills">
                         <p className="skills-banner">Technical Skills</p>
-                        <p>JavaScript, React, React Native, Redux, TypeScript, Node, Express, Ruby, Rails, SQL, NoSQL, CSS3, SASS, HTML5, GSAP, Bootstrap, Responsive Design, and Git workflow based programming.</p>
+                        <p>JavaScript, React, Redux, TypeScript, Node, Express, Rails, Responsive Design, and Git workflow based programming.</p>
                         <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20}}>Download Resume</button>
                     </div>
                 </div>
             </Col>  
-            <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
+            {/* <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
                 <section className="card1-list">
                     {newCards()}
                 </section>
@@ -117,7 +117,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                     </Modal.Footer>
                 </Modal>
                 </>
-            }
+            } */}
         </div>
     )
     
