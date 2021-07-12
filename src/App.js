@@ -26,9 +26,9 @@ function App() {
         subject: 'This email is from BarakSaidoff.com',
         message: data.message,
       };
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
       .then((result) => {
-          console.log(result);
           let newMessage = messages.concat([data])
           setMessages(newMessage)
           setData({ message: '' })
@@ -41,7 +41,7 @@ function App() {
     }
   };
 
-
+  
   return (
       <div className="App">
         <NavBar/>

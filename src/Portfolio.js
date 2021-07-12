@@ -51,7 +51,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                             onChange={(e)=>handleChange(e)}
                             value={ value || ''}
                         />
-                        <span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6"}}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
+                        <span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6", cursor: 'pointer' }}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
                     </Form.Group>
                 </div>
                 <div className='headline-section'>
