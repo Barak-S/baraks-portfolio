@@ -31,37 +31,37 @@ export const projects = [
             },
         ]
     }, 
-    {
-        "title": "Mortage Loan Calculator", 
-        "description": [
-            {
-                "intro": "Full Stack web application created for calculating commercial and residential property mortgages.",
-                "use": "Using react-router-dom, the calculator tab in the the nav bar takes the user to the real estate mortgage calculators. From there you can select from the dropdown to use either the “Multi-Family Max Refi” calculator for calculating multi family properties, or the “1-4 Family” property calculator.",
-                "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
-            }
-        ],
-        "technologies": "React.js, Express.js, Google Maps API for address auto-complete and map integration, MongoDB",
-        "code": "https://github.com/Barak-S/Mortgage-Loan-Calculator",
-        "live": "https://mortgage-loan-calculator.vercel.app/",
-        "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
-        "details": [ 
-            {
-                "img": "./images/Calculator5.jpg", 
-            }, 
-            {
-                "img": "./images/Calculator1.jpg", 
-            }, 
-            { 
-                "img": "./images/Calculator2.jpg",
-            },
-            {
-                "img": "./images/Calculator3.jpg"
-            },
-            {
-                "img": "./images/Calculator4.jpg"
-            }
-        ]
-    },
+    // {
+    //     "title": "Mortage Loan Calculator", 
+    //     "description": [
+    //         {
+    //             "intro": "Full Stack web application created for calculating commercial and residential property mortgages.",
+    //             "use": "Using react-router-dom, the calculator tab in the the nav bar takes the user to the real estate mortgage calculators. From there you can select from the dropdown to use either the “Multi-Family Max Refi” calculator for calculating multi family properties, or the “1-4 Family” property calculator.",
+    //             "show": "Loans are saved using a node.js server and a MongoDB database. All saved loans can be viewed in the “All Loans” tab in the nav bar. From here, users can click on a loan to be taken to the loan show page where a Google Maps API is integrated for a dynamic map and street view of the loan address. Users can also edit and update loan details."
+    //         }
+    //     ],
+    //     "technologies": "React.js, Express.js, Google Maps API for address auto-complete and map integration, MongoDB",
+    //     "code": "https://github.com/Barak-S/Mortgage-Loan-Calculator",
+    //     "live": "https://mortgage-loan-calculator.vercel.app/",
+    //     "note": "PLEASE NOTE: I use a free heroku account, it may take some time for the data to load.",
+    //     "details": [ 
+    //         {
+    //             "img": "./images/Calculator5.jpg", 
+    //         }, 
+    //         {
+    //             "img": "./images/Calculator1.jpg", 
+    //         }, 
+    //         { 
+    //             "img": "./images/Calculator2.jpg",
+    //         },
+    //         {
+    //             "img": "./images/Calculator3.jpg"
+    //         },
+    //         {
+    //             "img": "./images/Calculator4.jpg"
+    //         }
+    //     ]
+    // },
     {
         "title": "Skate Park Finder", 
         "description": [
@@ -90,27 +90,27 @@ export const projects = [
             }
         ]
     },
-    {
-        "title": "Covid-19 Data UI", 
-        "description": [
-            {
-                "intro": "This project was created back in march of 2020, when the Coronavirus outbreak was extremely rapid worldwide. This app is intended for tracking daily updates for every country's covid-19 infection statistics.",
-                "use" : " The Covid-19 data that is displayed in the app is from an open-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
-                "show" : "By default, the data is displayed in descending order from most confirmed cases to least. Clicking or selecting on the table headers will dynamically re-render the results based on the title of the header. The search bar in the top left will also filter through countires based on the search query from the user."
-            }
-        ],
-        "technologies": "React.js, React Bootstrap, open-source Covid-19 statistic API",
-        "code": "https://github.com/Barak-S/Covid-19-UI",
-        "live": "https://covid-19-ui.now.sh/",
-        "details": [ 
-            {
-                "img": "./images/Covid1.jpg", 
-            }, 
-            { 
-                "img": "./images/Covid2.jpg",
-            },
-        ]
-    },
+    // {
+    //     "title": "Covid-19 Data UI", 
+    //     "description": [
+    //         {
+    //             "intro": "This project was created back in march of 2020, when the Coronavirus outbreak was extremely rapid worldwide. This app is intended for tracking daily updates for every country's covid-19 infection statistics.",
+    //             "use" : " The Covid-19 data that is displayed in the app is from an open-source Covid-19 API which can be found at 'https://covid2019-api.herokuapp.com/docs'.",
+    //             "show" : "By default, the data is displayed in descending order from most confirmed cases to least. Clicking or selecting on the table headers will dynamically re-render the results based on the title of the header. The search bar in the top left will also filter through countires based on the search query from the user."
+    //         }
+    //     ],
+    //     "technologies": "React.js, React Bootstrap, open-source Covid-19 statistic API",
+    //     "code": "https://github.com/Barak-S/Covid-19-UI",
+    //     "live": "https://covid-19-ui.now.sh/",
+    //     "details": [ 
+    //         {
+    //             "img": "./images/Covid1.jpg", 
+    //         }, 
+    //         { 
+    //             "img": "./images/Covid2.jpg",
+    //         },
+    //     ]
+    // },
     {
         "title": "Tech Lounge", 
         "description": [
