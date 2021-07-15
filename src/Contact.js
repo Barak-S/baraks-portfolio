@@ -58,7 +58,7 @@ export default function Contact({ messages, reply }){
                             <div className="yours messages">
                                 { messages.map((mssg)=>{
                                     return(
-                                        <div className="message">
+                                        <div key={mssg} className="message">
                                         {mssg.message}
                                         </div>
                                     )

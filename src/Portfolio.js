@@ -1,43 +1,16 @@
-import React, { useState } from 'react'
-import { Card, Carousel, Button, Modal, Col, Image, Form } from 'react-bootstrap';
-import { projects } from './projects'
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import React from 'react'
+import { Col, Form } from 'react-bootstrap';
 import { FaArrowCircleUp } from "react-icons/fa";
+import ContainedButton from './components/ContainedButton';
+import { Hidden, Button, makeStyles } from '@material-ui/core';
+import * as BsIcons from 'react-icons/bs';
+import { useHistory } from 'react-router-dom';
+
 
 
 export default function Portfolio({ value, handleChange, handleSubmit}){
-    const [modal, setModal] = useState(false)
-    const [selectedProject, setSelectedProject] = useState({})
-
-    const toggleModal =(project={}) =>{
-        setModal(!modal)
-        setSelectedProject(project)
-    }
-
-    function newCards(){
-        return(
-            projects.map((img)=>{
-                return(
-                    <article className="card1" onClick={()=>toggleModal(img)} key={img.title}>
-                        <Image
-                            src={require(`${img.details[0].img}`)}
-                            alt={img.title}
-                            style={{marginBottom: 6}}
-                            thumbnail 
-                        /> 
-                        <header className="card1-header">
-                            <div>
-                                <h3 style={{color: "#6DDBAF", fontWeight: "600"}}>{img.title}</h3>
-                                <p style={{textOverflow: 'ellipsis', fontWeight: 500}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
-                            </div>
-                        </header>
-                    </article>
-                )
-            })
-        )
-    }
-
-
+    const classes = useStyles()
+    const history = useHistory()
     return(
         <div id="projects">
             <Col xs={12} sm={12} md={10} lg={9} className="about-banner">
@@ -59,66 +32,54 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                     <div className="tech-skills">
                         <p className="skills-banner">Technical Skills</p>
                         <p>JavaScript, React, Redux, TypeScript, Node, Express, Rails, Responsive Design, and Git workflow based programming.</p>
-                        <button className="live-button" onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20}}>Download Resume</button>
+                        <Hidden smDown>
+                            <ContainedButton onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
+                                Download Resume
+                            </ContainedButton>
+                        </Hidden>
+                        <Hidden mdUp>
+                            <Button
+                                variant='contained'
+                                color='primary'
+                                type='submit'
+                                className={classes.commonBtn}
+                                endIcon={<BsIcons.BsArrowRight/>}
+                                onClick={()=> history.push('/projects')}
+                            >
+                                <span style={styles.backBtnLabel}>{'My Projects'}</span>
+                            </Button>
+                        </Hidden>
                     </div>
                 </div>
             </Col>  
-            <Col xs={12} sm={12} md={10} lg={9} className="cards-column">
-                <section className="card1-list">
-                    {newCards()}
-                </section>
-            </Col>
-            { modal &&
-                <>
-                <Modal
-                    show={modal}
-                    onHide={toggleModal}
-                    backdrop="static"
-                    keyboard={false}
-                >
-                    <Modal.Header>
-                        <Modal.Title style={{color: '#6DDBAF', fontWeight: "600"}}>{selectedProject.title}</Modal.Title>
-                        <span><AiOutlineCloseCircle size={23} className="modal-close" onClick={toggleModal}/></span>
-                    </Modal.Header>
-                    <div className="modalImgContainer">
-                        <Carousel interval={9500}>
-                            {selectedProject.details.map(img=>{
-                                return(
-                                    <Carousel.Item>
-                                        <Image
-                                        src={require(`${img.img}`)}
-                                        alt={selectedProject.title}
-                                        thumbnail 
-                                        className="modal-thumbnail"
-                                        />
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                    <Modal.Body>
-                        <Card.Text style={{fontWeight: "600", fontSize:17}}>{selectedProject.description[0].intro}</Card.Text>
-                        <hr/>
-                        <Card.Text><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{selectedProject.technologies}</Card.Text>
-                        <Card.Text>{selectedProject.description[0].use}</Card.Text>
-                        { selectedProject.description[0].show && <Card.Text>{selectedProject.description[0].show}</Card.Text>}
-                        { selectedProject.note && <Card.Text style={{fontWeight: "600"}}>{selectedProject.note}</Card.Text>}
-                        <div style={{textAlign: "center"}}>
-                        {selectedProject.live && 
-                            <button className="live-button" onClick={()=> window.open(`${selectedProject.live}`, "_blank")}>Live</button>
-                        }
-                        { selectedProject.code &&  
-                            <button className="view-code" onClick={()=> window.open(`${selectedProject.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>
-                        }
-                        </div> 
-                    </Modal.Body>
-                    <Modal.Footer closeButton className="project-footer">
-                        <Button className="close-modal" onClick={toggleModal}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-                </>
-            }
         </div>
     )
     
 }
+
+const styles = {
+    projectBtn:{
+        outline: 'none', 
+    },
+};
+
+const useStyles = makeStyles((theme) => ({
+    commonBtn:{
+        marginTop: 22,
+        ouline: 'none',
+        fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        maxWidth: 230, 
+        padding: '8px 0', 
+        width: '100%',
+        position: 'relative',
+        borderRadius: 24,
+        '&:hover':{ 
+            backgroundColor: '#131313',
+            color: "#fff",
+            '& [class*="-endIcon"]': {
+            opacity: 1,
+            color: '#fff',
+            },
+        },
+    },
+  }));
