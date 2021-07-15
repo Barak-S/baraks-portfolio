@@ -1,49 +1,18 @@
-import React, { useState } from 'react'
-import { Card, Carousel, Button, Modal, Col, Image, Form } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react'
+import { Carousel, Col, Image } from 'react-bootstrap';
 import { projects } from '../projects'
-import { AiOutlineCloseCircle } from "react-icons/ai";
-// import { FaArrowCircleUp } from "react-icons/fa";
-import { Typography, Tabs, Tab, Grid, useMediaQuery } from '@material-ui/core';
+import { Typography, Tabs, Tab, Hidden, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import theme from '../theme'
-import { Redirect, Route, Switch, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import TabPanel from '../components/TabPanel';
+import ContainedButton from '../components/ContainedButton';
+import { useHistory } from 'react-router-dom';
+import * as BsIcons from 'react-icons/bs';
+
 
 const ProjectContainer = () => {
-    const [modal, setModal] = useState(false)
-    const [selectedProject, setSelectedProject] = useState({})
-
-    const toggleModal =(project={}) =>{
-        setModal(!modal)
-        setSelectedProject(project)
-    }
-
-    // function newCards(){
-    //     return(
-    //         projects.map((img)=>{
-    //             return(
-    //                 <article className="card1" onClick={()=>toggleModal(img)} key={img.title}>
-    //                     <Image
-    //                         src={require(`../${img.details[0].img}`)}
-    //                         alt={img.title}
-    //                         style={{marginBottom: 6}}
-    //                         thumbnail 
-    //                     /> 
-    //                     <header className="card1-header">
-    //                         <div>
-    //                             <h3 style={{color: "#6DDBAF", fontWeight: "600"}}>{img.title}</h3>
-    //                             <p style={{textOverflow: 'ellipsis', fontWeight: 500}}>{ img.description[0].intro.length > 99 ? img.description[0].intro.slice(0, 99) + "..." : img.description[0].intro}</p>
-    //                         </div>
-    //                     </header>
-    //                 </article>
-    //             )
-    //         })
-    //     )
-    // }
-
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
     const classes = useStyles();
+    const history = useHistory();
     const [activeTab, setActiveTab] = useState(0)
 
     const projectTabs = [
@@ -61,20 +30,39 @@ const ProjectContainer = () => {
         },
         {
           index: 2,
-          label: 'Ideasicle X Marketing SASS Platform',
+          label: 'Ideasicle X',
           link: '/Ideasicle-X',
           project: projects[2]
         },
-      ]
+    ];
+
+    useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
+
+    useEffect(()=>{
+        console.log(activeTab)
+    },[activeTab])
 
     return (
         <div style={styles.container}>
-            <Col xs={12} sm={12} md={10} lg={10}>
-                {/* <section className="card1-list" style={styles.projectList}>
-                    {newCards()}
-                </section> */}
+            <Col xs={12} sm={12} md={10} lg={10} style={{ margin: '0 auto' }}>
+                <Hidden mdUp>
+                    <div style={{ paddingTop: 84 }}>
+                        <Button
+                            style={styles.homeBtn}
+                            variant='outlined'
+                            color='primary'
+                            type='submit'
+                            className={classes.commonBtn}
+                            endIcon={<BsIcons.BsArrowRight/>}
+                            onClick={()=>history.push('/')}
+                            >
+                            <span style={styles.backBtnLabel}>{'Back'}</span>
+                        </Button>
+
+                    </div>
+                </Hidden>
                 <Tabs
-                    className={classes.accountTabs}
+                    className={classes.projectTabs}
                     classes={{ root: classes.root }}
                     value={activeTab || 0}
                     indicatorColor="primary"
@@ -98,265 +86,167 @@ const ProjectContainer = () => {
                     }) }
                 </Tabs>
 
-                <Switch>
-                    {/* <Route
-                        exact path={'/project1'}
-                        render={() => ( <ProfileTab value={activeTab} index={0} /> )}
-                    />
-                    <Route
-                        exact path={'/project2'}
-                        render={() => ( <SecurityTab value={activeTab} index={1} /> )}
-                    />
-                    <Route
-                        exact path={'/project3'}
-                        render={() => ( <NotificationsTab value={activeTab} index={2} /> )}
-                    /> */}
-                    {projectTabs.map((project, index)=>{
-                        return(
-                            <Route
-                                path={`${project.link}`}
-                                render={() => ( 
-                                    <TabPanel value={index} index={index}>
-                                        <Typography style={{ color: 'red'}} >HELLO WORLS</Typography>
-
-                                    </TabPanel>
-                                )}
-                            />
-                        )
-                    })}
-                    <Redirect to={`/projects${projectTabs[0].link}`} />
-                </Switch>
-
-            </Col>
-            {/* { modal &&
-                <>
-                <Modal
-                    show={modal}
-                    onHide={toggleModal}
-                    backdrop="static"
-                    keyboard={false}
-                >
-                    <Modal.Header>
-                        <Modal.Title style={{color: '#6DDBAF', fontWeight: "600"}}>{selectedProject.title}</Modal.Title>
-                        <span><AiOutlineCloseCircle size={23} className="modal-close" onClick={toggleModal}/></span>
-                    </Modal.Header>
-                    <div className="modalImgContainer">
+                <TabPanel value={activeTab} index={0}>
+                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[0].title}</Typography>
+                    <div className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
                         <Carousel interval={9500}>
-                            {selectedProject.details.map(img=>{
+                            {projects[0].details.map(img=>{
                                 return(
-                                    <Carousel.Item>
+                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
                                         <Image
-                                        src={require(`../${img.img}`)}
-                                        alt={selectedProject.title}
-                                        thumbnail 
-                                        className="modal-thumbnail"
+                                            src={require(`../${img.img}`)}
+                                            alt={projects[0].title}
+                                            thumbnail 
+                                            className={classes.imgThumbnail}
+                                            style={{ objectFit: 'cover', margin: '0 auto' }}
                                         />
                                     </Carousel.Item>
                                 )
                             })}
                         </Carousel>
                     </div>
-                    <Modal.Body>
-                        <Card.Text style={{fontWeight: "600", fontSize:17}}>{selectedProject.description[0].intro}</Card.Text>
-                        <hr/>
-                        <Card.Text><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{selectedProject.technologies}</Card.Text>
-                        <Card.Text>{selectedProject.description[0].use}</Card.Text>
-                        { selectedProject.description[0].show && <Card.Text>{selectedProject.description[0].show}</Card.Text>}
-                        { selectedProject.note && <Card.Text style={{fontWeight: "600"}}>{selectedProject.note}</Card.Text>}
+                    <div style={{ paddingBottom: 36}}>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[0].description[0].intro}</Typography>
+                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[0].technologies}</Typography>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[0].description[0].use}</Typography>
+                        { projects[0].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].description[0].show}</Typography>}
+                        { projects[0].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].note}</Typography>}
                         <div style={{textAlign: "center"}}>
-                        {selectedProject.live && 
-                            <button className="live-button" onClick={()=> window.open(`${selectedProject.live}`, "_blank")}>Live</button>
-                        }
-                        { selectedProject.code &&  
-                            <button className="view-code" onClick={()=> window.open(`${selectedProject.code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>
-                        }
+                            {projects[0].live && <ContainedButton onClick={()=> window.open(`${projects[0].live}`, "_blank")}>Live</ContainedButton>}
+                            { projects[0].code &&  <button className="view-code" onClick={()=> window.open(`${projects[0].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
                         </div> 
-                    </Modal.Body>
-                    <Modal.Footer closeButton className="project-footer">
-                        <Button className="close-modal" onClick={toggleModal}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-                </>
-            } */}
+                    </div>
+                    <hr/>
+                </TabPanel>
+                <TabPanel value={activeTab} index={1}>
+                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[1].title}</Typography>
+                    <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
+                        <Carousel interval={9500}>
+                            {projects[1].details.map(img=>{
+                                return(
+                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
+                                        <Image
+                                            src={require(`../${img.img}`)}
+                                            alt={projects[1].title}
+                                            thumbnail 
+                                            className={classes.imgThumbnail}
+                                            style={{ objectFit: 'cover', margin: '0 auto' }}
+                                        />
+                                    </Carousel.Item>
+                                )
+                            })}
+                        </Carousel>
+                    </div>
+                    <div style={{ paddingBottom: 36}}>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[1].description[0].intro}</Typography>
+                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[1].technologies}</Typography>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[1].description[0].use}</Typography>
+                        { projects[1].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].description[0].show}</Typography>}
+                        { projects[1].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].note}</Typography>}
+                        <div style={{textAlign: "center"}}>
+                            {projects[1].live && <ContainedButton onClick={()=> window.open(`${projects[1].live}`, "_blank")}>Live</ContainedButton>}
+                            { projects[1].code &&  <button className="view-code" onClick={()=> window.open(`${projects[1].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
+                        </div> 
+                    </div>
+                    <hr/>
+                </TabPanel>
+                <TabPanel value={activeTab} index={2}>
+                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[2].title}</Typography>
+                    <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
+                        <Carousel interval={9500}>
+                            {projects[2].details.map(img=>{
+                                return(
+                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
+                                        <Image
+                                            src={require(`../${img.img}`)}
+                                            alt={projects[2].title}
+                                            thumbnail 
+                                            className={classes.imgThumbnail}
+                                            style={{ objectFit: 'cover', margin: '0 auto' }}
+                                        />
+                                    </Carousel.Item>
+                                )
+                            })}
+                        </Carousel>
+                    </div>
+                    <div style={{ paddingBottom: 36}}>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[2].description[0].intro}</Typography>
+                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[2].technologies}</Typography>
+                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[2].description[0].use}</Typography>
+                        { projects[2].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].description[0].show}</Typography>}
+                        { projects[2].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].note}</Typography>}
+                        <div style={{textAlign: "center", marginTop: 26}}>
+                            {projects[2].live && <ContainedButton onClick={()=> window.open(`${projects[2].live}`, "_blank")}>Live</ContainedButton>}
+                            { projects[2].code &&  <button className="view-code" onClick={()=> window.open(`${projects[2].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
+                        </div> 
+                    </div>
+                    <hr/>
+                </TabPanel>
+            </Col>
         </div>
     );
 };
-
-const useStyles = makeStyles((theme) => ({
-    container: {
-        minHeight: 'calc(100vh)',
-        backgroundColor: "#fff",
-        [theme.breakpoints.down('sm')]:{
-          minHeight: '100%',
-        },
-        '& .MuiTab-root': {
-          minWidth: 'fit-content',
-        },
-      },
-      banner:{
-        margin: '0 auto',
-      },
-      header:{
-        color: "#2B2D6D",
-        paddingTop: 68,
-        paddingBottom: 38,
-        fontWeight: 600,
-        fontSize: 40,
-        letterSpacing: 2.25,
-        [theme.breakpoints.down('sm')]:{
-          fontSize: 30,
-          paddingTop: 40,
-          paddingBottom: 30,
-          textAlign: 'center',
-        }
-      },
-      profileHeader:{
-        textAlign: 'center',
-        [theme.breakpoints.down('sm')]:{
-          display: 'flex',
-          justContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }
-      },
-      userName:{
-        fontSize: 24,
-        marginTop: 19,
-        marginBottom: 45,
-        color: '#2B2D6D',
-        fontWeight: 500,
-      },
-      accountTabs:{
-        // marginBottom: 51,
-        paddingTop: 150,
-      },
-      accordionSection:{
-        marginBottom: 39,
-        [theme.breakpoints.down('sm')]:{
-          padding: '0px 14px',
-        }
-      },
-      root: {
-        '& .MuiTabs-flexContainer': {
-            // maxWidth: 340, 
-            display: 'flex',
-            justifyContent: 'space-between',
-        },
-      },
-    formInput:{
-        width: 390,
-        height: 56,
-        borderBottom: "2px solid #309AD5",
-        backgroundColor: '#F5F5F5',
-        paddingTop: 10,
-        paddingLeft: 8,
-        [theme.breakpoints.down('sm')]:{
-            width: '100%',
-            marginTop: 10,
-        }
-    },
-    fisrtName:{
-        width: 390,
-        height: 56,
-        marginRight: 27,
-        borderBottom: "2px solid #309AD5",
-        backgroundColor: '#F5F5F5',
-        paddingTop: 10,
-        paddingLeft: 8,
-        [theme.breakpoints.down('sm')]:{
-            width: '100%',
-            marginRight: 0,
-        }
-    },
-    subHeader:{
-        fontFamily: 'Montserrat, sans-serif',
-        display: 'block',
-        color: '#000',
-        fontSize: 15,
-        [theme.breakpoints.down('sm')]:{
-            fontSize: 18,
-        }
-    },
-    sectionHeader:{
-        color: '#2193D2',
-        fontSize: 18,
-        fontWeight: 600,
-        [theme.breakpoints.down('sm')]:{
-            paddingTop: 22,
-        }
-    },
-    formSection:{
-        display: 'flex',
-        [theme.breakpoints.down('sm')]:{
-            flexDirection: 'column',
-        }
-    },
-    imgSelection:{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingBottom: 155,
-        [theme.breakpoints.down('sm')]:{
-            paddingBottom: 43,
-        }
-
-    },
-    uploadPicHeader:{
-        color: '#2193D2',
-        fontSize: 18,
-        fontWeight: 600,
-        paddingTop: 32,
-        [theme.breakpoints.down('xs')]:{
-            paddingTop: 30,
-        }
-    },
-    uploadBtn:{
-        border: '1px solid #2B2D6D',
-        padding: '8px 0', 
-        marginLeft: 17, 
-        marginRight: 25,
-        width: 245,
-        [theme.breakpoints.down('sm')]:{
-            marginBottom: 0,
-        },
-        [theme.breakpoints.down('xs')]:{
-            width: 166,
-        }
-    },
-    photoSave:{
-        display: 'flex',
-        alignItems: 'center',
-        [theme.breakpoints.down('xs')]:{
-            flexDirection: 'column',
-            transform: 'translateY(18px)',
-        }
-
-    },
-    saveBtn:{
-        [theme.breakpoints.down('xs')]:{
-            paddingTop: 14.5,
-        },
-    },
-    imageError:{
-        color: 'red', 
-        position: 'absolute', 
-        bottom: 149,
-        [theme.breakpoints.down('sm')]:{
-            bottom: 35,
-        },
-        [theme.breakpoints.down('xs')]:{
-            bottom: 18,
-        }
-    }
-}));
 
 const styles = {
     container:{
         minHeight: 'calc(100vh - 94px)'
     },
-    projectList:{
-        padding: 94,
+    homeBtn:{
+        outline: 'none', 
+        position: 'absolute', 
+        left: 17.5,
+        transform: 'rotate(180deg)',
+        height: 40,
+        maxWidth: 99,
+        borderRadius: 50,
+    },
+    backBtnLabel:{
+        transform: 'rotate(180deg)',
     }
 };
+
+const useStyles = makeStyles((theme) => ({
+      projectTabs:{
+        paddingTop: 150,
+        [theme.breakpoints.down('sm')]:{
+            paddingTop: 56,
+        },
+      },
+      root: {
+        '& .MuiTabs-flexContainer': {
+            display: 'flex',
+            justifyContent: 'space-between',
+            [theme.breakpoints.down('sm')]:{
+                flexDirection: 'column',
+            },
+        },
+        '& .MuiTab-root': {
+            minWidth: 'fit-content',
+        },
+        '& .MuiTab-root':{
+            padding: 0,
+            color: '#6CDAAF',
+            fontWeight: 400,
+            textDecoration: 'none',
+        },
+     },
+     carousel:{
+        maxHeight: 550,
+        [theme.breakpoints.down('sm')]:{
+            maxHeight: 265,
+        }
+     },
+     imgThumbnail:{
+        margin: 0,
+        padding: 0,
+        borderRadius: 0,
+        border: 'none',
+        height: '100%',
+        [theme.breakpoints.down('sm')]:{
+            height: 'auto'
+        }
+     }
+}));
+
 
 export default ProjectContainer;

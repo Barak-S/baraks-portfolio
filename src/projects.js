@@ -1,6 +1,8 @@
 export const projects = [
     { 
-        "title": "Real Estate Portal'", 
+        "label": 'Real Estate Portal',
+        "link": '/Real-Estate-Portal',
+        "title": "Real Estate Portal", 
         "subTitle": 'Find your next dream home.',
         "description": [
             {
@@ -22,12 +24,11 @@ export const projects = [
             { 
                 "img": "images/wat4.png",
             },
-            { 
-                "img": "images/wat5.png",
-            },
         ]
     }, 
     { 
+        "label": "What We Watchin'",
+        "link": '/What-We-Watchin',
         "title": "What We Watchin'", 
         "description": [
             {
@@ -60,7 +61,9 @@ export const projects = [
         ]
     }, 
     { 
-        "title": "Ideasicle X Marketing SASS Platform", 
+        "label": 'Ideasicle X Marketing SASS Platform',
+        "link": '/Ideasicle-X',
+        "title": "Ideasicle X", 
         "subTitle": 'Finally, a SaaS platform designed for virtual idea generation.',
         "description": [
             {

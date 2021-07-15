@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ContainedButton from './components/ContainedButton';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import { Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import * as BsIcons from 'react-icons/bs';
-
 
 const NavBar = () =>{
     const history = useHistory();
@@ -46,25 +45,27 @@ const NavBar = () =>{
             right: 17.5
         },
         backBtnLabel:{
-            transform: 'rotate(180deg)'
+            transform: 'rotate(180deg)',
         }
     };
   
     return (
         <div className={`nav ${show && "nav-black"}`}>
-            { activeButton && activeButton.includes('/projects') &&
-                <Button
-                    style={styles.homeBtn}
-                    variant='outlined'
-                    color='primary'
-                    type='submit'
-                    className={classes.commonBtn}
-                    endIcon={<BsIcons.BsArrowRight/>}
-                    onClick={()=>history.push('/')}
-                    >
-                    <span style={styles.backBtnLabel}>{'Back'}</span>
-                </Button>
-            }
+            <Hidden smDown>
+                { activeButton && activeButton.includes('/projects') &&
+                    <Button
+                        style={styles.homeBtn}
+                        variant='outlined'
+                        color='primary'
+                        type='submit'
+                        className={classes.commonBtn}
+                        endIcon={<BsIcons.BsArrowRight/>}
+                        onClick={()=>history.push('/')}
+                        >
+                        <span style={styles.backBtnLabel}>{'Back'}</span>
+                    </Button>
+                }
+            </Hidden>
             <ul id="horizontal-list">
                 <li>
                     <img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" alt="Barak Saidoff LinkedIn" className="buttonIcon" style={{height: 63, padding:10,}} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}></img>
@@ -76,11 +77,13 @@ const NavBar = () =>{
                     <img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" alt="Barak Saidoff Medium Blog" className="buttonIcon" style={{height: 63, padding:10}} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}></img>
                 </li>
             </ul>
-            { activeButton === '/' &&
-                <ContainedButton variant="contained" color="primary" style={styles.projectBtn} onClick={()=>history.push('projects')}>
-                My Projects
-                </ContainedButton>
-            }
+            <Hidden smDown>
+                { activeButton === '/' &&
+                    <ContainedButton variant="contained" color="primary" style={styles.projectBtn} onClick={()=>history.push('projects')}>
+                    {'My Projects'}
+                    </ContainedButton>
+                }
+            </Hidden>
         </div>
     )
   }

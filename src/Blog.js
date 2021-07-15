@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Image } from 'react-bootstrap';
+import ContainedButton from './components/ContainedButton';
+import { Hidden, Button, makeStyles } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
+import * as BsIcons from 'react-icons/bs';
+
 
 const Blog = () => {
-
+    const history = useHistory()
+    const classes = useStyles()
     const [latestBlog, setLatestBlog] = useState('')
     const [blogTitle, setBlogTitle] = useState('')
     const [publishDate, setPublishDate] = useState('')
@@ -53,6 +59,19 @@ const Blog = () => {
           <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#6DDBAF"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving</p>
           <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p>
         </div>
+        <Hidden mdUp>
+            <div className="projectBtnSection">
+                <Button
+                    variant='outlined'
+                    color='primary'
+                    type='submit'
+                    className={classes.commonBtn}
+                    onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}
+                >
+                    <span style={styles.backBtnLabel}>{'Download Resume'}</span>
+                </Button>
+            </div>
+        </Hidden>
         <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
           <Row style={{ textAlign: "left", marginBottom: 5}}>
               <Col xs={3} sm={3} md={2} lg={2} >
@@ -69,5 +88,32 @@ const Blog = () => {
       </Col>
     )
   }
+
+  const useStyles = makeStyles((theme) => ({
+    commonBtn:{
+        marginTop: -16,
+        ouline: 'none',
+        fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        maxWidth: 230, 
+        padding: '8px 0', 
+        width: '100%',
+        position: 'relative',
+        borderRadius: 24,
+        '&:hover':{ 
+            backgroundColor: '#131313',
+            color: "#fff",
+            '& [class*="-endIcon"]': {
+            opacity: 1,
+            color: '#fff',
+            },
+        },
+    },
+  }));
+
+  const styles = {
+    projectBtn:{
+        outline: 'none', 
+    },
+};
 
 export default Blog;
