@@ -87,7 +87,7 @@ const ProjectContainer = () => {
                 </Tabs>
 
                 <TabPanel value={activeTab} index={0}>
-                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[0].title}</Typography>
+                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[0].title}</Typography>
                     <div className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
                         <Carousel interval={9500}>
                             {projects[0].details.map(img=>{
@@ -106,11 +106,11 @@ const ProjectContainer = () => {
                         </Carousel>
                     </div>
                     <div style={{ paddingBottom: 36}}>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[0].description[0].intro}</Typography>
-                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[0].technologies}</Typography>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[0].description[0].use}</Typography>
-                        { projects[0].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].description[0].show}</Typography>}
-                        { projects[0].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].note}</Typography>}
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[0].description[0].intro}</Typography>
+                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[0].technologies}</Typography>
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[0].description[0].use}</Typography>
+                        { projects[0].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].description[0].show}</Typography>}
+                        { projects[0].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].note}</Typography>}
                         <div style={{textAlign: "center"}}>
                             {projects[0].live && <ContainedButton onClick={()=> window.open(`${projects[0].live}`, "_blank")}>Live</ContainedButton>}
                             { projects[0].code &&  <button className="view-code" onClick={()=> window.open(`${projects[0].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
@@ -119,7 +119,7 @@ const ProjectContainer = () => {
                     <hr/>
                 </TabPanel>
                 <TabPanel value={activeTab} index={1}>
-                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[1].title}</Typography>
+                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[1].title}</Typography>
                     <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
                         <Carousel interval={9500}>
                             {projects[1].details.map(img=>{
@@ -138,11 +138,11 @@ const ProjectContainer = () => {
                         </Carousel>
                     </div>
                     <div style={{ paddingBottom: 36}}>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[1].description[0].intro}</Typography>
-                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[1].technologies}</Typography>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[1].description[0].use}</Typography>
-                        { projects[1].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].description[0].show}</Typography>}
-                        { projects[1].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].note}</Typography>}
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[1].description[0].intro}</Typography>
+                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[1].technologies}</Typography>
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[1].description[0].use}</Typography>
+                        { projects[1].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].description[0].show}</Typography>}
+                        { projects[1].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].note}</Typography>}
                         <div style={{textAlign: "center"}}>
                             {projects[1].live && <ContainedButton onClick={()=> window.open(`${projects[1].live}`, "_blank")}>Live</ContainedButton>}
                             { projects[1].code &&  <button className="view-code" onClick={()=> window.open(`${projects[1].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
@@ -151,7 +151,7 @@ const ProjectContainer = () => {
                     <hr/>
                 </TabPanel>
                 <TabPanel value={activeTab} index={2}>
-                    <Typography color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[2].title}</Typography>
+                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[2].title}</Typography>
                     <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
                         <Carousel interval={9500}>
                             {projects[2].details.map(img=>{
@@ -170,11 +170,11 @@ const ProjectContainer = () => {
                         </Carousel>
                     </div>
                     <div style={{ paddingBottom: 36}}>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[2].description[0].intro}</Typography>
-                        <Typography style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[2].technologies}</Typography>
-                        <Typography style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[2].description[0].use}</Typography>
-                        { projects[2].description[0].show && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].description[0].show}</Typography>}
-                        { projects[2].note && <Typography style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].note}</Typography>}
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[2].description[0].intro}</Typography>
+                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[2].technologies}</Typography>
+                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[2].description[0].use}</Typography>
+                        { projects[2].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].description[0].show}</Typography>}
+                        { projects[2].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].note}</Typography>}
                         <div style={{textAlign: "center", marginTop: 26}}>
                             {projects[2].live && <ContainedButton onClick={()=> window.open(`${projects[2].live}`, "_blank")}>Live</ContainedButton>}
                             { projects[2].code &&  <button className="view-code" onClick={()=> window.open(`${projects[2].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
@@ -189,7 +189,7 @@ const ProjectContainer = () => {
 
 const styles = {
     container:{
-        minHeight: 'calc(100vh - 94px)'
+        minHeight: 'calc(100vh - 94px)',
     },
     homeBtn:{
         outline: 'none', 
@@ -212,22 +212,27 @@ const useStyles = makeStyles((theme) => ({
             paddingTop: 56,
         },
       },
+      typography:{
+        fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      },
       root: {
         '& .MuiTabs-flexContainer': {
             display: 'flex',
             justifyContent: 'space-between',
-            [theme.breakpoints.down('sm')]:{
-                flexDirection: 'column',
-            },
+            maxWidth: 690,
         },
         '& .MuiTab-root': {
-            minWidth: 'fit-content',
-        },
-        '& .MuiTab-root':{
             padding: 0,
             color: '#6CDAAF',
             fontWeight: 400,
+            fontSize: 17.5,
             textDecoration: 'none',
+            fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+            [theme.breakpoints.down('sm')]:{
+                width: '33%',
+                fontSize: 14,
+            }
+                
         },
      },
      carousel:{
@@ -243,7 +248,7 @@ const useStyles = makeStyles((theme) => ({
         border: 'none',
         height: '100%',
         [theme.breakpoints.down('sm')]:{
-            height: 'auto'
+            height: 265,
         }
      }
 }));
