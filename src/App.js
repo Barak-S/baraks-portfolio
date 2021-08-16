@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './NavBar'
@@ -15,10 +15,11 @@ function App() {
   const [data, setData] = useState({ message: '' });
   const [reply, setReply] = useState({ message: '' })
   const [messages, setMessages] = useState([]);
+  const [selectedTheme, setSelectedTheme] = useState(null)
   const { message } = data;
 
   const handleTextFieldChanged = (e) => {
-      setData({ ...data, [e.target.name]: e.target.value });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const sendEmail = (e) => {
@@ -30,24 +31,29 @@ function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
       .then((result) => {
-          let newMessage = messages.concat([data])
-          setMessages(newMessage)
-          setData({ message: '' })
-          if (reply.message === ''){
-            setTimeout(()=>setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon.'}), 1400)
-          }
+        let newMessage = messages.concat([data])
+        setMessages(newMessage)
+        setData({ message: '' })
+        if (reply.message === ''){
+          setTimeout(()=>setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon.'}), 1400)
+        }
       }, (error) => {
           console.log(error.text);
       });
     }
   };
 
+  useEffect(()=>{
+    //reset selecred theme here when home '/'
+    console.log(selectedTheme)
+  },[selectedTheme])
+
   
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
         <div className="App">
-          <NavBar/>
+          <NavBar selectedTheme={selectedTheme} />
           <Switch>
             <Route exact path={'/'} render={(routerProps) =>( 
               <HomeContainer
@@ -63,31 +69,33 @@ function App() {
               <ProjectContainer value={message}
                 handleSubmit={sendEmail}
                 handleChange={handleTextFieldChanged} 
+                selectedTheme={selectedTheme}
+                setSelectedTheme={setSelectedTheme}
                 {...routerProps} 
               />)}
             />
             <Redirect to={'/'} />
           </Switch>
-          <Footer/>
+          <Footer selectedTheme={selectedTheme} />
         </div>
       </Router>
     </MuiThemeProvider>
   );
 }
 
-function Footer() {
+function Footer({ selectedTheme }) {
   return (
       <div className="div-footer">
-          <p className="footer-text">{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
+          <p className="footer-text" style={{ color: selectedTheme ? selectedTheme : '#6DDBAF' }}>{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
           <ul className="social-footer">
             <li className="social-button-footer">
-              <span><TiSocialLinkedinCircular size={27} onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
+              <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#6DDBAF' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
             </li>
             <li className="social-button-footer">
-              <span><AiFillGithub size={23} onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
+              <span><AiFillGithub size={23} color={ selectedTheme ? selectedTheme : '#6DDBAF' } onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
             </li>
             <li className="social-button-footer">
-              <span><AiFillMediumCircle size={23} onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
+              <span><AiFillMediumCircle size={23} color={ selectedTheme ? selectedTheme : '#6DDBAF' } onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
             </li>
           </ul>
       </div>

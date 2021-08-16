@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Carousel, Col, Image } from 'react-bootstrap';
+import { Carousel, Image } from 'react-bootstrap';
 import { projects } from '../projects'
-import { Typography, Tabs, Tab, Hidden, Button } from '@material-ui/core';
+import { Typography, Grid, Tabs, Tab, Hidden, Button, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { NavLink } from 'react-router-dom';
 import TabPanel from '../components/TabPanel';
@@ -10,10 +10,11 @@ import { useHistory } from 'react-router-dom';
 import * as BsIcons from 'react-icons/bs';
 
 
-const ProjectContainer = () => {
+const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
     const classes = useStyles();
     const history = useHistory();
     const [activeTab, setActiveTab] = useState(0)
+    // const [selectedTheme, setSelectedTheme] = useState(null)
 
     const projectTabs = [
         {
@@ -34,25 +35,24 @@ const ProjectContainer = () => {
           link: '/Ideasicle-X',
           project: projects[2]
         },
+        {
+          index: 3,
+          label: 'Glory Kickboxing',
+          link: '/glory-smacks',
+          project: projects[3]
+        },
     ];
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
 
-    useEffect(()=>{
-        console.log(activeTab)
-    },[activeTab])
-
     return (
         <div style={styles.container}>
-            <Col xs={12} sm={12} md={10} lg={10} style={{ margin: '0 auto' }}>
+            <Container>
                 <Hidden mdUp>
                     <div style={{ paddingTop: 84 }}>
                         <Button
-                            style={styles.homeBtn}
-                            variant='outlined'
-                            color='primary'
+                            style={styles.homeBtn, { color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24 }}
                             type='submit'
-                            className={classes.commonBtn}
                             endIcon={<BsIcons.BsArrowRight/>}
                             onClick={()=>history.push('/')}
                             >
@@ -65,16 +65,21 @@ const ProjectContainer = () => {
                     className={classes.projectTabs}
                     classes={{ root: classes.root }}
                     value={activeTab || 0}
-                    indicatorColor="primary"
-                    textColor="primary"
+                    indicatorColor="secondary"
+                    // textColor="secondary"
                     onChange={(_e, val) => setActiveTab(val)}
-                    aria-label="disabled tabs example"
                     >
-                    { projectTabs.map((tab)=>{
+                    {projectTabs.map((tab,i)=>{
                         return(
-                        <Tab key={tab.index} className={classes.accountTab} label={tab.label} component={NavLink} to={`/projects${tab.link}`} 
+                        <Tab 
+                            key={tab.index} 
+                            className={classes.accountTab} 
+                            label={tab.label} 
+                            component={NavLink} 
+                            to={`/projects${tab.link}`} 
                             isActive={(match, location) => {
                                 if (match) {
+                                    setSelectedTheme(projects[i].colorTheme)
                                     setActiveTab(tab.index);
                                     return true;
                                 } else {
@@ -83,106 +88,52 @@ const ProjectContainer = () => {
                             }}
                         />
                         )
-                    }) }
+                    })}
                 </Tabs>
-
-                <TabPanel value={activeTab} index={0}>
-                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[0].title}</Typography>
-                    <div className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
-                        <Carousel interval={9500}>
-                            {projects[0].details.map(img=>{
-                                return(
-                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
-                                        <Image
-                                            src={require(`../${img.img}`)}
-                                            alt={projects[0].title}
-                                            thumbnail 
-                                            className={classes.imgThumbnail}
-                                            style={{ objectFit: 'cover', margin: '0 auto' }}
-                                        />
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                    <div style={{ paddingBottom: 36}}>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[0].description[0].intro}</Typography>
-                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[0].technologies}</Typography>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[0].description[0].use}</Typography>
-                        { projects[0].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].description[0].show}</Typography>}
-                        { projects[0].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[0].note}</Typography>}
-                        <div style={{textAlign: "center"}}>
-                            {projects[0].live && <ContainedButton onClick={()=> window.open(`${projects[0].live}`, "_blank")}>Live</ContainedButton>}
-                            { projects[0].code &&  <button className="view-code" onClick={()=> window.open(`${projects[0].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
-                        </div> 
-                    </div>
-                    <hr/>
-                </TabPanel>
-                <TabPanel value={activeTab} index={1}>
-                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[1].title}</Typography>
-                    <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
-                        <Carousel interval={9500}>
-                            {projects[1].details.map(img=>{
-                                return(
-                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
-                                        <Image
-                                            src={require(`../${img.img}`)}
-                                            alt={projects[1].title}
-                                            thumbnail 
-                                            className={classes.imgThumbnail}
-                                            style={{ objectFit: 'cover', margin: '0 auto' }}
-                                        />
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                    <div style={{ paddingBottom: 36}}>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[1].description[0].intro}</Typography>
-                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[1].technologies}</Typography>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[1].description[0].use}</Typography>
-                        { projects[1].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].description[0].show}</Typography>}
-                        { projects[1].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[1].note}</Typography>}
-                        <div style={{textAlign: "center"}}>
-                            {projects[1].live && <ContainedButton onClick={()=> window.open(`${projects[1].live}`, "_blank")}>Live</ContainedButton>}
-                            { projects[1].code &&  <button className="view-code" onClick={()=> window.open(`${projects[1].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
-                        </div> 
-                    </div>
-                    <hr/>
-                </TabPanel>
-                <TabPanel value={activeTab} index={2}>
-                    <Typography className={classes.typography} color="primary" style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45 }}>{projects[2].title}</Typography>
-                    <div  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%', margin: '0 auto' }}>
-                        <Carousel interval={9500}>
-                            {projects[2].details.map(img=>{
-                                return(
-                                    <Carousel.Item  className={classes.carousel} style={{ maxWidth: 700, width: '100%', height: '100%' }}>
-                                        <Image
-                                            src={require(`../${img.img}`)}
-                                            alt={projects[2].title}
-                                            thumbnail 
-                                            className={classes.imgThumbnail}
-                                            style={{ objectFit: 'cover', margin: '0 auto' }}
-                                        />
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                    <div style={{ paddingBottom: 36}}>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26 }}>{projects[2].description[0].intro}</Typography>
-                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{color: '#6DDBAF', fontWeight: "600"}}>Technologies: </strong>{projects[2].technologies}</Typography>
-                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[2].description[0].use}</Typography>
-                        { projects[2].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].description[0].show}</Typography>}
-                        { projects[2].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[2].note}</Typography>}
-                        <div style={{textAlign: "center", marginTop: 26}}>
-                            {projects[2].live && <ContainedButton onClick={()=> window.open(`${projects[2].live}`, "_blank")}>Live</ContainedButton>}
-                            { projects[2].code &&  <button className="view-code" onClick={()=> window.open(`${projects[2].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{height: 25}} /></button>}
-                        </div> 
-                    </div>
-                    <hr/>
-                </TabPanel>
-            </Col>
+                {projectTabs.map((projectTab, i)=>{
+                    // projects[i].colorTheme && setSelectedTheme(projects[i].colorTheme)
+                    return(
+                        <TabPanel value={activeTab} index={i}>
+                            <div className={classes.projectPanel}>
+                                <Grid item lg={9} md={9} sm={12} xs={12}>
+                                    <Typography className={classes.typography} style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45, color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
+                                    <div className={classes.carousel} style={{ width: '100%', height: 485 }}>
+                                        <Carousel interval={9500} style={{ height: '100%' }}>
+                                            {projects[i].details.map(img=>{
+                                                return(
+                                                    <Carousel.Item  className={classes.carousel} style={{ width: '100%', height: '100%' }}>
+                                                        <Image
+                                                            src={require(`../${img.img}`)}
+                                                            alt={projects[i].title}
+                                                            thumbnail 
+                                                            className={classes.imgThumbnail}
+                                                            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                                                        />
+                                                    </Carousel.Item>
+                                                )
+                                            })}
+                                        </Carousel>
+                                    </div>
+                                </Grid>
+                                <Grid item lg={3} md={3} sm={12} xs={12}>
+                                    <div className={classes.descSection}>
+                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff' }}>{projects[i].description[0].intro}</Typography>
+                                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>{projects[i].technologies}</Typography>
+                                        {/* <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[i].description[0].use}</Typography>
+                                        { projects[i].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].description[0].show}</Typography>}
+                                        { projects[i].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].note}</Typography>} */}
+                                        <div style={{ textAlign: "center", marginTop: 32 }}>
+                                            { projects[i].live && <ContainedButton style={{ border: `1px solid ${projects[i].colorTheme}`, color: `${projects[i].colorTheme}` }} onClick={()=> window.open(`${projects[i].live}`, "_blank")}>Live</ContainedButton>}
+                                            { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
+                                        </div> 
+                                    </div>
+                                </Grid>
+                            </div>
+                        <hr style={{ backgroundColor: `${projects[i].colorTheme}` }} />
+                        </TabPanel>
+                    )
+                })}
+            </Container>
         </div>
     );
 };
@@ -192,13 +143,13 @@ const styles = {
         minHeight: 'calc(100vh - 94px)',
     },
     homeBtn:{
-        outline: 'none', 
-        position: 'absolute', 
-        left: 17.5,
-        transform: 'rotate(180deg)',
-        height: 40,
-        maxWidth: 99,
-        borderRadius: 50,
+        // outline: 'none', 
+        // position: 'absolute', 
+        // left: 17.5,
+        // transform: 'rotate(180deg)',
+        // height: 40,
+        // maxWidth: 99,
+        // borderRadius: 50,
     },
     backBtnLabel:{
         transform: 'rotate(180deg)',
@@ -212,6 +163,21 @@ const useStyles = makeStyles((theme) => ({
             paddingTop: 56,
         },
       },
+      projectPanel:{
+        display: 'flex',
+        paddingBottom: 36,
+        [theme.breakpoints.down('sm')]:{
+            flexDirection: 'column',
+        }
+      },
+      descSection:{
+        paddingTop: 115,
+        paddingLeft: 15,
+        [theme.breakpoints.down('sm')]:{
+            paddingTop: 26,
+            paddingLeft: 0,
+        }
+      },
       typography:{
         fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
       },
@@ -219,7 +185,10 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiTabs-flexContainer': {
             display: 'flex',
             justifyContent: 'space-between',
-            maxWidth: 690,
+            width: '100%',
+            [theme.breakpoints.down('sm')]:{
+                flexDirection: 'column'
+            }
         },
         '& .MuiTab-root': {
             padding: 0,
@@ -238,7 +207,7 @@ const useStyles = makeStyles((theme) => ({
      carousel:{
         maxHeight: 550,
         [theme.breakpoints.down('sm')]:{
-            maxHeight: 265,
+            maxHeight: 350,
         }
      },
      imgThumbnail:{

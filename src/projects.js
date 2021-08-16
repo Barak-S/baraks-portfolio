@@ -1,16 +1,18 @@
 export const projects = [
     { 
-        "label": 'Real Estate Portal',
-        "link": '/Real-Estate-Portal',
-        "title": "Real Estate Portal", 
+        "label": 'Watery',
+        "link": '/watery',
+        "title": "Watery Real Estate Portal", 
         "subTitle": 'Find your next dream home.',
+        "colorTheme": '#2794D2',
         "description": [
             {
                 "intro": "A Real Estate portal for finding your dream home. This is a full stack application using the Google Maps API for filtering property by location, getting address coordinates, and displaying on an interactive Airbnb styled property map.",
                 "show" : "Search by transaction type, property type, or location to find the right property that fits your needs."
             }
         ],
-        "technologies": "React.js, Node.js, MySQL, Docker, Listhub API",
+        "technologies": "React.js, Node.js, MySQL, Docker, Listhub API, Google Maps API",
+        "live": 'https://watery.com/',
         "details": [ 
             {
                 "img": "images/wat1.png"
@@ -30,6 +32,7 @@ export const projects = [
         "label": "What We Watchin'",
         "link": '/What-We-Watchin',
         "title": "What We Watchin'", 
+        "colorTheme": '#FF3F4D',
         "description": [
             {
                 "intro": "React Native social media app where users can come together and share their recommendations of movies/Tv shows they would like to watch with friends.",
@@ -65,6 +68,7 @@ export const projects = [
         "link": '/Ideasicle-X',
         "title": "Ideasicle X", 
         "subTitle": 'Finally, a SaaS platform designed for virtual idea generation.',
+        "colorTheme": '#FEF032',
         "description": [
             {
                 "intro" : "Sharing marketing ideas all in one thread, creating the ultimate collborative experience.",
@@ -100,6 +104,32 @@ export const projects = [
             },
             { 
                 "img": "images/idea9.png",
+            },
+        ]
+    }, 
+    { 
+        "label": 'Glory Smacks',
+        "link": '/glory-smacks',
+        "title": "Glory Kickboxing NFT", 
+        "subTitle": 'Finally, a SaaS platform designed for virtual idea generation.',
+        "colorTheme": '#EF4136',
+        "description": [
+            {
+                "intro" : "Sharing marketing ideas all in one thread, creating the ultimate collborative experience.",
+                "use": "Getting business-building ideas doesn’t have to be complicated. The last year has surprised us all with the productivity of working remotely. Ideasicle X is the first SaaS platform designed from the ground up specifically for virtual brainstorming in teams of four.",
+            }
+        ],
+        "technologies": "React.js, Material UI, Firebase",
+        "live": 'http://glory-smacks-splash-demo.s3-website-us-east-1.amazonaws.com/',
+        "details": [ 
+            {
+                "img": "images/glory1.jpg"
+            }, 
+            {
+                "img": "images/glory2.jpg", 
+            }, 
+            { 
+                "img": "images/glory3.jpg",
             },
         ]
     }, 

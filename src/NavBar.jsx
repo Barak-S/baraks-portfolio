@@ -5,7 +5,7 @@ import { Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import * as BsIcons from 'react-icons/bs';
 
-const NavBar = () =>{
+const NavBar = ({ selectedTheme }) =>{
     const history = useHistory();
     const location= useLocation();
     const classes = useStyles();
@@ -54,7 +54,18 @@ const NavBar = () =>{
             <Hidden smDown>
                 { activeButton && activeButton.includes('/projects') &&
                     <Button
-                        style={styles.homeBtn}
+                        style={{ 
+                            color: selectedTheme ? selectedTheme : undefined, 
+                            border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, 
+                            transform: 'rotate(180deg)',
+                            outline: 'none', 
+                            position: 'absolute', 
+                            left: 17.5,
+                            transform: 'rotate(180deg)',
+                            height: 40,
+                            maxWidth: 99,
+                            borderRadius: 24,
+                        }}
                         variant='outlined'
                         color='primary'
                         type='submit'
