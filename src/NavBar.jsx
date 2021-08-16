@@ -27,7 +27,6 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) =>{
 
     useEffect(()=>{
         setActiveButton(location.pathname)
-        // location.path === '/' && setSelectedTheme(null)
         if (location.pathname === '/'){
             setSelectedTheme(null)
         }
@@ -94,7 +93,7 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) =>{
             </ul>
             <Hidden smDown>
                 { activeButton === '/' &&
-                    <ContainedButton variant="contained" color="primary" style={styles.projectBtn} onClick={()=>history.push('projects')}>
+                    <ContainedButton variant="contained" color="primary" style={styles.projectBtn} onClick={()=>history.push('projects/watery')}>
                     {'My Projects'}
                     </ContainedButton>
                 }

@@ -115,8 +115,8 @@ export const projects = [
         "colorTheme": '#EF4136',
         "description": [
             {
-                "intro" : "Sharing marketing ideas all in one thread, creating the ultimate collborative experience.",
-                "use": "Getting business-building ideas doesn’t have to be complicated. The last year has surprised us all with the productivity of working remotely. Ideasicle X is the first SaaS platform designed from the ground up specifically for virtual brainstorming in teams of four.",
+                "intro" : "Litecoin Foundation Partners With Glory Kickboxing to Make LTC League’s Official Crypto.",
+                "use": "",
             }
         ],
         "technologies": "React.js, Material UI, Firebase",

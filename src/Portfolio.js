@@ -44,7 +44,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                                 type='submit'
                                 className={classes.commonBtn}
                                 endIcon={<BsIcons.BsArrowRight/>}
-                                onClick={()=> history.push('/projects')}
+                                onClick={()=> history.push('/projects/watery')}
                             >
                                 <span style={styles.backBtnLabel}>{'My Projects'}</span>
                             </Button>

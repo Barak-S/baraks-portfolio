@@ -42,12 +42,6 @@ function App() {
       });
     }
   };
-
-  useEffect(()=>{
-    //reset selecred theme here when home '/'
-    console.log(selectedTheme)
-  },[selectedTheme])
-
   
   return (
     <MuiThemeProvider theme={theme}>

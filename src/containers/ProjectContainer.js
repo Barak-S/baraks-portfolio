@@ -14,25 +14,24 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
     const classes = useStyles();
     const history = useHistory();
     const [activeTab, setActiveTab] = useState(0)
-    // const [selectedTheme, setSelectedTheme] = useState(null)
 
     const projectTabs = [
         {
           index: 0,
           label: 'Real Estate Portal',
-          link: '/Real-Estate-Portal',
+          link: '/watery',
           project: projects[0]
         },
         {
           index: 1,
           label: "What We Watchin'",
-          link: '/What-We-Watchin',
+          link: '/what-we-watchin',
           project: projects[1]
         },
         {
           index: 2,
           label: 'Ideasicle X',
-          link: '/Ideasicle-X',
+          link: '/ideasicle-x',
           project: projects[2]
         },
         {
@@ -65,13 +64,13 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                     className={classes.projectTabs}
                     classes={{ root: classes.root }}
                     value={activeTab || 0}
-                    indicatorColor="secondary"
-                    // textColor="secondary"
+                    indicatorColor={`secondary`}
                     onChange={(_e, val) => setActiveTab(val)}
                     >
                     {projectTabs.map((tab,i)=>{
                         return(
                         <Tab 
+                            classes={{ label: classes.label }}
                             key={tab.index} 
                             className={classes.accountTab} 
                             label={tab.label} 
@@ -91,7 +90,6 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                     })}
                 </Tabs>
                 {projectTabs.map((projectTab, i)=>{
-                    // projects[i].colorTheme && setSelectedTheme(projects[i].colorTheme)
                     return(
                         <TabPanel value={activeTab} index={i}>
                             <div className={classes.projectPanel}>
@@ -192,13 +190,13 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiTab-root': {
             padding: 0,
-            color: '#6CDAAF',
+            color: '#fff',
             fontWeight: 400,
             fontSize: 17.5,
             textDecoration: 'none',
             fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
             [theme.breakpoints.down('sm')]:{
-                width: '33%',
+                width: '50%',
                 fontSize: 14,
             }
                 
