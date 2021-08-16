@@ -53,7 +53,7 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <Router>
         <div className="App">
-          <NavBar selectedTheme={selectedTheme} />
+          <NavBar selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
           <Switch>
             <Route exact path={'/'} render={(routerProps) =>( 
               <HomeContainer

@@ -5,7 +5,7 @@ import { Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import * as BsIcons from 'react-icons/bs';
 
-const NavBar = ({ selectedTheme }) =>{
+const NavBar = ({ selectedTheme, setSelectedTheme }) =>{
     const history = useHistory();
     const location= useLocation();
     const classes = useStyles();
@@ -27,6 +27,10 @@ const NavBar = ({ selectedTheme }) =>{
 
     useEffect(()=>{
         setActiveButton(location.pathname)
+        // location.path === '/' && setSelectedTheme(null)
+        if (location.pathname === '/'){
+            setSelectedTheme(null)
+        }
     },[location])
 
     const styles = {
