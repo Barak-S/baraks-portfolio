@@ -21,12 +21,17 @@ export default function Contact({ messages, reply }){
             player.controls = false;
             player.playsinline = true;
             player.muted = true;
-            TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 0.5 })
-            TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 0.5 })
-            TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1.8 })    
         })
         .catch((err)=>console.log(err))
     }, [])
+
+    useEffect(()=>{
+        if (profilePic && textMessage && textMessage2 && !messages.length){
+            TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 0.5 })
+            TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 0.5 })
+            TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1.8 })    
+        }
+    },[profilePic, textMessage, textMessage2, messages])
 
 
     return(
@@ -35,22 +40,27 @@ export default function Contact({ messages, reply }){
                 <source src={Video} type="video/mp4" />
             </video>
             <Col xl={7} lg={8} md={9} sm={12} xs={12} className='align-auto'>
-                <div >
+                <div>
                     <div className='chat-div'>
                         <div className="chat">
                             <div className="mine messages">
                                 <Image 
                                     ref={el => (profilePic = el)} 
                                     className="HeadshotDrop" 
-                                    style={{ height: 100, width: 100 }} 
+                                    style={{ 
+                                        height: 100, 
+                                        width: 100, 
+                                        // opacity: messages.length ? 1 : 0,
+                                        // transform: messages.length ? 'translateY(-75%)' : undefined,
+                                    }} 
                                     src={require("./images/headshot5.jpg")} 
                                     roundedCircle 
                                     alt="Barak Saidoff Profile Picture"
                                     />
-                                <div className="message last" ref={el => (textMessage = el)} >
+                                <div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage = el)} >
                                 Hey, I'm Barak!
                                 </div>
-                                <div className="message last" ref={el => (textMessage2 = el)} >
+                                <div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage2 = el)} >
                                 Scroll down to view my portfolio!
                                 </div>
                             </div>
