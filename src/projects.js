@@ -133,6 +133,33 @@ export const projects = [
             },
         ]
     }, 
+    { 
+        "label": 'Netflix Clone',
+        "link": '/netflix-clone',
+        "title": "Netflix Clone", 
+        "subTitle": 'A Netflix Clone created using React.js and TheMovieDB API',
+        "colorTheme": '#D91921',
+        "description": [
+            {
+                "intro" : "A Netflix Clone created using React.js and TheMovieDB API",
+                // "use": "",
+            }
+        ],
+        "technologies": "React.js, YouTube API, TheMovieDB API ",
+        "live": 'https://netflix-clone-barak-s.netlify.app/',
+        "code": 'https://github.com/Barak-S/netflix-clone/tree/main/src',
+        "details": [ 
+            {
+                "img": "images/netflix-1.jpg"
+            }, 
+            {
+                "img": "images/netflix-2.jpg", 
+            }, 
+            { 
+                "img": "images/netflix-3.jpg",
+            },
+        ]
+    }, 
     
     // {
     //     "title": "Skate Park Finder", 

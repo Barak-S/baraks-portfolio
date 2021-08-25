@@ -40,6 +40,12 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
           link: '/glory-smacks',
           project: projects[3]
         },
+        {
+          index: 4,
+          label: 'Netflix Clone',
+          link: '/netflix-clone',
+          project: projects[4]
+        },
     ];
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
@@ -72,7 +78,6 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                         <Tab 
                             classes={{ label: classes.label }}
                             key={tab.index} 
-                            className={classes.accountTab} 
                             label={tab.label} 
                             component={NavLink} 
                             to={`/projects${tab.link}`} 
@@ -95,17 +100,17 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                             <div className={classes.projectPanel}>
                                 <Grid item lg={9} md={9} sm={12} xs={12}>
                                     <Typography className={classes.typography} style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45, color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
-                                    <div className={classes.carousel} style={{ width: '100%', height: 485 }}>
-                                        <Carousel interval={9500} style={{ height: '100%' }}>
+                                    <div className={classes.carousel}>
+                                        <Carousel interval={9500}>
                                             {projects[i].details.map(img=>{
                                                 return(
-                                                    <Carousel.Item  className={classes.carousel} style={{ width: '100%', height: '100%' }}>
+                                                    <Carousel.Item  className={classes.carousel}>
                                                         <Image
                                                             src={require(`../${img.img}`)}
                                                             alt={projects[i].title}
                                                             thumbnail 
                                                             className={classes.imgThumbnail}
-                                                            style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    
                                                         />
                                                     </Carousel.Item>
                                                 )
@@ -120,7 +125,7 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                         {/* <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[i].description[0].use}</Typography>
                                         { projects[i].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].description[0].show}</Typography>}
                                         { projects[i].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].note}</Typography>} */}
-                                        <div style={{ textAlign: "center", marginTop: 32 }}>
+                                        <div className={classes.buttonSection}>
                                             { projects[i].live && <ContainedButton style={{ border: `1px solid ${projects[i].colorTheme}`, color: `${projects[i].colorTheme}` }} onClick={()=> window.open(`${projects[i].live}`, "_blank")}>Live</ContainedButton>}
                                             { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
                                         </div> 
@@ -186,7 +191,7 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
             [theme.breakpoints.down('sm')]:{
                 flexDirection: 'column'
-            }
+            },
         },
         '& .MuiTab-root': {
             padding: 0,
@@ -203,21 +208,29 @@ const useStyles = makeStyles((theme) => ({
         },
      },
      carousel:{
-        maxHeight: 550,
-        [theme.breakpoints.down('sm')]:{
-            maxHeight: 350,
+        height: 550,
+        [theme.breakpoints.down('xs')]:{
+            height: 250,
         }
      },
      imgThumbnail:{
         margin: 0,
         padding: 0,
         borderRadius: 0,
+        objectFit: 'cover',
         border: 'none',
         height: '100%',
-        [theme.breakpoints.down('sm')]:{
-            height: 265,
-        }
-     }
+        width: '100%',
+    },
+    buttonSection:{
+        display: 'flex',
+        textAlign: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: 110,
+        justifyContent: 'space-between',    
+        marginTop: 35,
+    }
 }));
 
 

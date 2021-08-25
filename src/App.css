@@ -336,21 +336,18 @@ hr{
 }
 
 .view-code{
+  width: 165px;
   background-color: #000000; 
   font-weight: 600;
   border-radius: 6px;
   border: none;
   outline: none;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
   color: white;
   padding: 0.25rem 0.75rem;
-  margin: 0.5rem 0.5rem;
-
 }
 
 .view-code:hover{
-  opacity: 0.75;
+  opacity: 0.72;
 }
 
 .card1-list{
