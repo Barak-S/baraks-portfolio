@@ -31,7 +31,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                     <p className="headline">I'm a creative Full Stack Developer with an entrepreneurial spirit, proficient at Web Application Development using modern web tools. With attention to detail, I take ideas, deliver quickly and consistently, and build things that provide a ton of value in a short amount of time.</p>
                     <div className="tech-skills">
                         <p className="skills-banner">Technical Skills</p>
-                        <p>JavaScript, React, Redux, TypeScript, Node, Express, Rails, Responsive Design, and Git workflow based programming.</p>
+                        <p>JavaScript, React, Redux, TypeScript, Python, Node, Express, Rails, Responsive Design, and Git workflow based programming.</p>
                         <Hidden smDown>
                             <ContainedButton onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
                                 Download Resume

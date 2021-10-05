@@ -53,7 +53,7 @@ export default function Contact({ messages, reply }){
                                         // opacity: messages.length ? 1 : 0,
                                         // transform: messages.length ? 'translateY(-75%)' : undefined,
                                     }} 
-                                    src={require("./images/headshot5.jpg")} 
+                                    src={require("./images/headshot2021.jpg")} 
                                     roundedCircle 
                                     alt="Barak Saidoff Profile Picture"
                                     />
