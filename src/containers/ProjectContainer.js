@@ -40,12 +40,12 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
           link: '/glory-smacks',
           project: projects[3]
         },
-        {
-          index: 4,
-          label: 'Netflix Clone',
-          link: '/netflix-clone',
-          project: projects[4]
-        },
+        // {
+        //   index: 4,
+        //   label: 'Netflix Clone',
+        //   link: '/netflix-clone',
+        //   project: projects[4]
+        // },
     ];
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
