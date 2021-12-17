@@ -18,34 +18,28 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
     const projectTabs = [
         {
           index: 0,
-          label: 'Real Estate Portal',
+          label: 'Watery.com',
           link: '/watery',
           project: projects[0]
         },
         {
           index: 1,
+          label: 'Glorysmacks.com',
+          link: '/glory-smacks',
+          project: projects[3]
+        },
+        {
+            index: 2,
+            label: 'Ideasicle X',
+            link: '/ideasicle-x',
+            project: projects[2]
+        },
+        {
+          index: 3,
           label: "What We Watchin'",
           link: '/what-we-watchin',
           project: projects[1]
         },
-        {
-          index: 2,
-          label: 'Ideasicle X',
-          link: '/ideasicle-x',
-          project: projects[2]
-        },
-        {
-          index: 3,
-          label: 'Glory Kickboxing',
-          link: '/glory-smacks',
-          project: projects[3]
-        },
-        // {
-        //   index: 4,
-        //   label: 'Netflix Clone',
-        //   link: '/netflix-clone',
-        //   project: projects[4]
-        // },
     ];
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
@@ -97,9 +91,16 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                 {projectTabs.map((projectTab, i)=>{
                     return(
                         <TabPanel value={activeTab} index={i}>
+                            <Typography className={classes.typography} style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 12, color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
+                            {projects[i].subTitle && <Typography className={classes.typography} style={{ fontSize: 22, fontWeight: 600, paddingBottom: 32, color: '#fff' }}>{projects[i].subTitle}</Typography>}
                             <div className={classes.projectPanel}>
+                                <Grid item lg={3} md={3} sm={12} xs={12}>
+                                    <div className={classes.descSection}>
+                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingBottom: 12 }}>{projects[i].description[0].intro}</Typography>
+                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff' }}>{projects[i].description[0].use}</Typography>
+                                    </div>
+                                </Grid>
                                 <Grid item lg={9} md={9} sm={12} xs={12}>
-                                    <Typography className={classes.typography} style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 45, color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
                                     <div className={classes.carousel}>
                                         <Carousel interval={9500}>
                                             {projects[i].details.map(img=>{
@@ -118,20 +119,12 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                         </Carousel>
                                     </div>
                                 </Grid>
-                                <Grid item lg={3} md={3} sm={12} xs={12}>
-                                    <div className={classes.descSection}>
-                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff' }}>{projects[i].description[0].intro}</Typography>
-                                        <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 22, fontSize: 21 }}><strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>{projects[i].technologies}</Typography>
-                                        {/* <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingTop: 26}}>{projects[i].description[0].use}</Typography>
-                                        { projects[i].description[0].show && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].description[0].show}</Typography>}
-                                        { projects[i].note && <Typography className={classes.typography} style={{ fontWeight: "600", color: '#fff', fontWeight: "600", fontSize: 19, }}>{projects[i].note}</Typography>} */}
-                                        <div className={classes.buttonSection}>
-                                            { projects[i].live && <ContainedButton style={{ border: `1px solid ${projects[i].colorTheme}`, color: `${projects[i].colorTheme}` }} onClick={()=> window.open(`${projects[i].live}`, "_blank")}>Live</ContainedButton>}
-                                            { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
-                                        </div> 
-                                    </div>
-                                </Grid>
                             </div>
+                            <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 4, fontSize: 21, textAlign: 'center' }}><strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>{projects[i].technologies}</Typography>
+                            <div className={classes.buttonSection}>
+                                { projects[i].live && <ContainedButton style={{ border: `1px solid ${projects[i].colorTheme}`, color: `${projects[i].colorTheme}` }} onClick={()=> window.open(`${projects[i].live}`, "_blank")}>Live</ContainedButton>}
+                                { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
+                            </div> 
                         <hr style={{ backgroundColor: `${projects[i].colorTheme}` }} />
                         </TabPanel>
                     )
@@ -145,15 +138,7 @@ const styles = {
     container:{
         minHeight: 'calc(100vh - 94px)',
     },
-    homeBtn:{
-        // outline: 'none', 
-        // position: 'absolute', 
-        // left: 17.5,
-        // transform: 'rotate(180deg)',
-        // height: 40,
-        // maxWidth: 99,
-        // borderRadius: 50,
-    },
+    homeBtn:{},
     backBtnLabel:{
         transform: 'rotate(180deg)',
     }
@@ -174,11 +159,12 @@ const useStyles = makeStyles((theme) => ({
         }
       },
       descSection:{
-        paddingTop: 115,
-        paddingLeft: 15,
+        paddingTop: 2,
+        paddingRight: 15,
         [theme.breakpoints.down('sm')]:{
-            paddingTop: 26,
-            paddingLeft: 0,
+            paddingTop: 0,
+            paddingRight: 0,
+            paddingBottom: 29,
         }
       },
       typography:{
