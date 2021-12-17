@@ -17,7 +17,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                 <div className="email-area">
                     <Form.Group controlId="exampleForm.ControlTextarea1" style={{ display: "flex"}}>
                         <Form.Control 
-                            placeholder="Send me your contact info"
+                            placeholder="Send me your contact info!"
                             as="textarea" 
                             name="message"
                             rows={1} 

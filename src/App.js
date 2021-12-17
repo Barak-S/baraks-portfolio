@@ -29,16 +29,15 @@ function App() {
         message: data.message,
       };
       window.scrollTo({ top: 0, behavior: 'smooth' })
+      let newMessage = messages.concat([data])
+      setMessages(newMessage)
+      setData({ message: '' })
       emailjs.send("service_h4ihmok", "template_u7sijvk", templateParams, "user_O7KSyjF3rQEItHM4zGMUl")
       .then((result) => {
-        let newMessage = messages.concat([data])
-        setMessages(newMessage)
-        setData({ message: '' })
-        if (reply.message === ''){
-          setTimeout(()=>setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon.'}), 1400)
-        }
+        setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!'})
+        console.log('email sent success')
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
     }
   };

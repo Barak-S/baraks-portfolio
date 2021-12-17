@@ -72,7 +72,7 @@ body{
     margin-left: 0px;
   }
   .skill-tag{
-    max-width: 320;
+    max-width: 40%;
     padding: 0px 12px;
   }
 }
@@ -96,11 +96,6 @@ body{
   
   div .mine{
     padding-top: 60%;
-  }
-
-  .about-section{
-    flex-direction: column;
-    align-items: center;
   }
 
   .tech-skills{
