@@ -119,6 +119,9 @@ body{
   div.reply.message{
     margin-right: 5px;
   }
+  .about-section{
+    flex-direction: column;
+  }
 }
 
 
