@@ -5,7 +5,7 @@ import ContainedButton from './components/ContainedButton';
 import { Hidden, Button, makeStyles } from '@material-ui/core';
 import * as BsIcons from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';
-
+import Resume from './resume/Copy of Barak Saidoff Resume.pdf';
 
 
 export default function Portfolio({ value, handleChange, handleSubmit}){
@@ -33,7 +33,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                         <p className="skills-banner">Technical Skills</p>
                         <p>JavaScript, React, Redux, TypeScript, Python, Node, Express, Rails, Responsive Design, and Git workflow based programming.</p>
                         <Hidden smDown>
-                            <ContainedButton onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
+                            <ContainedButton onClick={()=> window.open(Resume, "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
                                 Download Resume
                             </ContainedButton>
                         </Hidden>
