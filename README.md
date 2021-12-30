@@ -1,2 +1,2 @@
 # Barak's Portfolio
-[a link](https://baraksaidoff.com)
+[https://baraksaidoff.com](https://baraksaidoff.com)
