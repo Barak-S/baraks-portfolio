@@ -55,8 +55,8 @@ const Blog = () => {
     return(
       <Col className="align-auto" xs={12} sm={12} md={10} lg={9}>
         <div className="about-section">
-          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#6DDBAF"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving.</p>
-          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#6DDBAF"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#6DDBAF"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
+          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#0B93F6"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving.</p>
+          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#0B93F6"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#0B93F6"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
           {/* <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p> */}
         </div>
         <Hidden mdUp>
@@ -80,7 +80,7 @@ const Blog = () => {
               <Col xs={9} sm={9} md={8} lg={8}>
                   <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
                   <h4>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#6DDBAF"}}>{blogTitle}</h4>
+                  <h4 style={{fontWeight: 600, color: "#0B93F6"}}>{blogTitle}</h4>
               </Col>
           </Row>                     
           <p id='blogIntro' style={{ textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
