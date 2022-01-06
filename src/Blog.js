@@ -4,6 +4,7 @@ import ContainedButton from './components/ContainedButton';
 import { Hidden, Button, makeStyles } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import * as BsIcons from 'react-icons/bs';
+import Resume from './resume/Copy of Barak Saidoff Resume.pdf';
 
 
 const Blog = () => {
@@ -66,7 +67,7 @@ const Blog = () => {
                     color='primary'
                     type='submit'
                     className={classes.commonBtn}
-                    onClick={()=> window.open("https://learn.co/baraksaidoff/resume", "_blank")}
+                    onClick={()=> window.open(Resume, "_blank")}
                 >
                     <span style={styles.backBtnLabel}>{'Download Resume'}</span>
                 </Button>
