@@ -33,11 +33,6 @@ body{
   font-weight: 600;
 }
 
-.skills-banner{
-  font-size: 24px;
-  font-weight: 700;
-}
-
 .about-banner{
   margin: 0 auto;
   font-size: 16;
@@ -96,10 +91,6 @@ body{
   
   div .mine{
     padding-top: 60%;
-  }
-
-  .tech-skills{
-    text-align: center;
   }
   
   p.headline{
