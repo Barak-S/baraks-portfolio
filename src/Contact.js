@@ -5,7 +5,6 @@ import Video from './images/city-scene.mp4'
 import { TweenMax, Power2 }  from 'gsap';
 
 export default function Contact({ messages, reply }){
-
     let videoRef = useRef(null);
     let profilePic = useRef(null);
     let textMessage = useRef(null);
@@ -26,7 +25,7 @@ export default function Contact({ messages, reply }){
     }, [])
 
     useEffect(()=>{
-        if (profilePic && textMessage && textMessage2 && !messages.length){
+        if (profilePic && textMessage && textMessage2){
             TweenMax.to( profilePic, 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: 0.5 })
             TweenMax.to( textMessage, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 0.5 })
             TweenMax.to( textMessage2, 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: 1.8 })    
@@ -50,8 +49,6 @@ export default function Contact({ messages, reply }){
                                     style={{ 
                                         height: 100, 
                                         width: 100, 
-                                        // opacity: messages.length ? 1 : 0,
-                                        // transform: messages.length ? 'translateY(-75%)' : undefined,
                                     }} 
                                     src={require("./images/headshot2021.jpg")} 
                                     roundedCircle 
@@ -64,9 +61,8 @@ export default function Contact({ messages, reply }){
                                 Scroll down to view my portfolio!
                                 </div>
                             </div>
-
                             <div className="yours messages">
-                                { messages.map((mssg)=>{
+                                {messages.map((mssg)=>{
                                     return(
                                         <div key={mssg} className="message">
                                         {mssg.message}
@@ -74,15 +70,13 @@ export default function Contact({ messages, reply }){
                                     )
                                 })}
                             </div>
-
-                            { reply.message === 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!' && 
-                            <div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
-                                <div className="reply message" style={{ opacity: 1}}>
-                                {reply.message}
-                                </div>
-                            </div> 
-                            }
-
+                            {reply.message === 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!' && (
+															<div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
+																	<div className="reply message" style={{ opacity: 1}}>
+																	{reply.message}
+																	</div>
+															</div> 
+														)}
                         </div>
                     </div>
                     <div >
