@@ -8,6 +8,7 @@ import TabPanel from '../components/TabPanel';
 import ContainedButton from '../components/ContainedButton';
 import { useHistory } from 'react-router-dom';
 import * as BsIcons from 'react-icons/bs';
+import classNames from 'classnames';
 
 
 const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
@@ -48,13 +49,13 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
         <div style={styles.container}>
             <Container>
                 <Hidden mdUp>
-                    <div style={{ paddingTop: 84 }}>
+                    <div style={{ paddingTop: 84, width: '100%', display: 'flex', justifyContent: 'center' }}>
                         <Button
-                            style={styles.homeBtn, { color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24 }}
+                            style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%', marginTop: 26 }}
                             type='submit'
                             endIcon={<BsIcons.BsArrowRight/>}
                             onClick={()=>history.push('/')}
-                            >
+                        >
                             <span style={styles.backBtnLabel}>{'Back'}</span>
                         </Button>
 
@@ -91,16 +92,16 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                 {projectTabs.map((projectTab, i)=>{
                     return(
                         <TabPanel value={activeTab} index={i}>
-                            <Typography className={classes.typography} style={{ fontSize: 32, fontWeight: 600, paddingTop: 26, paddingBottom: 12, color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
-                            {projects[i].subTitle && <Typography className={classes.typography} style={{ fontSize: 22, fontWeight: 600, paddingBottom: 32, color: '#fff' }}>{projects[i].subTitle}</Typography>}
+                            <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
                             <div className={classes.projectPanel}>
-                                <Grid item lg={3} md={3} sm={12} xs={12}>
+                                <Grid item lg={4} md={4} sm={12} xs={12}>
                                     <div className={classes.descSection}>
-                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff', paddingBottom: 12 }}>{projects[i].description[0].intro}</Typography>
-                                        <Typography className={classes.typography} style={{ fontWeight: "600", fontSize: 19, color: '#fff' }}>{projects[i].description[0].use}</Typography>
+																				{projects[i].subTitle && <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].subTitle}</Typography>}
+                                        <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].intro}</Typography>
+                                        <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].use}</Typography>
                                     </div>
                                 </Grid>
-                                <Grid item lg={9} md={9} sm={12} xs={12}>
+                                <Grid item lg={8} md={8} sm={12} xs={12}>
                                     <div className={classes.carousel}>
                                         <Carousel interval={9500}>
                                             {projects[i].details.map(img=>{
@@ -120,11 +121,38 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                     </div>
                                 </Grid>
                             </div>
-                            <Typography className={classes.typography} style={{ color: '#fff', paddingTop: 4, fontSize: 21, textAlign: 'center' }}><strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>{projects[i].technologies}</Typography>
+                            <Typography 
+															className={classes.typography} 
+															style={{ color: '#fff', paddingTop: 4, fontSize: 21, textAlign: 'center' }}
+														>
+															<strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>
+															{projects[i].technologies}</Typography>
                             <div className={classes.buttonSection}>
-                                { projects[i].live && <ContainedButton style={{ border: `1px solid ${projects[i].colorTheme}`, color: `${projects[i].colorTheme}` }} onClick={()=> window.open(`${projects[i].live}`, "_blank")}>Live</ContainedButton>}
+                                { projects[i].live && (
+																	<ContainedButton 
+																		className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
+																		style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
+																		onClick={()=> window.open(`${projects[i].live}`, "_blank")}
+																	>
+																		Live
+																	</ContainedButton>
+																)}
                                 { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
                             </div> 
+														
+														<Hidden mdUp>
+														<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+																	<Button
+																			style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%'}}
+																			type='submit'
+																			endIcon={<BsIcons.BsArrowRight/>}
+																			onClick={()=>history.push('/')}
+																			>
+																			<span style={styles.backBtnLabel}>{'Back'}</span>
+																	</Button>
+
+															</div>
+													</Hidden>
                         <hr style={{ backgroundColor: `${projects[i].colorTheme}` }} />
                         </TabPanel>
                     )
@@ -138,7 +166,6 @@ const styles = {
     container:{
         minHeight: 'calc(100vh - 94px)',
     },
-    homeBtn:{},
     backBtnLabel:{
         transform: 'rotate(180deg)',
     }
@@ -148,18 +175,17 @@ const useStyles = makeStyles((theme) => ({
       projectTabs:{
         paddingTop: 150,
         [theme.breakpoints.down('sm')]:{
-            paddingTop: 56,
+            paddingTop: 24,
         },
       },
       projectPanel:{
         display: 'flex',
-        paddingBottom: 36,
+        paddingBottom: 24,
         [theme.breakpoints.down('sm')]:{
             flexDirection: 'column',
         }
       },
       descSection:{
-        paddingTop: 2,
         paddingRight: 15,
         [theme.breakpoints.down('sm')]:{
             paddingTop: 0,
@@ -176,7 +202,8 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'space-between',
             width: '100%',
             [theme.breakpoints.down('sm')]:{
-                flexDirection: 'column'
+                flexDirection: 'column',
+								alignItems: 'center'
             },
         },
         '& .MuiTab-root': {
@@ -216,7 +243,47 @@ const useStyles = makeStyles((theme) => ({
         height: 110,
         justifyContent: 'space-between',    
         marginTop: 35,
-    }
+				[theme.breakpoints.down('sm')]: {
+					height: 'auto',
+					marginBottom: 26
+				}
+    },
+		liveButtonMain: {
+			[theme.breakpoints.down('sm')]: {
+				marginBottom: 0
+			}
+		},
+		liveButton: {
+			'& [class*="-endIcon"]': {
+				color: '#131313',
+			},
+			'&:hover':{ 
+				'& [class*="-endIcon"]': {
+					color: '#131313',
+				},
+			},
+		},
+		projectInfo: {
+			fontWeight: 600, 
+			fontSize: 19, 
+			paddingBottom: 12, 
+			color: '#fff',
+			[theme.breakpoints.down('xs')]:{
+				textAlign: 'center',
+				fontWeight: 500,
+				fontSize: 16,
+			}
+		},
+		projectTitle: {
+			fontSize: 32, 
+			fontWeight: 600, 
+			paddingTop: 26, 
+			paddingBottom: 26, 
+			[theme.breakpoints.down('xs')]:{
+				fontSize: 22,
+				textAlign: 'center',
+			}
+		}
 }));
 
 

@@ -43,7 +43,7 @@ export const projects = [
                 "use": "We have built a digital collectibles experience which give fans the opportunity to unpack and own the best moments in kickboxing history, ranging from the early days of K-1 to the modern era in GLORY.",
             }
         ],
-        "technologies": "React.js, Moralis, Material UI",
+        "technologies": "React.js, Moralis, Web3",
         "live": 'https://glorysmacks.com/',
         "details": [ 
             {
