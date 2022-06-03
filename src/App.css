@@ -219,7 +219,6 @@ div.active.carousel-item{
 }
 
 .social-footer{
-  /* color: #6DDBAF;  */
   display: flex;
   justify-content: center; 
   margin: 0px;
@@ -228,30 +227,10 @@ div.active.carousel-item{
 }
 
 .social-button-footer{
-  /* color: #6DDBAF; */
   list-style: none;
   padding: 0px 8px;
   cursor: pointer;
 }
-
-/* .live-button{
-  background-color: #6DDBAF;
-  font-weight: 600;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  color: #000;
-  padding: 0.25rem 0.75rem;
-}
-
-.live-button:hover{
-  background-color: white;
-  color: #131313;
-  padding-right: 22px;
-  padding-left: 22px;
-} */
 
 .resume-button:hover{
   background-color: #131313;
@@ -268,7 +247,7 @@ div.active.carousel-item{
 p#blogIntro::first-letter{
   font-weight: 500;
   font-size: 40px;
-  color: #0B93F6;
+  color: #35c958;
 }
 
 div.modal-header, div.modal-body, div.modal-footer{

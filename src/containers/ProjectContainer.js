@@ -92,11 +92,39 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                 {projectTabs.map((projectTab, i)=>{
                     return(
                         <TabPanel value={activeTab} index={i}>
-                            <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
+                            <div className={classes.headerButtonWrapper}>
+                                <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
+                                {projects[i].live && (
+                                    <ContainedButton 
+                                        className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
+                                        style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
+                                        onClick={()=> window.open(`${projects[i].live}`, "_blank")}
+                                    >
+                                    {'Live'}
+                                    </ContainedButton>
+                                )}
+                                {projects[i].code &&  (
+                                    <Button
+                                        className={classes.viewCodeButton}
+                                        style={{ maxWidth: 165, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, borderRadius: 24, width: '100%' }}
+                                        type='submit'
+                                        endIcon={<img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} />}
+                                        onClick={()=> window.open(`${projects[i].code}`, "_blank")}
+                                    >
+                                        View Code
+                                    </Button>
+                                )}
+                            </div>
                             <div className={classes.projectPanel}>
                                 <Grid item lg={4} md={4} sm={12} xs={12}>
                                     <div className={classes.descSection}>
-																				{projects[i].subTitle && <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].subTitle}</Typography>}
+										{projects[i].subTitle && (
+                                            <Typography 
+                                                className={classNames(classes.typography, classes.projectInfo)}
+                                            >
+                                                {projects[i].subTitle}
+                                            </Typography>
+                                        )}
                                         <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].intro}</Typography>
                                         <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].use}</Typography>
                                     </div>
@@ -122,37 +150,25 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                 </Grid>
                             </div>
                             <Typography 
-															className={classes.typography} 
-															style={{ color: '#fff', paddingTop: 4, fontSize: 21, textAlign: 'center' }}
-														>
-															<strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>
-															{projects[i].technologies}</Typography>
-                            <div className={classes.buttonSection}>
-                                { projects[i].live && (
-																	<ContainedButton 
-																		className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
-																		style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
-																		onClick={()=> window.open(`${projects[i].live}`, "_blank")}
-																	>
-																		Live
-																	</ContainedButton>
-																)}
-                                { projects[i].code &&  <button className="view-code" onClick={()=> window.open(`${projects[i].code}`, "_blank")}>View Code <img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} /></button>}
-                            </div> 
-														
-														<Hidden mdUp>
-														<div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-																	<Button
-																			style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%'}}
-																			type='submit'
-																			endIcon={<BsIcons.BsArrowRight/>}
-																			onClick={()=>history.push('/')}
-																			>
-																			<span style={styles.backBtnLabel}>{'Back'}</span>
-																	</Button>
+                                className={classes.technologiesText} 
+                                style={{ color: '#fff', paddingTop: 4, fontSize: 21, textAlign: 'center' }}
+                            >
+                                <strong style={{ color: `${projects[i].colorTheme}`, fontWeight: "600" }}>Technologies: </strong>
+                                {projects[i].technologies}
+                            </Typography>														
+                            <Hidden mdUp>
+                                <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                    <Button
+                                        style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%', marginTop: 26, marginBottom: 16 }}
+                                        type='submit'
+                                        endIcon={<BsIcons.BsArrowRight/>}
+                                        onClick={()=>history.push('/')}
+                                    >
+                                        <span style={styles.backBtnLabel}>{'Back'}</span>
+                                    </Button>
 
-															</div>
-													</Hidden>
+                                </div>
+                        </Hidden>
                         <hr style={{ backgroundColor: `${projects[i].colorTheme}` }} />
                         </TabPanel>
                     )
@@ -196,12 +212,19 @@ const useStyles = makeStyles((theme) => ({
       typography:{
         fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
       },
+      technologiesText: {
+        fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        paddingBottom: 32,
+        [theme.breakpoints.down('sm')]: {
+            paddingBottom: 2,
+        }
+      },
       root: {
         '& .MuiTabs-flexContainer': {
             display: 'flex',
             justifyContent: 'space-between',
             width: '100%',
-            [theme.breakpoints.down('sm')]:{
+            [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column',
 								alignItems: 'center'
             },
@@ -250,9 +273,16 @@ const useStyles = makeStyles((theme) => ({
     },
 		liveButtonMain: {
 			[theme.breakpoints.down('sm')]: {
-				marginBottom: 0
+				marginBottom: 4,
+                marginTop: 12,
 			}
 		},
+        viewCodeButton: {
+            [theme.breakpoints.down('sm')]: {
+				marginBottom: 4,
+                marginTop: 12,
+			}
+        },
 		liveButton: {
 			'& [class*="-endIcon"]': {
 				color: '#131313',
@@ -268,7 +298,7 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: 19, 
 			paddingBottom: 12, 
 			color: '#fff',
-			[theme.breakpoints.down('xs')]:{
+			[theme.breakpoints.down('xs')]: {
 				textAlign: 'center',
 				fontWeight: 500,
 				fontSize: 16,
@@ -277,13 +307,24 @@ const useStyles = makeStyles((theme) => ({
 		projectTitle: {
 			fontSize: 32, 
 			fontWeight: 600, 
-			paddingTop: 26, 
-			paddingBottom: 26, 
-			[theme.breakpoints.down('xs')]:{
+			[theme.breakpoints.down('xs')]: {
 				fontSize: 22,
 				textAlign: 'center',
 			}
-		}
+		},
+        headerButtonWrapper: {
+            display: 'flex', 
+            width: '100%', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            paddingBottom: 12, 
+            padding: '12px 0px',
+            [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column',
+                padding: '16px 0px',
+            }
+            
+        }
 }));
 
 

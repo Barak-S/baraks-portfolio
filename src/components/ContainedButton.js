@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         position: 'relative',
         borderRadius: 24,
+        height: 40,
         '& .MuiButton-label': {
             marginRight: -24,
             transition: '0.3s ease-in-out all',

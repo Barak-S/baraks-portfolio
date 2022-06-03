@@ -76,8 +76,8 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                             </Tooltip>   
                         </div>
                         <Hidden smDown>
-                            <ContainedButton onClick={()=> window.open(Resume, "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
-                                Download Resume
+                            <ContainedButton className={classes.commonBtn} onClick={()=> window.open(Resume, "_blank")} style={{ marginTop: 20, maxWidth: 245, outline: 'none' }} variant="contained" color="primary">
+                                {'Download Resume'}
                             </ContainedButton>
                         </Hidden>
                         <Hidden mdUp>
@@ -109,8 +109,12 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         position: 'relative',
         borderRadius: 24,
+        backgroundColor: '#35c958',
+        backgroundAttachment: 'fixed',
+        color: '#131313',
         '&:hover':{ 
-            backgroundColor: '#131313',
+            background: 'none',
+            boxShadow: 'none',
             color: "#fff",
             '& [class*="-endIcon"]': {
             opacity: 1,

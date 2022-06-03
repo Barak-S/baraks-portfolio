@@ -76,19 +76,19 @@ function App() {
   );
 }
 
-function Footer({ selectedTheme }) {
+const Footer = ({ selectedTheme }) => {
   return (
       <div className="div-footer">
-          <p className="footer-text" style={{ color: selectedTheme ? selectedTheme : '#0B93F6' }}>{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
+          <p className="footer-text" style={{ color: selectedTheme ? selectedTheme : '#35c958' }}>{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
           <ul className="social-footer">
             <li className="social-button-footer">
-              <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#0B93F6' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
+              <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
             </li>
             <li className="social-button-footer">
-              <span><AiFillGithub size={23} color={ selectedTheme ? selectedTheme : '#0B93F6' } onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
+              <span><AiFillGithub size={23} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
             </li>
             <li className="social-button-footer">
-              <span><AiFillMediumCircle size={23} color={ selectedTheme ? selectedTheme : '#0B93F6' } onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
+              <span><AiFillMediumCircle size={23} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
             </li>
           </ul>
       </div>

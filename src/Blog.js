@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Image } from 'react-bootstrap';
-import ContainedButton from './components/ContainedButton';
 import { Hidden, Button, makeStyles } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
-import * as BsIcons from 'react-icons/bs';
 import Resume from './resume/Copy of Barak Saidoff Resume.pdf';
 
 
 const Blog = () => {
-    const history = useHistory()
     const classes = useStyles()
     const [latestBlog, setLatestBlog] = useState('')
     const [blogTitle, setBlogTitle] = useState('')
@@ -29,14 +25,14 @@ const Blog = () => {
       .catch(err=>console.log(err))
     })
   
-    function toText(node) {
+    const toText = (node) => {
       let tag = document.createElement('div')
       tag.innerHTML = node
       node = tag.innerText
       return node
     }
   
-    function getDateString(timestamp){
+    const getDateString = (timestamp) => {
       if (timestamp !== "N/A"){
           var arr = timestamp.split(/[- :]/);
           timestamp = new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]);
@@ -44,7 +40,7 @@ const Blog = () => {
       }
     }
   
-    function previewBlogContent(content){
+    const previewBlogContent = (content) => {
       let parsedText = toText(content)
       if (content.length > 449 ){
           return `${parsedText.slice(0,450)} ...`
@@ -58,7 +54,6 @@ const Blog = () => {
         <div className="about-section">
           <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#0B93F6"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving.</p>
           <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#0B93F6"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#0B93F6"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
-          {/* <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Background in Sales and Financial Services <span style={{ color: "#6DDBAF"}}>|</span></strong> Partnered with S2 Filings sales team and brought in leads that accounted for generating over $1 million in annual sales.</p> */}
         </div>
         <Hidden mdUp>
             <div className="projectBtnSection">
@@ -69,7 +64,7 @@ const Blog = () => {
                     className={classes.commonBtn}
                     onClick={()=> window.open(Resume, "_blank")}
                 >
-                    <span style={styles.backBtnLabel}>{'Download Resume'}</span>
+                    <span>{'Download Resume'}</span>
                 </Button>
             </div>
         </Hidden>
@@ -81,10 +76,10 @@ const Blog = () => {
               <Col xs={9} sm={9} md={8} lg={8}>
                   <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
                   <h4>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#0B93F6"}}>{blogTitle}</h4>
+                  <h4 style={{fontWeight: 600, color: "#35c958"}}>{blogTitle}</h4>
               </Col>
           </Row>                     
-          <p id='blogIntro' style={{ textAlign: "left"}}>{previewBlogContent(latestBlog)}</p>
+          <p id='blogIntro' style={{ textAlign: "left" }}>{previewBlogContent(latestBlog)}</p>
         </div>
       </Col>
     )
@@ -100,13 +95,15 @@ const Blog = () => {
         width: '100%',
         position: 'relative',
         borderRadius: 24,
+        borderColor: '#35c958',
+        color: '#35c958',
         '&:hover':{ 
-            backgroundColor: '#131313',
+            backgroundColor: '#35c958',
             color: "#fff",
             '& [class*="-endIcon"]': {
             opacity: 1,
             color: '#fff',
-            },
+          },
         },
     },
   }));
