@@ -76,7 +76,7 @@ const Blog = () => {
               <Col xs={9} sm={9} md={8} lg={8}>
                   <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
                   <h4>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#35c958"}}>{blogTitle}</h4>
+                  <h4 style={{fontWeight: 600, color: "#fff"}}>{blogTitle}</h4>
               </Col>
           </Row>                     
           <p id='blogIntro' style={{ textAlign: "left" }}>{previewBlogContent(latestBlog)}</p>
