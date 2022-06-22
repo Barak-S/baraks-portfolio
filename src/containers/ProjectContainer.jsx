@@ -12,8 +12,8 @@ import classNames from 'classnames';
 
 
 const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
-    const classes = useStyles();
-    const history = useHistory();
+    const classes = useStyles()
+    const history = useHistory()
     const [activeTab, setActiveTab] = useState(0)
 
     const projectTabs = [
@@ -30,10 +30,10 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
           project: projects[3]
         },
         {
-            index: 2,
-            label: 'Ideasicle X',
-            link: '/ideasicle-x',
-            project: projects[2]
+					index: 2,
+					label: 'Ideasicle X',
+					link: '/ideasicle-x',
+					project: projects[2]
         },
         {
           index: 3,

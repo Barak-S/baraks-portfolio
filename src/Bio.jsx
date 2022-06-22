@@ -94,7 +94,24 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                         </Hidden>
                     </div>
                 </div>
-            </Col>  
+								<div className="about-section">
+									<p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#0B93F6"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving.</p>
+									<p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#0B93F6"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#0B93F6"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
+								</div>
+								<Hidden mdUp>
+										<div className="projectBtnSection">
+												<Button
+														variant='outlined'
+														color='primary'
+														type='submit'
+														className={classes.commonBtn}
+														onClick={()=> window.open(Resume, "_blank")}
+												>
+														<span>{'Download Resume'}</span>
+												</Button>
+										</div>
+								</Hidden>
+            </Col>
         </div>
     )  
 }

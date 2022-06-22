@@ -51,36 +51,21 @@ const Blog = () => {
   
     return(
       <Col className="align-auto" xs={12} sm={12} md={10} lg={9}>
-        <div className="about-section">
-          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Experienced in Agile Development <span style={{ color: "#0B93F6"}}>|</span></strong> Hands on experience contributing to startups and existing code-bases through creativity and problem solving.</p>
-          <p className='skill-tag'><strong style={{fontSize: 17, fontWeight: "700"}}>Military Leadership <span style={{ color: "#0B93F6"}}>|</span> Former Sergeant in the IDF <span style={{ color: "#0B93F6"}}>|</span></strong> Achieved award of excellence upon advanced training graduation. </p>
-        </div>
-        <Hidden mdUp>
-            <div className="projectBtnSection">
-                <Button
-                    variant='outlined'
-                    color='primary'
-                    type='submit'
-                    className={classes.commonBtn}
-                    onClick={()=> window.open(Resume, "_blank")}
-                >
-                    <span>{'Download Resume'}</span>
-                </Button>
-            </div>
-        </Hidden>
-        <div className="blog-highlight" onClick={()=> window.open( `${articleLink}`, "_blank")}>   
-          <Row style={{ textAlign: "left", marginBottom: 5}}>
-              <Col xs={3} sm={3} md={2} lg={2} >
-                  <Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
-              </Col>
-              <Col xs={9} sm={9} md={8} lg={8}>
-                  <h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
-                  <h4>{getDateString(publishDate)}</h4>
-                  <h4 style={{fontWeight: 600, color: "#fff"}}>{blogTitle}</h4>
-              </Col>
-          </Row>                     
-          <p id='blogIntro' style={{ textAlign: "left" }}>{previewBlogContent(latestBlog)}</p>
-        </div>
+        {articleLink && blogTitle && (
+					<div className={classes.blogHighlight} onClick={()=> window.open( `${articleLink}`, "_blank")}>   
+						<Row style={{ textAlign: "left", marginBottom: 5}}>
+								<Col xs={3} sm={3} md={2} lg={2} >
+										<Image style={{ height: 125, width: 125, objectFit: "cover" }} src={thumbnail} thumbnail alt="Barak Saidoff Blog Thumbnail"/>
+								</Col>
+								<Col xs={9} sm={9} md={8} lg={8}>
+										<h5 style={{ fontWeight: "600"}}>Latest Blog Post: </h5> 
+										<h4>{getDateString(publishDate)}</h4>
+										<h4 style={{fontWeight: 600, color: "#fff"}}>{blogTitle}</h4>
+								</Col>
+						</Row>                     
+						<p id='blogIntro' style={{ textAlign: "left" }}>{previewBlogContent(latestBlog)}</p>
+					</div>
+				)}
       </Col>
     )
   }
@@ -106,6 +91,46 @@ const Blog = () => {
           },
         },
     },
+		blogHighlight: {
+			maxWidth: 1500,
+			margin: '0rem auto 2rem auto',
+			backgroundColor: '#131313',
+			color: '#fff',
+			zIndex: 1,
+			boxShadow: '-0.125rem 0 1rem #000',
+			WebkitTransition: '0.3s ease-in-out',
+			transition: '0.3s ease-in-out',
+			borderRadius: 16,
+			paddingLeft: 20,
+			paddingRight: 20,
+			paddingBottom: 12,
+			paddingTop: 20,
+			border: '1px solid white',
+			'&:hover': {
+				cursor: 'pointer',
+			}
+		},
+		
+		// .blog-highlight{
+		// 	max-width: 1500px;
+		// 	margin: 0rem auto 2rem auto;
+		// 	background-color: #131313;
+		// 	color: #fff;
+		// 	z-index: 1;
+		// 	box-shadow: -0.125rem 0 1rem #000;
+		// 	-webkit-transition: 0.3s ease-in-out;
+		// 	transition: 0.3s ease-in-out;
+		// 	border-radius: 16px;
+		// 	padding-left: 20px;
+		// 	padding-right: 20px;
+		// 	padding-bottom: 12px;
+		// 	padding-top: 20px;
+		// 	border: 1px solid white;
+		// }
+		
+		// .blog-highlight:hover{
+		// 	cursor: pointer;
+		// }
   }));
 
   const styles = {

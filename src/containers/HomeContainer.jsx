@@ -1,23 +1,23 @@
-import React from 'react';
-import Contact from '../Contact';
-import Portfolio from '../Portfolio';
-import Blog from '../Blog';
+import React from 'react'
+import IntroContact from '../IntroContact'
+import Bio from '../Bio'
+import Blog from '../Blog'
 
 const HomeContainer = ({ messages, reply, value, handleSubmit, handleChange }) => {
     return (
         <div>
-            <Contact
+            <IntroContact
                 messages={messages}
                 reply={reply}
             />
-            <Portfolio
+            <Bio
                 value={value}
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
             />
             <Blog/>
         </div>
-    );
-};
+    )
+}
 
-export default HomeContainer;
+export default HomeContainer

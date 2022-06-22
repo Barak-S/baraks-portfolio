@@ -3,8 +3,11 @@ import { Col, Image } from 'react-bootstrap';
 import './App.css';
 import Video from './images/city-scene.mp4'
 import { TweenMax, Power2 }  from 'gsap';
+import { makeStyles } from '@material-ui/core';
 
-export default function Contact({ messages, reply }){
+const Contact = ({ messages, reply }) => {
+	const classes = useStyles()
+	
     let videoRef = useRef(null);
     let profilePic = useRef(null);
     let textMessage = useRef(null);
@@ -35,17 +38,17 @@ export default function Contact({ messages, reply }){
 
     return(
         <div style={{ height: '100vh'}}>
-            <video ref={videoRef} id="background-video" autoPlay muted playsInline loop >
+            <video ref={videoRef} className={classes.backgroundVideo} autoPlay muted playsInline loop >
                 <source src={Video} type="video/mp4" />
             </video>
             <Col xl={7} lg={8} md={9} sm={12} xs={12} className='align-auto'>
                 <div>
-                    <div className='chat-div'>
-                        <div className="chat">
+                    <div className={classes.chatWrapper}>
+                        <div className={classes.chat}>
                             <div className="mine messages">
                                 <Image 
                                     ref={el => (profilePic = el)} 
-                                    className="HeadshotDrop" 
+                                    className={classes.headshotDrop} 
                                     style={{ 
                                         height: 100, 
                                         width: 100, 
@@ -80,11 +83,53 @@ export default function Contact({ messages, reply }){
                         </div>
                     </div>
                     <div >
-                        <h3 className="name-header">Barak Saidoff</h3>
-                        <h5 className="title-header">Full Stack Developer</h5>
+                        <h3 className={classes.nameHeader}>Barak Saidoff</h3>
+                        <h5 className={classes.titleHeader}>Full Stack Developer</h5>
                     </div>
                 </div>
             </Col>
         </div>   
     )
 }
+
+const useStyles = makeStyles((theme) => ({
+	backgroundVideo: {
+		objectFit: 'cover',
+		width: '100vw',
+		height: '100vh',
+		position: 'absolute',
+	},
+	nameHeader: {
+		paddingTop: '1rem',
+		paddingBottom: '0.5rem',
+		color: '#fff',
+		fontSize: 32,
+		fontWeight: 600,
+	},
+	titleHeader: {
+		paddingBottom: '1rem',
+		color: '#fff',
+		fontSize: 24,
+		fontWeight: 600,
+	},
+	chatWrapper: {
+		fontFamily: 'helvetica',
+		display: 'flex' ,
+		flexDirection: 'column',
+		alignItems: 'center',
+		width: '100%',
+	},
+	chat: {
+		width: '100%',
+		display: 'flex',
+		flexDirection: 'column',
+		padding: 10,
+		maxHeight: '85vh',
+		overflow: 'auto',
+	},
+	headshotDrop: {
+		opacity: 0,
+	}
+}))
+
+export default Contact

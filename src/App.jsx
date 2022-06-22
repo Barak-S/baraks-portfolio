@@ -3,31 +3,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './NavBar'
 import emailjs from 'emailjs-com';
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { AiFillMediumCircle, AiFillGithub } from "react-icons/ai";
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import HomeContainer from './containers/HomeContainer';
 import ProjectContainer from './containers/ProjectContainer';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
+import { makeStyles } from '@material-ui/core';
+import Footer from './components/Footer';
 
-function App() {
+
+const App = () => {
+	const classes = useStyles()
+	
   const [data, setData] = useState({ message: '' });
   const [reply, setReply] = useState({ message: '' })
   const [messages, setMessages] = useState([]);
   const [selectedTheme, setSelectedTheme] = useState(null)
+	
   const { message } = data;
 
   const handleTextFieldChanged = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-  };
+  }
 
   const sendEmail = (e) => {
     if (data.message.length){
       var templateParams = {
         subject: 'This email is from BarakSaidoff.com',
         message: data.message,
-      };
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' })
       let newMessage = messages.concat([data])
       setMessages(newMessage)
@@ -37,15 +41,15 @@ function App() {
         setReply({ message: 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!'})
         console.log('email sent success')
       }, (error) => {
-        console.log(error.text);
-      });
+        console.log(error.text)
+      })
     }
-  };
+  }
   
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <div className="App">
+        <div className={classes.root}>
           <NavBar selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
           <Switch>
             <Route exact path={'/'} render={(routerProps) =>( 
@@ -73,27 +77,22 @@ function App() {
         </div>
       </Router>
     </MuiThemeProvider>
-  );
-}
-
-const Footer = ({ selectedTheme }) => {
-  return (
-      <div className="div-footer">
-          <p className="footer-text" style={{ color: selectedTheme ? selectedTheme : '#35c958' }}>{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
-          <ul className="social-footer">
-            <li className="social-button-footer">
-              <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
-            </li>
-            <li className="social-button-footer">
-              <span><AiFillGithub size={23} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/></span>
-            </li>
-            <li className="social-button-footer">
-              <span><AiFillMediumCircle size={23} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
-            </li>
-          </ul>
-      </div>
   )
 }
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		minHeight: '100vh',
+		fontFamily: `"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
+		letterSpacing: .35, 
+		lineHeight: 1.8,
+		margin: 0,
+		padding: 0,
+		boxSizing: 'border-box',
+		backgroundColor: '#131313',
+	}
+}))
+
 
 export default App;
 
