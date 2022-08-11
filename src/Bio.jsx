@@ -85,7 +85,7 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
                                 variant='contained'
                                 color='primary'
                                 type='submit'
-                                className={classes.commonBtn}
+                                className={classes.commonBtnProjects}
                                 endIcon={<BsIcons.BsArrowRight/>}
                                 onClick={()=> history.push('/projects/watery')}
                             >
@@ -100,15 +100,15 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
 								</div>
 								<Hidden mdUp>
 										<div className="projectBtnSection">
-												<Button
+												<ContainedButton
 														variant='outlined'
 														color='primary'
 														type='submit'
 														className={classes.commonBtn}
 														onClick={()=> window.open(Resume, "_blank")}
 												>
-														<span>{'Download Resume'}</span>
-												</Button>
+													{'Download Resume'}
+												</ContainedButton>
 										</div>
 								</Hidden>
             </Col>
@@ -117,6 +117,28 @@ export default function Portfolio({ value, handleChange, handleSubmit}){
 }
 
 const useStyles = makeStyles((theme) => ({
+	commonBtnProjects:{
+		marginTop: 22,
+		ouline: 'none',
+		fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+		maxWidth: 230, 
+		padding: '8px 0', 
+		width: '100%',
+		position: 'relative',
+		borderRadius: 24,
+		backgroundColor: '#35c958',
+		backgroundAttachment: 'fixed',
+		color: '#131313',
+		'&:hover':{ 
+				background: 'none',
+				boxShadow: 'none',
+				color: "#fff",
+				'& [class*="-endIcon"]': {
+				opacity: 1,
+				color: '#fff',
+				},
+		},
+	},
     commonBtn:{
         marginTop: 22,
         ouline: 'none',
@@ -127,17 +149,36 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         borderRadius: 24,
         backgroundColor: '#35c958',
+				border: 'none',
+				outline: 'none',
         backgroundAttachment: 'fixed',
         color: '#131313',
-        '&:hover':{ 
-            background: 'none',
-            boxShadow: 'none',
-            color: "#fff",
-            '& [class*="-endIcon"]': {
-            opacity: 1,
-            color: '#fff',
-            },
-        },
+				'& .MuiButton-label': {
+					marginRight: -6,
+					marginBottom: -2,
+					transition: '0.3s ease-in-out all',
+				},    
+				'&:hover':{ 
+					backgroundColor: '#131313',
+					boxShadow: 'none',
+					border: 'none',
+					outline: 'none',
+					color: "#fff",
+					"& > *:first-child": {
+						transform: 'translateY(5px)',
+						opacity: 1,
+					},
+					'& [class*="-endIcon"]': {
+						opacity: 1,
+						color: '#35c958',
+					},
+				},
+				'& [class*="-endIcon"]': {
+					opacity: 1,
+					transform: 'translateY(-1px) rotate(90deg)',
+					color: '#131313',
+					transition: '0.5s ease-out all',
+			},
     },
     techSkills: {
         display: 'flex',

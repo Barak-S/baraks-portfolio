@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
         '&:hover':{ 
             backgroundColor: '#131313',
             color: "#fff",
+						border: 'none',
+						outline: 'none',	
             "& > *:first-child": {
             transform: 'translateX(-10px)',
             opacity: 1,
