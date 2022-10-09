@@ -46,9 +46,6 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 			outline: 'none',
 			position: 'absolute',
 			right: 17.5,
-			backgroundColor: '#131313',
-			color: "#fff",
-
 		},
 		backBtnLabel: {
 			transform: 'rotate(180deg)',
@@ -76,7 +73,7 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 						variant='outlined'
 						color='primary'
 						type='submit'
-						className={classes.commonBtn}
+						className={classes.backBtn}
 						endIcon={<BsIcons.BsArrowRight />}
 						onClick={() => history.push('/')}
 					>
@@ -97,7 +94,13 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 			</ul>
 			<Hidden smDown>
 				{activeButton === '/' && (
-					<ContainedButton variant="contained" color="primary" style={styles.projectBtn} onClick={() => history.push('projects/watery')}>
+					<ContainedButton
+						variant="contained"
+						color="primary"
+						style={styles.projectBtn}
+						onClick={() => history.push('projects/watery')}
+						className={classes.commonBtn}
+					>
 						{'My Projects'}
 					</ContainedButton>
 				)}
@@ -108,6 +111,41 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 
 const useStyles = makeStyles((theme) => ({
 	commonBtn: {
+		fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+		maxWidth: 165,
+		padding: '8px 0',
+		width: '100%',
+		position: 'relative',
+		borderRadius: 24,
+		backgroundColor: '#131313',
+		color: '#fff',
+		'& .MuiButton-label': {
+			marginRight: -10,
+			transition: '0.3s ease-in-out all',
+			color: '#fff',
+		},
+		'&:hover': {
+			backgroundColor: '#131313',
+			color: "#fff",
+			"& > *:first-child": {
+				transform: 'translateX(-10px)',
+				opacity: 1,
+			},
+			'& [class*="-endIcon"]': {
+				opacity: 1,
+				color: '#35c958',
+			},
+		},
+		[theme.breakpoints.down('sm')]: {
+			marginBottom: 27,
+		},
+		'& [class*="-endIcon"]': {
+			opacity: 1,
+			color: '#fff',
+			transition: '0.5s ease-out all',
+		},
+	},
+	backBtn: {
 		fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
 		maxWidth: 165,
 		padding: '8px 0',

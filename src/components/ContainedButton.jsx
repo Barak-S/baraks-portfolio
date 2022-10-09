@@ -34,6 +34,11 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         borderRadius: 24,
         height: 40,
+				backgroundColor: '#35c958',
+				border: 'none',
+				outline: 'none',
+				backgroundAttachment: 'fixed',
+				color: '#131313',
         '& .MuiButton-label': {
             marginRight: -24,
             transition: '0.3s ease-in-out all',
@@ -48,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
             opacity: 1,
             },
             '& [class*="-endIcon"]': {
-            opacity: 1,
-            color: '#fff',
+							opacity: 1,
+							color: '#35c958',
             },
         },
         [theme.breakpoints.down('sm')]: {

@@ -17,30 +17,30 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
     const [activeTab, setActiveTab] = useState(0)
 
     const projectTabs = [
-        {
-          index: 0,
-          label: 'Watery.com',
-          link: '/watery',
-          project: projects[0]
-        },
-        {
-          index: 1,
-          label: 'Glorysmacks.com',
-          link: '/glory-smacks',
-          project: projects[3]
-        },
-        {
-					index: 2,
-					label: 'Ideasicle X',
-					link: '/ideasicle-x',
-					project: projects[2]
-        },
-        {
-          index: 3,
-          label: "What We Watchin'",
-          link: '/what-we-watchin',
-          project: projects[1]
-        },
+			{
+				index: 0,
+				label: 'Watery.com',
+				link: '/watery',
+				project: projects[0]
+			},
+			{
+				index: 1,
+				label: 'Glorysmacks.com',
+				link: '/glory-smacks',
+				project: projects[3]
+			},
+			{
+				index: 2,
+				label: 'Ideasicle X',
+				link: '/ideasicle-x',
+				project: projects[2]
+			},
+			{
+				index: 3,
+				label: "What We Watchin'",
+				link: '/what-we-watchin',
+				project: projects[1]
+			},
     ];
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
@@ -104,50 +104,49 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                     </ContainedButton>
                                 )}
                                 {projects[i].code &&  (
-                                    <Button
-                                        className={classes.viewCodeButton}
-                                        style={{ maxWidth: 165, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, borderRadius: 24, width: '100%' }}
-                                        type='submit'
-                                        endIcon={<img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} />}
-                                        onClick={()=> window.open(`${projects[i].code}`, "_blank")}
-                                    >
-                                        View Code
-                                    </Button>
+																	<Button
+																		className={classes.viewCodeButton}
+																		style={{ maxWidth: 165, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, borderRadius: 24, width: '100%' }}
+																		type='submit'
+																		endIcon={<img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} />}
+																		onClick={()=> window.open(`${projects[i].code}`, "_blank")}
+																	>
+																		View Code
+																	</Button>
                                 )}
                             </div>
                             <div className={classes.projectPanel}>
-                                <Grid item lg={4} md={4} sm={12} xs={12}>
-                                    <div className={classes.descSection}>
-										{projects[i].subTitle && (
-                                            <Typography 
-                                                className={classNames(classes.typography, classes.projectInfo)}
-                                            >
-                                                {projects[i].subTitle}
-                                            </Typography>
-                                        )}
-                                        <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].intro}</Typography>
-                                        <Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].use}</Typography>
-                                    </div>
-                                </Grid>
-                                <Grid item lg={8} md={8} sm={12} xs={12}>
-                                    <div className={classes.carousel}>
-                                        <Carousel interval={9500}>
-                                            {projects[i].details.map(img=>{
-                                                return(
-                                                    <Carousel.Item  className={classes.carousel}>
-                                                        <Image
-                                                            src={require(`../${img.img}`)}
-                                                            alt={projects[i].title}
-                                                            thumbnail 
-                                                            className={classes.imgThumbnail}
-                    
-                                                        />
-                                                    </Carousel.Item>
-                                                )
-                                            })}
-                                        </Carousel>
-                                    </div>
-                                </Grid>
+															<Grid item lg={4} md={4} sm={12} xs={12}>
+																<div className={classes.descSection}>
+																	{projects[i].subTitle && (
+																		<Typography 
+																			className={classNames(classes.typography, classes.projectInfo)}
+																		>
+																			{projects[i].subTitle}
+																		</Typography>
+																	)}
+																	<Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].intro}</Typography>
+																	<Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].use}</Typography>
+																</div>
+															</Grid>
+															<Grid item lg={8} md={8} sm={12} xs={12}>
+																<div className={classes.carousel}>
+																	<Carousel interval={9500}>
+																		{projects[i].details.map(img=>{
+																			return(
+																				<Carousel.Item  className={classes.carousel}>
+																					<Image
+																						src={require(`../${img.img}`)}
+																						alt={projects[i].title}
+																						thumbnail 
+																						className={classes.imgThumbnail}
+																					/>
+																				</Carousel.Item>
+																			)
+																		})}
+																	</Carousel>
+																</div>
+															</Grid>
                             </div>
                             <Typography 
                                 className={classes.technologiesText} 
