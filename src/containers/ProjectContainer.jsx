@@ -41,53 +41,52 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 				link: '/what-we-watchin',
 				project: projects[1]
 			},
-    ];
+    ]
 
     useEffect(()=>window.scrollTo({ top: 0, behavior: 'smooth' }),[])
 
     return (
-        <div style={styles.container}>
+        <div style={{ minHeight: 'calc(100vh - 94px)' }}>
             <Container>
                 <Hidden mdUp>
-                    <div style={{ paddingTop: 84, width: '100%', display: 'flex', justifyContent: 'center' }}>
-                        <Button
-                            style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%', marginTop: 26 }}
-                            type='submit'
-                            endIcon={<BsIcons.BsArrowRight/>}
-                            onClick={()=>history.push('/')}
-                        >
-                            <span style={styles.backBtnLabel}>{'Back'}</span>
-                        </Button>
-
-                    </div>
+									<div style={{ paddingTop: 84, width: '100%', display: 'flex', justifyContent: 'center' }}>
+										<Button
+											style={{ maxWidth: 310, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, transform: 'rotate(180deg)', borderRadius: 24, width: '100%', marginTop: 26 }}
+											type='submit'
+											endIcon={<BsIcons.BsArrowRight/>}
+											onClick={()=>history.push('/')}
+										>
+											<span style={styles.backBtnLabel}>{'Back'}</span>
+										</Button>
+									</div>
                 </Hidden>
                 <Tabs
-                    className={classes.projectTabs}
-                    classes={{ root: classes.root }}
-                    value={activeTab || 0}
-                    indicatorColor={`secondary`}
-                    onChange={(_e, val) => setActiveTab(val)}
-                    >
-                    {projectTabs.map((tab,i)=>{
-                        return(
-                        <Tab 
-                            classes={{ label: classes.label }}
-                            key={tab.index} 
-                            label={tab.label} 
-                            component={NavLink} 
-                            to={`/projects${tab.link}`} 
-                            isActive={(match, location) => {
-                                if (match) {
-                                    setSelectedTheme(projects[i].colorTheme)
-                                    setActiveTab(tab.index);
-                                    return true;
-                                } else {
-                                    return false;
-                                }
-                            }}
-                        />
-                        )
-                    })}
+									className={classes.projectTabs}
+									classes={{ root: classes.root }}
+									value={activeTab || 0}
+									indicatorColor={`secondary`}
+									onChange={(_e, val) => setActiveTab(val)}
+								>
+									{projectTabs.map((tab,i)=>{
+										return(
+											<Tab 
+												classes={{ label: classes.label }}
+												key={tab.index} 
+												label={tab.label} 
+												component={NavLink} 
+												to={`/projects${tab.link}`} 
+												isActive={(match, location) => {
+													if (match) {
+														setSelectedTheme(projects[i].colorTheme)
+														setActiveTab(tab.index);
+														return true;
+													} else {
+														return false;
+													}
+												}}
+											/>
+										)
+									})}
                 </Tabs>
                 {projectTabs.map((projectTab, i)=>{
                     return(
@@ -96,9 +95,9 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                 <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
                                 {projects[i].live && (
                                     <ContainedButton 
-                                        className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
-                                        style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
-                                        onClick={()=> window.open(`${projects[i].live}`, "_blank")}
+																			className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
+																			style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
+																			onClick={()=> window.open(`${projects[i].live}`, "_blank")}
                                     >
                                     {'Live'}
                                     </ContainedButton>
@@ -178,9 +177,6 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 };
 
 const styles = {
-    container:{
-        minHeight: 'calc(100vh - 94px)',
-    },
     backBtnLabel:{
         transform: 'rotate(180deg)',
     }
@@ -273,15 +269,23 @@ const useStyles = makeStyles((theme) => ({
 		liveButtonMain: {
 			[theme.breakpoints.down('sm')]: {
 				marginBottom: 4,
-                marginTop: 12,
-			}
+				marginTop: 12,
+			},
+			'& [class*="-endIcon"]': {
+				color: '#fff',
+			},
+			'&:hover':{ 
+				'& [class*="-endIcon"]': {
+					color: '#fff',
+				},
+			},
 		},
-        viewCodeButton: {
-            [theme.breakpoints.down('sm')]: {
+		viewCodeButton: {
+			[theme.breakpoints.down('sm')]: {
 				marginBottom: 4,
-                marginTop: 12,
-			}
-        },
+				marginTop: 12,
+			},
+		},
 		liveButton: {
 			'& [class*="-endIcon"]': {
 				color: '#131313',

@@ -41,69 +41,69 @@ const Contact = ({ messages, reply, value, handleChange, handleSubmit }) => {
 
 
     return(
-        <div style={{ height: '100vh', width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <video ref={videoRef} className={classes.backgroundVideo} autoPlay muted playsInline loop >
-                <source src={Video} type="video/mp4" />
-            </video>
-            <Col xl={7} lg={8} md={9} sm={12} xs={12} className={classes.contentCol}>
-							<div className={classes.chatWrapper}>
-									<div className={classes.chat}>
-											<div className="mine messages">
-												<Image 
-													ref={el => (profilePic = el)} 
-													className={classes.headshotDrop} 
-													style={{ 
-															height: 100, 
-															width: 100, 
-													}} 
-													src={require("./images/headshot2021.jpg")} 
-													roundedCircle 
-													alt="Barak Saidoff Profile Picture"
-												/>
-												<div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage = el)} >
-													Hey, I'm Barak!
-												</div>
-												<div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage2 = el)} >
-													Scroll down to view my portfolio!
-												</div>
-											</div>
-											<div className="yours messages">
-													{messages.map((mssg)=>{
-														return(
-															<div key={mssg} className="message">
-																{mssg.message}
-															</div>
-														)
-													})}
-											</div>
-											{reply.message === 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!' && (
-												<div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
-														<div className="reply message" style={{ opacity: 1}}>
-														{reply.message}
-														</div>
-												</div> 
-											)}
+      <div style={{ height: '100vh', width: '100%', display: 'flex', justifyContent: 'center' }}>
+				<video ref={videoRef} className={classes.backgroundVideo} autoPlay muted playsInline loop >
+						<source src={Video} type="video/mp4" />
+				</video>
+				<Col xl={7} lg={8} md={9} sm={12} xs={12} className={classes.contentCol}>
+						<div className={classes.chatWrapper}>
+							<div className={classes.chat}>
+									<div className="mine messages">
+										<Image 
+											ref={el => (profilePic = el)} 
+											className={classes.headshotDrop} 
+											style={{ 
+													height: 100, 
+													width: 100, 
+											}} 
+											src={require("./images/headshot2021.jpg")} 
+											roundedCircle 
+											alt="Barak Saidoff Profile Picture"
+										/>
+										<div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage = el)} >
+											Hey, I'm Barak!
+										</div>
+										<div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage2 = el)} >
+											Scroll down to view my portfolio!
+										</div>
 									</div>
+									<div className="yours messages">
+											{messages.map((mssg)=>{
+												return(
+													<div key={mssg} className="message">
+														{mssg.message}
+													</div>
+												)
+											})}
+									</div>
+									{reply.message === 'You have sent a message to my email. Please leave your contact information and I will get back to you soon. Thanks!' && (
+										<div className="mine messages" style={{ paddingTop: 0, opacity: 1, transform: 'translateY(-150px)'}}>
+												<div className="reply message" style={{ opacity: 1}}>
+												{reply.message}
+												</div>
+										</div> 
+									)}
 							</div>
-							<div className={classes.emailArea} ref={el => (inputRef = el)}>
-								<Form.Group controlId="exampleForm.ControlTextarea1" className={classes.formGroup}>
-									<Form.Control 
-										placeholder="Send me your contact info!"
-										as="textarea" 
-										name="message"
-										rows={1} 
-										onChange={(e)=>handleChange(e)}
-										value={ value || ''}
-									/>
-									<span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6", cursor: 'pointer' }}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
-								</Form.Group>
-							</div>
-							<div className={classes.headerArea}>
-									<h3 className={classes.nameHeader}>Barak Saidoff</h3>
-									<h5 className={classes.titleHeader}>Full Stack Developer</h5>
-							</div>
-            </Col>
-        </div>   
+					</div>
+					<div className={classes.emailArea} ref={el => (inputRef = el)}>
+						<Form.Group controlId="exampleForm.ControlTextarea1" className={classes.formGroup}>
+							<Form.Control 
+								placeholder="Send me your contact info!"
+								as="textarea" 
+								name="message"
+								rows={1} 
+								onChange={(e)=>handleChange(e)}
+								value={ value || ''}
+							/>
+							<span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6", cursor: 'pointer' }}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
+						</Form.Group>
+					</div>
+					<div className={classes.headerArea}>
+							<h3 className={classes.nameHeader}>Barak Saidoff</h3>
+							<h5 className={classes.titleHeader}>Full Stack Developer</h5>
+					</div>
+				</Col>
+			</div>   
     )
 }
 
