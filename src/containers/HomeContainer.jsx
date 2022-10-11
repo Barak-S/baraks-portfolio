@@ -4,16 +4,16 @@ import Bio from '../Bio'
 
 const HomeContainer = ({ messages, reply, value, handleSubmit, handleChange }) => {
     return (
-        <div>
-					<IntroContact
-						messages={messages}
-						reply={reply}
-						value={value}
-						handleSubmit={handleSubmit}
-						handleChange={handleChange}
-					/>
-					<Bio/>
-        </div>
+			<div>
+				<IntroContact
+					messages={messages}
+					reply={reply}
+					value={value}
+					handleSubmit={handleSubmit}
+					handleChange={handleChange}
+				/>
+				<Bio/>
+			</div>
     )
 }
 

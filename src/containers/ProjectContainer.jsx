@@ -8,6 +8,7 @@ import TabPanel from '../components/TabPanel';
 import ContainedButton from '../components/ContainedButton';
 import { useHistory } from 'react-router-dom';
 import * as BsIcons from 'react-icons/bs';
+import * as BiIcons from 'react-icons/bi';
 import classNames from 'classnames';
 
 
@@ -21,25 +22,29 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 				index: 0,
 				label: 'Watery.com',
 				link: '/watery',
-				project: projects[0]
+				project: projects[0],
+				tabClassName: classes.project1
 			},
 			{
 				index: 1,
 				label: 'Glorysmacks.com',
 				link: '/glory-smacks',
-				project: projects[3]
+				project: projects[3],
+				tabClassName: classes.project2
 			},
 			{
 				index: 2,
 				label: 'Ideasicle X',
 				link: '/ideasicle-x',
-				project: projects[2]
+				project: projects[2],
+				tabClassName: classes.project3
 			},
 			{
 				index: 3,
 				label: "What We Watchin'",
 				link: '/what-we-watchin',
-				project: projects[1]
+				project: projects[1],
+				tabClassName: classes.project4
 			},
     ]
 
@@ -67,14 +72,15 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 									indicatorColor={`secondary`}
 									onChange={(_e, val) => setActiveTab(val)}
 								>
-									{projectTabs.map((tab,i)=>{
+									{projectTabs.map((tab, i)=>{
 										return(
-											<Tab 
-												classes={{ label: classes.label }}
-												key={tab.index} 
-												label={tab.label} 
-												component={NavLink} 
-												to={`/projects${tab.link}`} 
+											<Tab
+												classes={{ root: classes.tabItem }}
+												key={tab.index}
+												label={tab.label}
+												component={NavLink}
+												to={`/projects${tab.link}`}
+												className={tab.tabClassName}
 												isActive={(match, location) => {
 													if (match) {
 														setSelectedTheme(projects[i].colorTheme)
@@ -93,26 +99,6 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                         <TabPanel value={activeTab} index={i}>
                             <div className={classes.headerButtonWrapper}>
                                 <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
-                                {projects[i].live && (
-                                    <ContainedButton 
-																			className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
-																			style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
-																			onClick={()=> window.open(`${projects[i].live}`, "_blank")}
-                                    >
-                                    {'Live'}
-                                    </ContainedButton>
-                                )}
-                                {projects[i].code &&  (
-																	<Button
-																		className={classes.viewCodeButton}
-																		style={{ maxWidth: 165, color: selectedTheme ? selectedTheme : undefined, border: selectedTheme ? `1px solid ${selectedTheme}` : undefined, borderRadius: 24, width: '100%' }}
-																		type='submit'
-																		endIcon={<img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" style={{ height: 25 }} />}
-																		onClick={()=> window.open(`${projects[i].code}`, "_blank")}
-																	>
-																		View Code
-																	</Button>
-                                )}
                             </div>
                             <div className={classes.projectPanel}>
 															<Grid item lg={4} md={4} sm={12} xs={12}>
@@ -124,8 +110,34 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 																			{projects[i].subTitle}
 																		</Typography>
 																	)}
-																	<Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].intro}</Typography>
-																	<Typography className={classNames(classes.typography, classes.projectInfo)}>{projects[i].description[0].use}</Typography>
+																	<Typography className={classNames(classes.typography, classes.projectInfo)}>
+																		{projects[i].description[0].intro}
+																	</Typography>
+																	<Typography className={classNames(classes.typography, classes.projectInfo)}>
+																		{projects[i].description[0].use}
+																	</Typography>
+																	{projects[i].live && (
+                                    <ContainedButton 
+																			className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
+																			style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
+																			onClick={()=> window.open(`${projects[i].live}`, "_blank")}
+																			endIcon={<BiIcons.BiWorld/>}
+                                    >
+                                    <span style={{ position: 'relative' }}>
+																			{'Live'}
+																			{/* <BsIcons.BsRecordFill
+																				style={{
+																					position: 'absolute',
+																					top: 3,
+																					left: 29,
+																					width: 10,
+																					height: 10,
+																				}}
+																				color={'#FF3F4D'}
+																			/> */}
+																		</span>
+                                    </ContainedButton>
+                                	)}
 																</div>
 															</Grid>
 															<Grid item lg={8} md={8} sm={12} xs={12}>
@@ -198,10 +210,13 @@ const useStyles = makeStyles((theme) => ({
       },
       descSection:{
         paddingRight: 15,
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
         [theme.breakpoints.down('sm')]:{
-            paddingTop: 0,
-            paddingRight: 0,
-            paddingBottom: 29,
+					paddingTop: 0,
+					paddingRight: 0,
+					paddingBottom: 29,
         }
       },
       typography:{
@@ -267,7 +282,9 @@ const useStyles = makeStyles((theme) => ({
 				}
     },
 		liveButtonMain: {
+			marginTop: 24,
 			[theme.breakpoints.down('sm')]: {
+				margin: '0 auto',
 				marginBottom: 4,
 				marginTop: 12,
 			},
@@ -297,7 +314,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 		projectInfo: {
-			fontWeight: 600, 
+			fontWeight: 400, 
 			fontSize: 19, 
 			paddingBottom: 12, 
 			color: '#fff',
@@ -315,19 +332,38 @@ const useStyles = makeStyles((theme) => ({
 				textAlign: 'center',
 			}
 		},
-        headerButtonWrapper: {
-            display: 'flex', 
-            width: '100%', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-            paddingBottom: 12, 
-            padding: '12px 0px',
-            [theme.breakpoints.down('sm')]: {
-                flexDirection: 'column',
-                padding: '16px 0px',
-            }
-            
-        }
+		headerButtonWrapper: {
+			display: 'flex', 
+			width: '100%', 
+			justifyContent: 'space-between', 
+			alignItems: 'center', 
+			paddingBottom: 12, 
+			padding: '12px 0px',
+			[theme.breakpoints.down('sm')]: {
+				flexDirection: 'column',
+				padding: '16px 0px',
+			}
+		},
+		project1: {
+			'& .MuiTab-wrapper': {
+				color: '#2794D2'
+			},
+		 },
+		 project2: {
+			'& .MuiTab-wrapper': {
+				color: '#EF4136'
+			}
+		 },
+		 project3: {
+			'& .MuiTab-wrapper': {
+				color: '#FEF032'
+			}
+		 },
+		 project4: {
+			'& .MuiTab-wrapper': {
+				color: '#FF3F4D'
+			}
+		 },
 }));
 
 

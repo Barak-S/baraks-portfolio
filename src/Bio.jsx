@@ -142,14 +142,20 @@ const Portfolio = () => {
 							value={activeTab || 0}
 							indicatorColor={`secondary`}
 							onChange={(_e, val) => setActiveTab(val)}
-							>
+						>
 							{projectTabs.map((tab,i)=>{
 								return(
-									<Tab 
+									<Tab
+										onMouseEnter={(_e, val) => setActiveTab(val)}
+										onMouseLeave={(_e, val) => setActiveTab(0)}
 										classes={{ label: classes.label }}
 										className={tab.tabClassName}
 										key={tab.index} 
-										label={tab.label} 
+										label={
+											<Tooltip title={tab.label}>
+												<span>{tab.label}</span>
+											</Tooltip>
+										}
 										component={NavLink} 
 										to={`/projects${tab.link}`} 
 									/>
