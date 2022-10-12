@@ -28,6 +28,7 @@ const Footer = ({ selectedTheme }) => {
 const useStyles = makeStyles((theme) => ({
 	divFooter: {
 		position: 'relative',
+		paddingBottom: 32,
 	},
 	footerText: {
 		textAlign: 'center',

@@ -11,7 +11,7 @@ export const projects = [
                 "use" : "Search by transaction type, property type, or location to find the right property that fits your needs."
             }
         ],
-        "technologies": "React.js, Node.js, MySQL, Docker, Listhub API, Google Maps API",
+        "technologies": "React.js | Node.js | MySQL | Docker | Listhub API | Google Maps API",
         "live": 'https://watery.com/',
         "details": [ 
             {
@@ -43,14 +43,14 @@ export const projects = [
                 "use": "We have built a digital collectibles experience which give fans the opportunity to unpack and own the best moments in kickboxing history, ranging from the early days of K-1 to the modern era in GLORY.",
             }
         ],
-        "technologies": "React.js, Moralis, Web3",
+        "technologies": "React.js | Moralis | Web3",
         "live": 'https://glorysmacks.com/',
         "details": [ 
+						{
+								"img": "images/glory-2.jpg"
+						}, 
             {
                 "img": "images/glory-1.jpg"
-            }, 
-            {
-                "img": "images/glory-2.jpg"
             }, 
             {
                 "img": "images/glory-3.jpg"
@@ -75,7 +75,7 @@ export const projects = [
                 "use": "Ideasicle X does one thing and does it obsessively well: help your company come up with more and better ideas. Getting business-building ideas doesn’t have to be complicated. The last year has surprised us all with the productivity of working remotely. Ideasicle X is the first SaaS platform designed from the ground up specifically for virtual brainstorming.",
             }
         ],
-        "technologies": "React.js, Ruby on Rails, PostgreSQL, Stripe",
+        "technologies": "React.js | Ruby on Rails | PostgreSQL | Stripe",
         "live": 'https://www.ideasiclex.com/',
         "details": [ 
             {
@@ -120,7 +120,7 @@ export const projects = [
                 "show" : "The Solution - What We Watchin’ - A React Native social media app where users can come together and share movies or tv shows that they’d recommend, or want to watch soon. This app provides interaction with your friends by clicking on one’s profile and seeing what tv shows or movies they really enjoyed watching. My app solves the issue of spending countless hours trying to find something to watch when planning a movie night."
             }
         ],
-        "technologies": "React Native, Ruby on Rails, PostgreSQL, OMDB API (Open Movie Database)",
+        "technologies": "React Native | Ruby on Rails | PostgreSQL | OMDB API (Open Movie Database)",
         "code": "https://github.com/Barak-S/Movies-App",
         "details": [ 
             {

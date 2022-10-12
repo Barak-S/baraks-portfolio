@@ -95,8 +95,9 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 							rows={1} 
 							onChange={(e)=>handleChange(e)}
 							value={ value || ''}
+							className={classes.textArea}
 						/>
-						<span style={{ transform: 'translateX(-30px) translateY(5px)', color: "#0B93F6", cursor: 'pointer' }}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
+						<span className={classes.sendMessageBtn}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
 					</Form.Group>
 				</div>
 				<div className={classes.headerArea}>
@@ -174,6 +175,22 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%',
 		[theme.breakpoints.down('sm')]: {
 			marginTop: 0
+		}
+	},
+	textArea: {
+		minHeight: '45px !important',
+		maxHeight: '145px !important',
+		borderRadius: '24px !important',
+		paddingBottom: '9px !important',
+		paddingTop: '9px !important',
+	},
+	sendMessageBtn: {
+		transform: 'translateX(-35px) translateY(6px)',
+		transition: '0.3s ease',
+		color: "#0B93F6",
+		cursor: 'pointer',
+		'&:hover': {
+			color: "#818181",
 		}
 	}
 }))

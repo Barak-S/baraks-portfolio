@@ -179,7 +179,6 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 
                                 </div>
                         </Hidden>
-                        <hr style={{ backgroundColor: `${projects[i].colorTheme}` }} />
                         </TabPanel>
                     )
                 })}
@@ -224,9 +223,9 @@ const useStyles = makeStyles((theme) => ({
       },
       technologiesText: {
         fontFamily: "Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-        paddingBottom: 32,
+        paddingBottom: 48,
         [theme.breakpoints.down('sm')]: {
-            paddingBottom: 2,
+          paddingBottom: 2,
         }
       },
       root: {

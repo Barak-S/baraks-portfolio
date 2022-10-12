@@ -9,19 +9,19 @@ const ContainedButton = ({ label, id, handleSubmit, children, className, ...prop
     const classes = useStyles();
 
     return (
-        <Button
-            id={id}
-            variant='outlined'
-            color='primary'
-            type='submit'
-            className={classNames(classes.commonBtn, className)}
-            onClick={handleSubmit}
-            endIcon={<BsIcons.BsArrowRight/>}
-            {...props}
-            >
-            <span className={classes.btnLabel}>{label}</span>
-            {children}
-        </Button>
+			<Button
+				id={id}
+				variant='outlined'
+				color='primary'
+				type='submit'
+				className={classNames(classes.commonBtn, className)}
+				onClick={handleSubmit}
+				endIcon={<BsIcons.BsArrowRight/>}
+				{...props}
+			>
+				<span className={classes.btnLabel}>{label}</span>
+				{children}
+			</Button>
     );
 };
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         position: 'relative',
         borderRadius: 24,
-        height: 40,
+        height: 45,
 				backgroundColor: '#35c958',
 				border: 'none',
 				outline: 'none',
@@ -43,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
             marginRight: -24,
             transition: '0.3s ease-in-out all',
         },    
-        '&:hover':{ 
+        '&:hover':{
+						height: 45,
             backgroundColor: '#131313',
             color: "#fff",
 						border: 'none',

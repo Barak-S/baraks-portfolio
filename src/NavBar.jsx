@@ -117,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
 		width: '100%',
 		position: 'relative',
 		borderRadius: 24,
+		border: '1.5px solid #fff',
 		backgroundColor: '#131313',
 		color: '#fff',
 		'& .MuiButton-label': {
@@ -125,6 +126,7 @@ const useStyles = makeStyles((theme) => ({
 			color: '#fff',
 		},
 		'&:hover': {
+			border: '1.5px solid #fff',
 			backgroundColor: '#131313',
 			color: "#fff",
 			"& > *:first-child": {
