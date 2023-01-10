@@ -12,6 +12,15 @@ const theme = createTheme({
       default: '#131313',
     },
   },
+	overrides: {
+    MuiIconButton: {
+      root: {
+        '&:hover': {
+          backgroundColor: "$labelcolor"
+        }
+      }
+    }
+  }
 });
 
 export default theme;
