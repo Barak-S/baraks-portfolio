@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import * as BsIcons from 'react-icons/bs';
+import { AiFillGithub } from "react-icons/ai"
 
 const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 	const history = useHistory();
@@ -83,10 +84,10 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 			</Hidden>
 			<ul id="horizontal-list">
 				<li>
-					<img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" alt="Barak Saidoff LinkedIn" className="buttonIcon" style={{ height: 63, padding: 10, }} onClick={() => window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}></img>
+					<img src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png" alt="Barak Saidoff LinkedIn" className="buttonIcon" style={{ height: 61, padding: 10, }} onClick={() => window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}></img>
 				</li>
 				<li>
-					<img src="https://i.ya-webdesign.com/images/github-icon-png-7.png" alt="Barak Saidoff Github" className="buttonIcon github" style={{ height: 63, padding: 10 }} onClick={() => window.open("https://github.com/Barak-S", "_blank")}></img>
+				<AiFillGithub className="buttonIcon github" size={62} color={'#C3C5C6' } onClick={()=> window.open("https://github.com/Barak-S", "_blank")}/>
 				</li>
 				<li>
 					<img src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png" alt="Barak Saidoff Medium Blog" className="buttonIcon" style={{ height: 63, padding: 10 }} onClick={() => window.open("https://medium.com/@baraksaidoff", "_blank")}></img>
