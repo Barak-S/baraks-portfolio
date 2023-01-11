@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 import { IoLogoNodejs } from "react-icons/io";
 import { SiJavascript, SiReact, SiRedux, SiTypescript, SiPython, SiGithub } from "react-icons/si";
 import ContainedButton from './components/ContainedButton';
-import { Hidden, Tabs, Tab, Button, makeStyles, IconButton, Tooltip } from '@material-ui/core';
+import { Hidden, Tabs, Tab, Button, makeStyles, IconButton, Tooltip, useTheme, useMediaQuery } from '@material-ui/core';
 import * as BsIcons from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';
 import Resume from './resume/Copy of Barak Saidoff Resume.pdf';
@@ -15,6 +15,8 @@ const Portfolio = () => {
     const classes = useStyles()
     const history = useHistory()
 		const [activeTab, setActiveTab] = useState(0)
+		const theme = useTheme();
+  	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 		
 		const projectTabs = [
 			{
@@ -76,7 +78,7 @@ const Portfolio = () => {
 									<p className={classes.skillsBanner}>Technical Skills</p>
 									<div className={classes.iconWrapper}>
 										<Tooltip placement="top" title="JavaScript">
-												<IconButton style={{ paddingTop: 0, outline: 'none' }}>
+												<IconButton style={{ paddingTop: 0, paddingLeft: isMobile ? 12 : 2, outline: 'none' }}>
 														<SiJavascript size={24} color={'#EFD81D'} />
 												</IconButton>
 										</Tooltip>
@@ -98,6 +100,11 @@ const Portfolio = () => {
 										<Tooltip placement="top" title="TypeScript">
 												<IconButton style={{ paddingTop: 0, outline: 'none' }}>
 														<SiTypescript size={24} color={'#2F73BF'} />
+												</IconButton>
+										</Tooltip>
+										<Tooltip placement="top" title="Vue.js">
+												<IconButton style={{ paddingTop: 0, outline: 'none' }}>
+														<img style={{ width: 28 }} src="https://cdn.iconscout.com/icon/free/png-256/vuejs-3-1175070.png" />
 												</IconButton>
 										</Tooltip>
 										<Tooltip placement="top" title="Python">
@@ -266,7 +273,7 @@ const useStyles = makeStyles((theme) => ({
 			display: 'flex', 
 			alignItems: 'center', 
 			justifyContent: 'space-between', 
-			maxWidth: 500, 
+			maxWidth: 540, 
 			flexWrap: 'wrap',
 			[theme.breakpoints.down('sm')]: {
 				justifyContent: 'center',
