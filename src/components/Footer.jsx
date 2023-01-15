@@ -10,7 +10,7 @@ const Footer = ({ selectedTheme }) => {
   return (
       <div className={classes.divFooter}>
           <p className={classes.footerText} style={{ color: selectedTheme ? selectedTheme : '#35c958' }}>{`© ${new Date().getFullYear()}, Barak Web Development`}</p> 
-          <ul className="social-footer">
+          {/* <ul className="social-footer">
             <li className={classes.socialButtonFooter}>
               <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>
             </li>
@@ -20,7 +20,7 @@ const Footer = ({ selectedTheme }) => {
             <li className={classes.socialButtonFooter}>
               <span><AiFillMediumCircle size={23} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://medium.com/@baraksaidoff", "_blank")}/></span>
             </li>
-          </ul>
+          </ul> */}
       </div>
   )
 }
@@ -28,7 +28,7 @@ const Footer = ({ selectedTheme }) => {
 const useStyles = makeStyles((theme) => ({
 	divFooter: {
 		position: 'relative',
-		paddingBottom: 32,
+		paddingBottom: 52,
 	},
 	footerText: {
 		textAlign: 'center',

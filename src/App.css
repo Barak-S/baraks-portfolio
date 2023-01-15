@@ -136,6 +136,7 @@ img.d-block.w-100.img-thumbnail{
 	padding: 8.5px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+	border-radius: 50%;
 }
 
 .buttonIcon:hover{
@@ -370,7 +371,7 @@ ul#horizontal-list{
   display: flex;
 	justify-content: space-around;
 	align-items: center;
-	width: 232px;
+	width: 319px;
 }
 
 ul#horizontal-list li {
