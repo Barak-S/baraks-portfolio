@@ -5,6 +5,9 @@ import { Button, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import * as BsIcons from 'react-icons/bs';
 import { AiFillGithub } from "react-icons/ai"
+import UpworkLogo from './images/upwork-logo.png'
+import LinkedInLogo from './images/LinkedIn-logo.png'
+import MediumLogo from './images/medium-logo.png'
 
 const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 	const history = useHistory();
@@ -85,10 +88,10 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 			<ul id="horizontal-list" className={`${show && "mobile-scroll-nav"}`}>
 				<li>
 					<img 
-						src="https://www.sharethis.com/wp-content/uploads/2017/05/LinkedIn.png"
-						alt="Barak Saidoff LinkedIn"
+						src={LinkedInLogo}
+						alt="Barak - LinkedIn"
 						className="buttonIcon"
-						style={{ height: show ? 44 : 61, padding: 10, }}
+						style={{ height: show ? 44 : 61, padding: 10 }}
 						onClick={() => window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}
 					/>
 				</li>
@@ -101,19 +104,19 @@ const NavBar = ({ selectedTheme, setSelectedTheme }) => {
 				</li>
 				<li>
 					<img
-						src="https://www.citypng.com/public/uploads/small/11662555971udurdbf0uniifutgcylp1gud40ihnfb7ciqdmowfhrxifaxga54ydmoj81r2cxpxsdcuchjqxjuf2is7a3vdgwiq78fx3tvgcf4u.png"
-						alt="Barak Saidoff Medium Blog"
+						src={UpworkLogo}
+						alt="Barak - Upwork"
 						className="buttonIcon"
-						style={{ height: show ? 45 : 63, padding: 10 }}
+						style={{ height: show ? 44 : 61, padding: 10 }}
 						onClick={() => window.open("https://www.upwork.com/freelancers/~018ba5c1b1004e41ea", "_blank")}
 					/>
 				</li>
 				<li>
 					<img
-						src="https://cdn4.iconfinder.com/data/icons/social-media-2210/24/Medium-512.png"
-						alt="Barak Saidoff Medium Blog"
+						src={MediumLogo}
+						alt="Barak - Medium"
 						className="buttonIcon"
-						style={{ height: show ? 45 : 63, padding: 10 }}
+						style={{ height: show ? 46 : 63, padding: 10 }}
 						onClick={() => window.open("https://medium.com/@baraksaidoff", "_blank")}
 					/>
 				</li>
