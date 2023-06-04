@@ -107,7 +107,7 @@ const Portfolio = () => {
 										</Tooltip>
 										<Tooltip placement="top" title="Vue.js">
 												<IconButton style={{ paddingTop: 0, outline: 'none' }}>
-														<img style={{ width: 28 }} src="https://cdn.iconscout.com/icon/free/png-256/vuejs-3-1175070.png" />
+														<img style={{ width: 27 }} src="https://cdn.iconscout.com/icon/free/png-256/vuejs-3-1175070.png" />
 												</IconButton>
 										</Tooltip>
 										<Tooltip placement="top" title="Python">
@@ -119,32 +119,25 @@ const Portfolio = () => {
 												<IconButton
                           style={{
                             outline: 'none',
-                            backgroundColor: '#14AA52',
                             outline: 'none',
-                            padding: 3,
-                            margin: '0px 12px',
-                            marginBottom: 11,
-                            height: 29,
-                            width: 29,
+                            padding: 7,
+                            paddingTop: 0,
+                            paddingBottom: 12,
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
                           }}
                         >
-														<SiMongodb size={22} color={'#fff'} />
+														<SiMongodb size={23} color={'#14AA52'} />
 												</IconButton>
 										</Tooltip>
 										<Tooltip placement="top" title="Firebase">
                         <IconButton
                           style={{
                             outline: 'none',
-                            backgroundColor: '#fff',
                             outline: 'none',
-                            padding: 3,
-                            margin: '0px 12px',
-                            marginBottom: 11,
-                            height: 29,
-                            width: 29,
+                            padding: 12,
+                            paddingTop: 0,
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -330,7 +323,7 @@ const useStyles = makeStyles((theme) => ({
 			}
 		},
     railsLogo: {
-			height: 60,
+			height: 58,
     },
 		projectTabs:{
 			paddingBottom: 72,
