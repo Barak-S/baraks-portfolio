@@ -66,33 +66,33 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
 									</div>
                 </Hidden>
                 <Tabs
-									className={classes.projectTabs}
-									classes={{ root: classes.root }}
-									value={activeTab || 0}
-									indicatorColor={`secondary`}
-									onChange={(_e, val) => setActiveTab(val)}
-								>
-									{projectTabs.map((tab, i)=>{
-										return(
-											<Tab
-												classes={{ root: classes.tabItem }}
-												key={tab.index}
-												label={tab.label}
-												component={NavLink}
-												to={`/projects${tab.link}`}
-												className={tab.tabClassName}
-												isActive={(match, location) => {
-													if (match) {
-														setSelectedTheme(projects[i].colorTheme)
-														setActiveTab(tab.index);
-														return true;
-													} else {
-														return false;
-													}
-												}}
-											/>
-										)
-									})}
+					className={classes.projectTabs}
+					classes={{ root: classes.root }}
+					value={activeTab || 0}
+					indicatorColor={`secondary`}
+					onChange={(_e, val) => setActiveTab(val)}
+				>
+					{projectTabs.map((tab, i)=>{
+						return(
+							<Tab
+								classes={{ root: classes.tabItem }}
+								key={tab.index}
+								label={tab.label}
+								component={NavLink}
+								to={`/projects${tab.link}`}
+								className={tab.tabClassName}
+								isActive={(match, location) => {
+									if (match) {
+										setSelectedTheme(projects[i].colorTheme)
+										setActiveTab(tab.index);
+										return true;
+									} else {
+										return false;
+									}
+								}}
+							/>
+						)
+					})}
                 </Tabs>
                 {projectTabs.map((projectTab, i)=>{
                     return(
@@ -101,63 +101,63 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                 <Typography className={classNames(classes.typography, classes.projectTitle)} style={{ color: `${projects[i].colorTheme}` }}>{projects[i].title}</Typography>
                             </div>
                             <div className={classes.projectPanel}>
-															<Grid item lg={4} md={4} sm={12} xs={12}>
-																<div className={classes.descSection}>
-																	{projects[i].subTitle && (
-																		<Typography 
-																			className={classNames(classes.typography, classes.projectInfo)}
-																		>
-																			{projects[i].subTitle}
-																		</Typography>
-																	)}
-																	<Typography className={classNames(classes.typography, classes.projectInfo)}>
-																		{projects[i].description[0].intro}
-																	</Typography>
-																	<Typography className={classNames(classes.typography, classes.projectInfo)}>
-																		{projects[i].description[0].use}
-																	</Typography>
-																	{projects[i].live && (
-                                    <ContainedButton 
-																			className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
-																			style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
-																			onClick={()=> window.open(`${projects[i].live}`, "_blank")}
-																			endIcon={<BiIcons.BiWorld/>}
-                                    >
-                                    <span style={{ position: 'relative' }}>
-																			{'Live'}
-																			{/* <BsIcons.BsRecordFill
-																				style={{
-																					position: 'absolute',
-																					top: 3,
-																					left: 29,
-																					width: 10,
-																					height: 10,
-																				}}
-																				color={'#FF3F4D'}
-																			/> */}
-																		</span>
-                                    </ContainedButton>
-                                	)}
-																</div>
-															</Grid>
-															<Grid item lg={8} md={8} sm={12} xs={12}>
-																<div className={classes.carousel}>
-																	<Carousel interval={9500}>
-																		{projects[i].details.map(img=>{
-																			return(
-																				<Carousel.Item  className={classes.carousel}>
-																					<Image
-																						src={require(`../${img.img}`)}
-																						alt={projects[i].title}
-																						thumbnail 
-																						className={classes.imgThumbnail}
-																					/>
-																				</Carousel.Item>
-																			)
-																		})}
-																	</Carousel>
-																</div>
-															</Grid>
+								<Grid item lg={4} md={4} sm={12} xs={12}>
+									<div className={classes.descSection}>
+										{projects[i].subTitle && (
+											<Typography 
+												className={classNames(classes.typography, classes.projectInfo)}
+											>
+												{projects[i].subTitle}
+											</Typography>
+										)}
+										<Typography className={classNames(classes.typography, classes.projectInfo)}>
+											{projects[i].description[0].intro}
+										</Typography>
+										<Typography className={classNames(classes.typography, classes.projectInfo)}>
+											{projects[i].description[0].use}
+										</Typography>
+										{projects[i].live && (
+                                    		<ContainedButton 
+												className={classNames(classes.liveButtonMain, i === 2 && classes.liveButton)} 
+												style={{ border: `1px solid ${projects[i].colorTheme}`, color: `#131313`, backgroundColor: `${projects[i].colorTheme}`, border: 'none', outline: 'none' }} 
+												onClick={()=> window.open(`${projects[i].live}`, "_blank")}
+												endIcon={<BiIcons.BiWorld/>}
+                                   			 >
+												<span style={{ position: 'relative' }}>
+													{'Live'}
+													{/* <BsIcons.BsRecordFill
+														style={{
+															position: 'absolute',
+															top: 3,
+															left: 29,
+															width: 10,
+															height: 10,
+														}}
+														color={'#FF3F4D'}
+													/> */}
+												</span>
+											</ContainedButton>
+										)}
+									</div>
+								</Grid>
+								<Grid item lg={8} md={8} sm={12} xs={12}>
+									<div className={classes.carousel}>
+										<Carousel interval={9500}>
+											{projects[i].details.map(img=>{
+												return(
+													<Carousel.Item  className={classes.carousel}>
+														<Image
+															src={require(`../${img.img}`)}
+															alt={projects[i].title}
+															thumbnail 
+															className={classes.imgThumbnail}
+														/>
+													</Carousel.Item>
+												)
+											})}
+										</Carousel>
+									</div>
+								</Grid>
                             </div>
                             <Typography 
                                 className={classes.technologiesText} 
@@ -178,7 +178,7 @@ const ProjectContainer = ({ selectedTheme, setSelectedTheme }) => {
                                     </Button>
 
                                 </div>
-                        </Hidden>
+                        	</Hidden>
                         </TabPanel>
                     )
                 })}
@@ -344,24 +344,24 @@ const useStyles = makeStyles((theme) => ({
 			}
 		},
 		project1: {
-			'& .MuiTab-wrapper': {
-				color: '#2794D2'
-			},
+			// '& .MuiTab-wrapper': {
+			// 	color: '#2794D2'
+			// },
 		 },
 		 project2: {
-			'& .MuiTab-wrapper': {
-				color: '#EF4136'
-			}
+			// '& .MuiTab-wrapper': {
+			// 	color: '#EF4136'
+			// }
 		 },
 		 project3: {
-			'& .MuiTab-wrapper': {
-				color: '#FEF032'
-			}
+			// '& .MuiTab-wrapper': {
+			// 	color: '#FEF032'
+			// }
 		 },
 		 project4: {
-			'& .MuiTab-wrapper': {
-				color: '#FF3F4D'
-			}
+			// '& .MuiTab-wrapper': {
+			// 	color: '#FF3F4D'
+			// }
 		 },
 }));
 

@@ -9,7 +9,7 @@ const Footer = ({ selectedTheme }) => {
 	const classes = useStyles()
   return (
       <div className={classes.divFooter}>
-          <p className={classes.footerText} style={{ color: selectedTheme ? selectedTheme : '#35c958' }}>{`© ${new Date().getFullYear()}, Barak's Web Dev Shop`}</p>
+          <p className={classes.footerText} style={{ color: selectedTheme ? selectedTheme : '#35c958' }}>{`© ${new Date().getFullYear()}, Barak's Web Dev Studios`}</p>
           {/* <ul className="social-footer">
             <li className={classes.socialButtonFooter}>
               <span><TiSocialLinkedinCircular size={27} color={ selectedTheme ? selectedTheme : '#35c958' } onClick={()=> window.open("https://www.linkedin.com/in/baraksaidoff/", "_blank")}/></span>

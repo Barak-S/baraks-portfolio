@@ -380,24 +380,24 @@ const useStyles = makeStyles((theme) => ({
 		},
 	 },
 	 project1: {
-		'& .MuiTab-wrapper': {
-			color: '#2794D2'
-		},
+		// '& .MuiTab-wrapper': {
+		// 	color: '#2794D2'
+		// },
 	 },
 	 project2: {
-		'& .MuiTab-wrapper': {
-			color: '#EF4136'
-		}
+		// '& .MuiTab-wrapper': {
+		// 	color: '#EF4136'
+		// }
 	 },
 	 project3: {
-		'& .MuiTab-wrapper': {
-			color: '#FEF032'
-		}
+		// '& .MuiTab-wrapper': {
+		// 	color: '#FEF032'
+		// }
 	 },
 	 project4: {
-		'& .MuiTab-wrapper': {
-			color: '#FF3F4D'
-		}
+		// '& .MuiTab-wrapper': {
+		// 	color: '#FF3F4D'
+		// }
 	 },
    fbLogo: {
     width: 18,
