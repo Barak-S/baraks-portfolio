@@ -14,13 +14,11 @@ import Footer from './components/Footer';
 
 const App = () => {
 	const classes = useStyles()
-	
-  const [data, setData] = useState({ message: '' });
+
+  const [data, setData] = useState({ email: '', message: '' });
   const [reply, setReply] = useState({ message: '' })
   const [messages, setMessages] = useState([]);
   const [selectedTheme, setSelectedTheme] = useState(null)
-	
-  const { message } = data;
 
   const handleTextFieldChanged = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -45,30 +43,30 @@ const App = () => {
       })
     }
   }
-  
+
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
         <div className={classes.root}>
           <NavBar selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
           <Switch>
-            <Route exact path={'/'} render={(routerProps) =>( 
+            <Route exact path={'/'} render={(routerProps) =>(
               <HomeContainer
-                value={message}
+                value={data}
                 messages={messages}
                 reply={reply}
                 handleSubmit={sendEmail}
-                handleChange={handleTextFieldChanged} 
-                {...routerProps} 
+                handleChange={handleTextFieldChanged}
+                {...routerProps}
               />)}
             />
             <Route path={'/projects'} render={(routerProps) => (
-              <ProjectContainer value={message}
+              <ProjectContainer
                 handleSubmit={sendEmail}
-                handleChange={handleTextFieldChanged} 
+                handleChange={handleTextFieldChanged}
                 selectedTheme={selectedTheme}
                 setSelectedTheme={setSelectedTheme}
-                {...routerProps} 
+                {...routerProps}
               />)}
             />
             <Redirect to={'/'} />
@@ -84,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		minHeight: '100vh',
 		fontFamily: `"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
-		letterSpacing: .35, 
+		letterSpacing: .35,
 		lineHeight: 1.8,
 		margin: 0,
 		padding: 0,
