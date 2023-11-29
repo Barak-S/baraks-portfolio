@@ -1,15 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Video from './images/city-scene.mp4'
 import { TweenMax, Power2 }  from 'gsap';
 import { makeStyles } from '@material-ui/core';
 import { Col, Form, Image } from 'react-bootstrap';
 import { FaArrowCircleUp } from "react-icons/fa";
+import classNames from 'classnames';
 
 
 const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }) => {
 	const classes = useStyles()
-	
+
 	let videoRef = useRef(null);
 	let profilePic = useRef(null);
 	let textMessage = useRef(null);
@@ -30,16 +31,27 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 		.catch((err)=>console.log(err))
 	}, [])
 
+  const [isFocused, setIsFocused] = useState(false)
+
+  const handleFocus = () => {
+    setIsFocused(true)
+  }
+
+  const handleBlur = () => {
+    setIsFocused(false)
+  }
+
 	useEffect(() => {
 		const hasMessages = messages?.length
 		if (profilePic && textMessage && textMessage2){
 			TweenMax.to( profilePic, hasMessages ? 0 : 1.1, { opacity: 1, y: '-75%', ease: Power2.easeOut, delay: hasMessages ? 0 : 0.5 })
 			TweenMax.to( textMessage, hasMessages ? 0 : 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: hasMessages ? 0 : 0.5 })
-			TweenMax.to( textMessage2, hasMessages ? 0 : 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: hasMessages ? 0 : 1.8 })    
-			TweenMax.to( inputRef, hasMessages ? 0 : 1.1, { opacity: 1, y: '-0px', ease: Power2.easeOut, delay: hasMessages ? 0 : 2.8 })    
+			TweenMax.to( textMessage2, hasMessages ? 0 : 1.1, { opacity: 1, y: '-125px', ease: Power2.easeOut, delay: hasMessages ? 0 : 1.8 })
+			TweenMax.to( inputRef, hasMessages ? 0 : 1.1, { opacity: 1, y: '-0px', ease: Power2.easeOut, delay: hasMessages ? 0 : 2.8 })
 		}
 	}, [profilePic, textMessage, textMessage2, messages])
 
+  const canSend = (value.message && value.email)
 
 	return(
 		<div style={{ height: '100vh', width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -50,15 +62,15 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 					<div className={classes.chatWrapper}>
 						<div className={classes.chat}>
 							<div className="mine messages">
-								<Image 
-									ref={el => (profilePic = el)} 
-									className={classes.headshotDrop} 
-									style={{ 
-										height: 100, 
-										width: 100, 
-									}} 
-									src={require("./images/headshot2021.jpg")} 
-									roundedCircle 
+								<Image
+									ref={el => (profilePic = el)}
+									className={classes.headshotDrop}
+									style={{
+										height: 100,
+										width: 100,
+									}}
+									src={require("./images/headshot2021.jpg")}
+									roundedCircle
 									alt="Barak Saidoff Profile Picture"
 								/>
 								<div className="message last" style={{ opacity: messages.length ? 1 : 0 }} ref={el => (textMessage = el)} >
@@ -82,22 +94,40 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 										<div className="reply message" style={{ opacity: 1}}>
 										{reply.message}
 										</div>
-								</div> 
+								</div>
 							)}
 						</div>
 				</div>
 				<div className={classes.emailArea} ref={el => (inputRef = el)}>
-					<Form.Group controlId="exampleForm.ControlTextarea1" className={classes.formGroup}>
-						<Form.Control 
-							placeholder="Send me your contact info!"
-							as="textarea" 
-							name="message"
-							rows={1} 
+					<Form.Group controlId="exampleForm.ControlTextarea1"
+            className={classNames(classes.formGroup, isFocused && classes.formFocused)}
+          >
+						<Form.Control
+							placeholder="Email or phone"
+							as="textarea"
+							name="email"
+							rows={1}
 							onChange={(e)=>handleChange(e)}
-							value={ value || ''}
-							className={classes.textArea}
+							value={ value.email || ''}
+							className={classNames(classes.textArea, !isFocused && classes.inputFocused )}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
 						/>
-						<span className={classes.sendMessageBtn}><FaArrowCircleUp size={25} onClick={(e)=>handleSubmit(e)}/></span>
+            {/* <div className={classes.formDivider} /> */}
+						<Form.Control
+							placeholder="Message"
+							as="textarea"
+							name="message"
+							rows={1}
+							onChange={(e)=>handleChange(e)}
+							value={ value.message || ''}
+							className={classNames(classes.textArea, !isFocused && classes.inputFocused )}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+						/>
+						<span className={classNames(classes.sendMessageBtn, !canSend && classes.disabled )}>
+              <FaArrowCircleUp size={25} onClick={(e)=> canSend && handleSubmit(e)}/>
+            </span>
 					</Form.Group>
 				</div>
 				<div className={classes.headerArea}>
@@ -105,7 +135,7 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 					<h5 className={classes.titleHeader}>Full Stack Developer</h5>
 				</div>
 			</Col>
-		</div>   
+		</div>
 	)
 }
 
@@ -167,7 +197,16 @@ const useStyles = makeStyles((theme) => ({
 		maxHeight: 158,
 		marginLeft: '0px !important',
 		marginRight: 0,
+    backgroundColor: '#131313',
+    borderRadius: 24,
+    border: '1px solid #ced4da',
+    justifyContent: 'space-between'
 	},
+  formFocused: {
+    backgroundColor: '#fff',
+    border: '1px solid #80bdff',
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)'
+  },
 	headshotDrop: {
 		opacity: 0,
 	},
@@ -184,15 +223,29 @@ const useStyles = makeStyles((theme) => ({
 		paddingBottom: '9px !important',
 		paddingTop: '9px !important',
 	},
+  inputFocused: {
+    color: '#fff !important'
+  },
+  formDivider: {
+    // height: '100%',
+    // width: 1,
+    // backgroundColor: '#ced4da',
+    // minHeight: 45,
+    // display: 'flex',
+    // margin: '5px 0px'
+  },
 	sendMessageBtn: {
-		transform: 'translateX(-35px) translateY(6px)',
+		transform: 'translateX(-10px) translateY(6px)',
 		transition: '0.3s ease',
 		color: "#0B93F6",
 		cursor: 'pointer',
 		'&:hover': {
 			color: "#818181",
 		}
-	}
+	},
+  disabled: {
+    color: "#818181",
+  }
 }))
 
 export default IntroContactForm
