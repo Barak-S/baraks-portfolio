@@ -57,7 +57,7 @@ const IntroContactForm = ({ messages, reply, value, handleChange, handleSubmit }
 										height: 100, 
 										width: 100, 
 									}} 
-									src={require("./images/headshot2021.jpg")} 
+									src={require("./images/headshot2025.jpg")} 
 									roundedCircle 
 									alt="Barak Saidoff Profile Picture"
 								/>
